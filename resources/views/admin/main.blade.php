@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-main admin
+    <div class="container">    
+        main admin
+    </div>
 @endsection
