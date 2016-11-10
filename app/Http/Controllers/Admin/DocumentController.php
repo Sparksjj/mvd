@@ -19,7 +19,7 @@ class DocumentController extends Controller
         $data = [
             'documents' => Document::paginate(15),
         ];
-        return 123;
+        return view('admin.document.index', $data);
     }
 
     /**
@@ -29,7 +29,10 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        return 234;
+        $data=[
+            'categories' => Category::all(),
+        ];
+        return view('admin.document.create', $data);
     }
 
     /**
@@ -40,7 +43,18 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        return 345;
+        $this->validate($request,[
+            'title_ru' => 'required|max:255',
+            'title_en' => 'required|max:255',
+            'category' => 'required',
+            'documents' => 'required',
+        ]);
+        dd($request->documents);
+        $doc = new Document();
+        $doc->title_ru = $request->title_ru;
+        $doc->title_en = $request->title_en;
+        $doc->category = $request->category;
+        return redirect(route('documents.index'));
     }
 
     /**

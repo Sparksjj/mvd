@@ -13,7 +13,8 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    
+    <link href='/uploader3/css/fileinput.min.css' rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -35,7 +36,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src='/js/jquery-3.1.1.min.js'></script>
     <script src="/css/bootstrap/js/bootstrap.min.js"></script>
+
     <script>
         $(function(){
             var contentHeight = $(window).height() - $('#page-wrapper .footer').outerHeight(true) - $('#page-wrapper .navigation').outerHeight(true);
@@ -43,5 +46,7 @@
         })
 
     </script>
+    <script src='/uploader3/js/fileinput.min.js'></script>
+
 </body>
 </html>
