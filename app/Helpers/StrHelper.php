@@ -1,25 +1,18 @@
 <?php
-
 namespace App\Helpers;
-use App\Hashtag;
 
-class HashTagsHelper {
+class StrHelper {
 
-    public static function saveHashtags($tags)
+    public static function getCatFolder($cat)
     {
-        $tags_arr = explode('#', $tags);
-
-        foreach ($tags_arr as $key => &$value) {
-
-            if ($key !=0) {
-                $value = '#' . trim($value);
-                $hash = Hashtag::firstOrCreate(['tag'=>$value]);
-                $value = $hash->id;
-            }
-
-        }
-        array_shift($tags_arr);
-        return $tags_arr;
+        $str = self::rmSpaces($cat->title_en) . $cat->id;
+        return $str;
     }
-    
+
+    /*prvate function*/
+    private static function rmSpaces($str) {
+        $str = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $str);
+        $str = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $str);
+        return $str;
+    }
 }

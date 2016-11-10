@@ -12,3 +12,43 @@
 	line-height: 50px;
 	color: #555;
 }
+
+/* contoll_panel */
+.contoll_panel{
+	padding: 30px 0;
+}
+
+#page-wrapper .border_left{	
+	border-left: 1px solid #ddd;
+}
+/* contoll_buttons */
+.contoll_buttons{
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 0 !important;
+	margin-bottom: 20px;
+}
+.contoll_buttons > div{
+	cursor: pointer;
+	padding: 0;
+}
+.contoll_buttons > div:last-child{
+	background-color: red;
+	padding: 20px 0;
+}
+.contoll_buttons > div a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0;
+}
+/* media */
+@media only screen and (max-width: 767px){
+	#page-wrapper .border_left{	
+		border-left: none;
+		border-top: 1px solid #ddd;
+	}
+	.contoll_panel{
+		text-align: center;
+	}
+}

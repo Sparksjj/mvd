@@ -2,7 +2,12 @@
 
 @section('content')
 
-    <div class="container">    
+    <div class="container"> 
+      
+    @include('admin.parts._controllPanel')
+
+    <div class="col-sm-9  border_left">
+        
         <h3 class="text-center">Добавить документ</h3>
 
         @include('admin.parts._formErorr')
@@ -40,6 +45,7 @@
             <button type="submit" class="button btn btn-success btn-block">Добавить запись</button>
 
         </form>
+    </div> 
 
     </div><!-- close default .container_wrap element -->
 
