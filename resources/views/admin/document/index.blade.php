@@ -2,24 +2,67 @@
 
 @section('content')
 
-    <div class="container">   
+    <div class="container">  
 
-        @include('admin.parts._controllPanel')
+        @include('admin.parts._tree_category')
 
-        <div class="col-sm-9 border_left"> 
-            @if(count($documents) == 0)
-                <h3 class="text-center">Нет добавленныз документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
-            @else
-                <h3 class="text-center">Документы</h3>
-            @endif
+        <div class="col-md-12 content-wrapper" id="main-content">
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="text-center">Все документы 
+                    @if($category) 
+                        в категории 
+                        <form action=" {{route('documents.index')}} " method="GET" id="select_category">
+                            <select name="categoryId" id="categoryId">
+                                <option value="null">все категории</option>
+                                @foreach($categories as $cat)
+                                    <option value="{{$cat->id}}" @if($cat->id == $category->id) selected @endif>{{ $cat['name_'.Lang::getLocale()] }}</option>
+                                @endforeach
 
-            @foreach($documents as $document)
-                <a href="{{ route('documents.show', $document) }}" class="col-xs-4">
-                    <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h4>
-                
-                    <iframe src="{{ $document->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%"></iframe>
-                </a>
-            @endforeach
+                            </select>
+                        </form>
+                    @else 
+                        во всех категориях 
+                        <form action=" {{route('documents.index')}} " method="GET" id="select_category">
+                            <select name="categoryId" id="categoryId">
+                                <option value="null" selected>все категории</option>
+                                @foreach($categories as $cat)
+                                    <option value="{{$cat->id}}">{{ $cat['name_'.Lang::getLocale()] }}</option>
+                                @endforeach
+
+                            </select>
+                        </form>
+                    @endif</h4>
+                </div>
+
+                <div class="panel-body">
+                    <form action="{{ route('documents.create') }}" method="GET">
+                        <input type="hidden" value="@if($category){{$category->id}}@else{{'null'}}@endif" name="categoryId">
+                        <button type="submit" class="btn btn-success btn-block">Добавить документ</button>
+                    </form>
+                    
+
+                    @if(count($documents) == 0)
+                        <h3 class="text-center">Нет добавленныз документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
+                    @else
+                        <h3 class="text-center">Документы</h3>
+                    @endif
+
+                    @foreach($documents as $document)                    
+                        <a href="{{ route('documents.show', $document) }}" class="col-sm-4">
+                            <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h4>
+                        
+                            <iframe src="{{ $document->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%"></iframe>
+                        </a>
+                    @endforeach
+
+                    <div class="col-md-12 text-center">
+                    {{ $documents->links() }}
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 @endsection

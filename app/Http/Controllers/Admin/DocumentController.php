@@ -8,6 +8,7 @@ use App\Document;
 use App\Category;
 use App\Helpers\StrHelper;
 use App\Helpers\ControlHelper;
+use App\Helpers\TreeHelper;
 use Route;
 
 class DocumentController extends Controller
@@ -17,12 +18,20 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = [
-            'documents' => Document::paginate(15),
-            'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
+            'category' => Category::where('id', $request->categoryId)->first(),
+            'categories' => Category::all(),
+            'tree' => TreeHelper::getTree(),
         ];
+
+        if ($data['category'] == null) {
+            $data['documents'] = Document::paginate(15);
+        }else{
+            $data['documents'] = $data['category']->documents()->paginate(15);
+        }
+
         return view('admin.document.index', $data);
     }
 
@@ -31,12 +40,19 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $data=[
             'categories' => Category::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
+            'tree' => TreeHelper::getTree(),
         ];
+
+        if ($request->categoryId == null) {
+            $data['from_category'] = ['id'=>null];
+        }else{
+            $data['from_category'] = Category::where('id', $request->categoryId)->first();
+        }
         return view('admin.document.create', $data);
     }
 
@@ -84,6 +100,7 @@ class DocumentController extends Controller
         $data = [
             'document' => $document,
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
+            'tree' => TreeHelper::getTree(),
         ];
         return view('admin.document.show', $data);
     }
@@ -101,6 +118,7 @@ class DocumentController extends Controller
             'catId' => $document->category->id,
             'categories' => Category::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
+            'tree' => TreeHelper::getTree(),
         ];
         return view('admin.document.edit', $data);
     }

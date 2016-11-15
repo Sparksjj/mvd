@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Site\MainPageController@index')->name('main.index');
 
 Auth::routes();
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
-	Route::get('/', 'admin\MainController@index')->name('admin.index');
+	Route::get('/', 'Admin\MainController@index')->name('admin.index');
 	Route::resource('documents', 'Admin\DocumentController');
+	Route::resource('categories', 'Admin\CategoryController');
 });

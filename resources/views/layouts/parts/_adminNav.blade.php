@@ -14,14 +14,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{ route('documents.index') }}">Документы</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+<!--         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+        <li class="@if(stristr( url()->current(), '/documents')) active @endif"><a href="{{ route('documents.index') }}">Документы</a></li>
+        <li class="@if(stristr( url()->current(), '/categories')) active @endif"><a href="{{ route('categories.index') }}">Категории</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="">logout</a></li>
+        <li>
+            <form action="{{route('logout')}}" method="POST" class="logout">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class='news-headline'>Выйти</strong>
+            </form>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

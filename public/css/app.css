@@ -42,6 +42,26 @@
 	height: 100%;
 	padding: 20px 0;
 }
+.help-href{
+	text-align: center;
+	display: block;
+	margin: 20px 0;
+	padding: 6px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+#select_category{
+	display: inline;
+}
+.logout{
+	margin-top: 10px;
+}
+.logout button{
+	border: none;
+	background-color: transparent;
+}
 /* media */
 @media only screen and (max-width: 767px){
 	#page-wrapper .border_left{	
