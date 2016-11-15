@@ -11,7 +11,7 @@ class TreeHelper {
     {
         $tree = [
             'categoryes' => [
-                'name' => 'Категории',
+                'name' => trans('admin.categories'),
                 'have_child' => false,
                 'id' => 'all_categories',
             ],
@@ -33,5 +33,4 @@ class TreeHelper {
         }
         return $tree;
     }
-
 }

@@ -10,19 +10,19 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="text-center">Все категории </h4>
+                    <h4 class="text-center">{{trans('admin.all_cat')}}</h4>
                 </div>
 
                 <div class="panel-body">
                     <form action="{{ route('categories.create') }}" method="GET">
-                        <button type="submit" class="btn btn-success btn-block">Добавить категорию</button>
+                        <button type="submit" class="btn btn-success btn-block">{{trans('admin.add_cat')}}</button>
                     </form>
                     
 
                     @if(count($categories) == 0)
-                        <h3 class="text-center">Нет добавленны категории. <a href="{{route('categories.create')}}">создать новую</a></h3>
+                        <h3 class="text-center">{{trans('admin.now_cat')}} <a href="{{route('categories.create')}}">{{trans('admin.create_cat')}} </a></h3>
                     @else
-                        <h3 class="text-center">Категории</h3>
+                        <h3 class="text-center">{{trans('admin.categoryes')}}</h3>
                     @endif
 
                     @foreach($categories as $category)                    

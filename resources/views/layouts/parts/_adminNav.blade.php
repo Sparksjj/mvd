@@ -15,15 +15,21 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 <!--         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
-        <li class="@if(stristr( url()->current(), '/documents')) active @endif"><a href="{{ route('documents.index') }}">Документы</a></li>
-        <li class="@if(stristr( url()->current(), '/categories')) active @endif"><a href="{{ route('categories.index') }}">Категории</a></li>
+        <li class="@if(stristr( url()->current(), '/documents')) active @endif"><a href="{{ route('documents.index') }}">{{trans('admin.documents')}}</a></li>
+        <li class="@if(stristr( url()->current(), '/categories')) active @endif"><a href="{{ route('categories.index') }}">{{trans('admin.categories')}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
             <form action="{{route('logout')}}" method="POST" class="logout">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <button type="submit" class='news-headline'>Выйти</strong>
+                <button type="submit" class='news-headline'>{{trans('admin.logout')}}</strong>
             </form>
+        </li>
+        <li class="@if(Lang::getLocale() == 'ru') active @endif">
+          <a href="{{url('/lang/ru')}}">ru</a>
+        </li>
+        <li class="@if(Lang::getLocale() == 'en') active @endif">
+          <a href="{{url('/lang/en')}}">en</a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

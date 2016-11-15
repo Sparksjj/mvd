@@ -7,18 +7,18 @@
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="text-center">Просмотр документа</h4>
+                    <h4 class="text-center">{{trans('admin.show_doc')}}</h4>
                 </div>
 
                 <div class="panel-body">
 
                     
-                    <a href="{{route('documents.index')}}" class="help-href">Все документы</a>
+                    <a href="{{route('documents.index')}}" class="help-href">{{trans('admin.all_doc')}}</a>
 
                     <div class="col-xs-12 contoll_buttons">                    
 
                         <div class="col-xs-6">
-                            <a href="{{route('documents.edit', $document)}}">Изменить</a>
+                            <a href="{{route('documents.edit', $document)}}">{{trans('admin.update')}}</a>
                         </div>
                         <div class="col-xs-6">
                             <form action="{{ route('documents.destroy', $document) }}" method="POST" class="destroy-news">
@@ -27,7 +27,7 @@
                                 <input name="_method" type="hidden" value="DELETE">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                 <button type="submit" class="button button-red">
-                                    <i class="fa fa-times" aria-hidden="true"></i> Удалить
+                                    <i class="fa fa-times" aria-hidden="true"></i> {{trans('admin.delete')}}
                                 </button>
 
                             </form>

@@ -10,9 +10,9 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="text-center">Все документы 
+                    <h4 class="text-center">{{trans('admin.all_doc')}} 
                     @if($category) 
-                        в категории 
+                        {{trans('admin.in_cat')}} 
                         <form action=" {{route('documents.index')}} " method="GET" id="select_category">
                             <select name="categoryId" id="categoryId">
                                 <option value="null">все категории</option>
@@ -23,10 +23,10 @@
                             </select>
                         </form>
                     @else 
-                        во всех категориях 
+                        {{trans('admin.add_into_doc')}}
                         <form action=" {{route('documents.index')}} " method="GET" id="select_category">
                             <select name="categoryId" id="categoryId">
-                                <option value="null" selected>все категории</option>
+                                <option value="null" selected>{{trans('admin.all_doc')}}</option>
                                 @foreach($categories as $cat)
                                     <option value="{{$cat->id}}">{{ $cat['name_'.Lang::getLocale()] }}</option>
                                 @endforeach
@@ -39,14 +39,14 @@
                 <div class="panel-body">
                     <form action="{{ route('documents.create') }}" method="GET">
                         <input type="hidden" value="@if($category){{$category->id}}@else{{'null'}}@endif" name="categoryId">
-                        <button type="submit" class="btn btn-success btn-block">Добавить документ</button>
+                        <button type="submit" class="btn btn-success btn-block">{{trans('admin.all_doc')}}</button>
                     </form>
                     
 
                     @if(count($documents) == 0)
-                        <h3 class="text-center">Нет добавленныз документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
+                        <h3 class="text-center">{{trans('admin.now_doc')}}<a href="{{route('documents.create')}}">{{trans('admin.create_doc')}}</a></h3>
                     @else
-                        <h3 class="text-center">Документы</h3>
+                        <h3 class="text-center">{{trans('admin.documents')}}</h3>
                     @endif
 
                     @foreach($documents as $document)                    

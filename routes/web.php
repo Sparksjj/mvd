@@ -10,6 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/lang/{locale}', function ($locale) {
+    if(in_array($locale, ['ru', 'en'])) Session::put('language', $locale);
+    return redirect()->back();
+})->name('lang.set-locale');
 
 Route::get('/', 'Site\MainPageController@index')->name('main.index');
 

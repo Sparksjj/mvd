@@ -8,12 +8,12 @@
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>Создать документ</h4>
+                <h4>{{trans('admin.create_doc')}}</h4>
             </div>
 
             <div class="panel-body">
         
-                    <h3 class="text-center">Добавить документ</h3>
+                    <h3 class="text-center">{{trans('admin.add_doc')}}</h3>
 
                     @include('admin.parts._formErorr')
 
@@ -22,17 +22,17 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         
                         <div class="form-group {{ $errors->has('title_ru') ? 'has-error' : '' }}">
-                            <label for="title_ru">Заголовок (рус.)</label>
+                            <label for="title_ru">{{trans('admin.title')}} (рус.)</label>
                             <input type="text" class="form-control" id="title_ru" name="title_ru" required value="{{ old('title_ru') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
-                            <label for="title_en">Заголовок (англ.)</label>
+                            <label for="title_en">{{trans('admin.title')}} (англ.)</label>
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ old('title_en') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}">
-                            <label for="category">Category</label>
+                            <label for="category">{{trans('admin.category')}}</label>
                             <select name="category">
 
                                 @foreach( $categories as $index => $category )
@@ -47,10 +47,10 @@
                             <input id="input-7" name="document" type="file" class="file-loading" data-allowed-file-extensions='["pdf"]' value="{{ old('file') }}">
                         </div>
 
-                        <button type="submit" class="button btn btn-success btn-block">Добавить запись</button>
+                        <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_doc')}}</button>
 
                     </form>
-                    <a href="{{route('documents.index')}}" class="help-href">Все документы</a>
+                    <a href="{{route('documents.index')}}" class="help-href">{{trans('admin.all_doc')}}</a>
                 </div> 
             </div>
         </div>
