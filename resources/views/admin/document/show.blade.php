@@ -34,8 +34,40 @@
                         </div>
 
                     </div>
-                    <h3 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h3>        
-                    <iframe src="{{ $document->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; height: 700px;"></iframe>
+                    <h3 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h3>
+
+                    @foreach($sources as $index => $source)
+                                                        <!-- Small modal -->
+                        <div class="text-center" style="padding-bottom: 20px;">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm{{$index}}">{{trans('admin.delete')}}</button>
+
+                            <div class="modal fade bs-example-modal-sm{{$index}} source-delete text-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                
+                                  <div class="modal-footer text-center">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                                    <form action="{{route('sources.destroy', $source->id)}}" method="POST" class="destroy-news">
+                                    {{ csrf_field() }}
+                                      
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                        
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-times" aria-hidden="true"></i> remove
+                                        </button>
+
+                                        
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; height: 700px;"></iframe>                            
+                        </div>
+
+                    @endforeach
                 </div>
 
             </div>

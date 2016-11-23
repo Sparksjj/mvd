@@ -34,7 +34,7 @@
                         </div>
 
                     </div>
-                    <h3 class="text-center">{{ $category['name_' . Lang::getLocale()] }}</h3>      
+                    <h3 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h3>      
                 </div>
 
             </div>

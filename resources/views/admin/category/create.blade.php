@@ -21,14 +21,14 @@
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         
-                        <div class="form-group {{ $errors->has('name_ru') ? 'has-error' : '' }}">
-                            <label for="name_ru">{{trans('admin.name')}} (рус.)</label>
-                            <input type="text" class="form-control" id="name_ru" name="name_ru" required value="{{ old('name_ru') }}">
+                        <div class="form-group {{ $errors->has('title_ru') ? 'has-error' : '' }}">
+                            <label for="title_ru">{{trans('admin.name')}} (рус.)</label>
+                            <input type="text" class="form-control" id="title_ru" name="title_ru" required value="{{ old('title_ru') }}">
                         </div>
 
-                        <div class="form-group {{ $errors->has('name_en') ? 'has-error' : '' }}">
-                            <label for="name_en">{{trans('admin.name')}} (en.)</label>
-                            <input type="text" class="form-control" id="name_en" name="name_en" required value="{{ old('name_en') }}">
+                        <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
+                            <label for="title_en">{{trans('admin.name')}} (en.)</label>
+                            <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ old('title_en') }}">
                         </div>
 
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_cat')}}</button>

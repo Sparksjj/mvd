@@ -74,7 +74,7 @@
                     $(location).attr('href', "/admin/documents?categoryId="+id);  
                 break;
                 case 'document':
-                    $(location).attr('href', "/admin/documents/"+data.selected[0]+"/edit");
+                    $(location).attr('href', "/admin/documents/"+data.selected[0]);
                 break;
             }
             /*http://192.168.10.208/admin/items/1/edit*/

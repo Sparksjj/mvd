@@ -3,9 +3,9 @@ namespace App\Helpers;
 
 class StrHelper {
 
-    public static function getCatFolder($cat)
+    public static function getCatFolder($cat, $doc)
     {
-        $str = self::rmSpaces($cat->title_en) . $cat->id;
+        $str = self::rmSpaces($cat->title_en) . $cat->id . '/' . self::rmSpaces($doc) . '/';
         return $str;
     }
 

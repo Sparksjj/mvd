@@ -36,15 +36,21 @@
                             <select name="category">
 
                                 @foreach( $categories as $index => $category )
-                                    <option value="{{$category->id}}" @if($category->id == $from_category['id']) selected @endif>{{ $category['name_' . Lang::getLocale() ]}}</option>
+                                    <option value="{{$category->id}}" @if($category->id == $from_category['id']) selected @endif>{{ $category['title_' . Lang::getLocale() ]}}</option>
                                 @endforeach
 
                             </select>
                         </div>
+                        
+                        <div class="form-group {{ $errors->has('type') ? 'has-error' : '' }}" id="type-wrapper">
+                            <label for="type">{{trans('admin.type')}}</label>
+                            <select name="type" id="type">
 
-                        <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-                            <label class="control-label">Загрузить документ</label>
-                            <input id="input-7" name="document" type="file" class="file-loading" data-allowed-file-extensions='["pdf"]' value="{{ old('file') }}">
+                                    <option value="pdf" selected >pdf</option>
+                                    <option value="3d">3d</option>
+                                    <option value="video">video</option>
+
+                            </select>
                         </div>
 
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_doc')}}</button>
@@ -58,14 +64,37 @@
 
     <script>
         setTimeout(function() {
+            initInput()
+            var contentHeight = $(window).height() - $('#page-wrapper .footer').outerHeight(true) - $('#page-wrapper .navigation').outerHeight(true);
+            $('#content-wrapper').css('min-height', contentHeight);
+            $('#type').on('change', function(e){                
+                initInput()
+            })
+        },1500);
+
+        function initInput(){
+            $("#input-wrapper").remove();
+            var imput = $('<div class="form-group" id="input-wrapper"><label class="control-label">Загрузить документ</label><input id="input-7" name="document[]" type="file" class="file-loading" multiple></div>');
+            var attr;
+            switch($('#type').val()){
+                case 'pdf':
+                    attr = '["pdf"]';
+                break;
+                case '3d':
+                    attr = '["jpg", "png", "gif", "jpeg"]';
+                break;
+                case 'video':
+                    attr = '["ogv", "mp4", "webm"]';
+                break;
+            }  
+            imput.insertAfter('#type-wrapper');
+            $('#input-7').attr('data-allowed-file-extensions', attr);
+            
             $("#input-7").fileinput({
                 showUpload: false,
                 mainClass: "input-group",
                 initialPreviewAsData: true,
             });
-            var contentHeight = $(window).height() - $('#page-wrapper .footer').outerHeight(true) - $('#page-wrapper .navigation').outerHeight(true);
-            $('#content-wrapper').css('min-height', contentHeight);
-        },1000);
-
+        }
     </script>
 @endsection

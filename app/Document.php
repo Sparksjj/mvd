@@ -10,4 +10,8 @@ class Document extends Model
     {
         return $this->belongsTo('App\Category');
     }
+	public function sources()
+	{
+		return $this->hasMany('App\Source');
+	}
 }

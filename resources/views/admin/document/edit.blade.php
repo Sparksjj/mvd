@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
     <div class="container"> 
         @include('admin.parts._tree_category')
         <div class="col-md-12 content-wrapper" id="main-content">
@@ -31,25 +30,68 @@
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ $document->title_en }}">
                         </div>
 
-                        <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}" id="category-wrapper">
                             <label for="category">{{trans('admin.category')}}</label>
                             <select name="category">
 
                                 @foreach( $categories as $index => $category )
-                                    <option value="{{$category->id}}" @if($category->id == $catId) selected @endif>{{ $category['name_' . Lang::getLocale() ]}}</option>
+                                    <option value="{{$category->id}}" @if($category->id == $catId) selected @endif>{{ $category['title_' . Lang::getLocale() ]}}</option>
                                 @endforeach
 
                             </select>
                         </div>
 
-                        <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-                            <label class="control-label">{{trans('admin.change_doc')}}</label>
-                            <input id="input-7" name="document" type="file" class="file-loading" data-allowed-file-extensions='["pdf"]' value="{{ old('file') }}">
-                        </div>
+<!--                         <div class="form-group {{ $errors->has('type') ? 'has-error' : '' }}" id="type-wrapper">
+    <label for="type">{{trans('admin.type')}}</label>
+    <select name="type" id="type">
+
+            <option value="pdf" @if($document->type == 'pdf') selected @endif>pdf</option>
+            <option value="3d" @if($document->type == '3d') selected @endif>3d</option>
+            <option value="video" @if($document->type == 'video') selected @endif>video</option>
+
+    </select>
+</div> -->
 
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_doc')}}</button>
 
                     </form>
+
+                    <div class="form-group" id="old-doc-wrapper">
+                        <label class="col-xs-12">{{trans('admin.type')}}</label>
+                        @foreach($sources as $index => $source)
+
+                                <div class="text-center" style="padding-bottom: 20px;">
+                                    <!-- Small modal -->
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm{{$index}}">{{trans('admin.delete')}}</button>
+
+                                    <div class="modal fade bs-example-modal-sm{{$index}} source-delete text-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                      <div class="modal-dialog modal-sm" role="document">
+                                        <div class="modal-content">
+                                        
+                                          <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                                            <form action="{{route('sources.destroy', $source->id)}}" method="POST" class="destroy-news">
+                                            {{ csrf_field() }}
+                                              
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                                
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa fa-times" aria-hidden="true"></i> remove
+                                                </button>
+
+                                                
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; height: 500px;"></iframe>                                    
+                                </div>
+
+                        @endforeach
+                    </div>
+
                     <a href="{{route('documents.index')}}" class="help-href">{{trans('admin.all_doc')}}</a>
                 </div> 
             </div>
@@ -57,15 +99,43 @@
     </div><!-- close default .container_wrap element -->
 
     <script>
+
         setTimeout(function() {
+            $(function(){
+                initInput()
+                var contentHeight = $(window).height() - $('#page-wrapper .footer').outerHeight(true) - $('#page-wrapper .navigation').outerHeight(true);
+                $('#content-wrapper').css('min-height', contentHeight);
+                $('#type').on('change', function(e){                
+                    initInput()
+                })
+            })
+        },1500);
+
+        function initInput(){
+            $("#input-wrapper").remove();
+            var imput = $('<div class="form-group" id="input-wrapper"><label class="control-label">{{trans("admin.change_doc")}}</label><input id="input-7" name="document[]" type="file" class="file-loading" multiple></div>');
+            var attr;
+
+            switch('{{$document->type}}'){
+                case 'pdf':
+                    attr = '["pdf"]';
+                break;
+                case '3d':
+                    attr = '["jpg", "png", "gif", "jpeg"]';
+                break;
+                case 'video':
+                    attr = '["ogv", "mp4", "webm"]';
+                break;
+            }  
+            imput.insertAfter('#category-wrapper');
+            $('#input-7').attr('data-allowed-file-extensions', attr);
+            
             $("#input-7").fileinput({
                 showUpload: false,
                 mainClass: "input-group",
                 initialPreviewAsData: true,
             });
-            var contentHeight = $(window).height() - $('#page-wrapper .footer').outerHeight(true) - $('#page-wrapper .navigation').outerHeight(true);
-            $('#content-wrapper').css('min-height', contentHeight);
-        },1000);
+        }
 
     </script>
 @endsection

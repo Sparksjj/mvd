@@ -23,4 +23,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
 	Route::get('/', 'Admin\MainController@index')->name('admin.index');
 	Route::resource('documents', 'Admin\DocumentController');
 	Route::resource('categories', 'Admin\CategoryController');
+	Route::delete('destroySource/{id}', 'Admin\DocumentController@destroySource')->name('sources.destroy');
 });

@@ -27,7 +27,7 @@
 
                     @foreach($latest_categories as $category)                    
                         <a href="{{ route('categories.show', $category) }}" class="col-sm-4">
-                            <h4 class="text-center">{{ $category['name_' . Lang::getLocale()] }}</h4>
+                            <h4 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h4>
                         </a>
                     @endforeach
 
@@ -56,7 +56,6 @@
                         <a href="{{ route('documents.show', $document) }}" class="col-sm-4">
                             <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h4>
                         
-                            <iframe src="{{ $document->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%"></iframe>
                         </a>
                     @endforeach
                 </div>

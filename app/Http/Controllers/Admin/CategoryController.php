@@ -51,13 +51,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name_ru' => 'required|max:255',
-            'name_en' => 'required|max:255',
+            'title_ru' => 'required|max:255',
+            'title_en' => 'required|max:255',
         ]);
 
         $cat = new Category();
-        $cat->name_ru = $request->name_ru;
-        $cat->name_en = $request->name_en;
+        $cat->title_ru = $request->title_ru;
+        $cat->title_en = $request->title_en;
 
         $cat->save();
 
@@ -104,12 +104,12 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request,[
-            'name_ru' => 'required|max:255',
-            'name_en' => 'required|max:255',
+            'title_ru' => 'required|max:255',
+            'title_en' => 'required|max:255',
         ]);
 
-        $category->name_ru = $request->name_ru;
-        $category->name_en = $request->name_en;
+        $category->title_ru = $request->title_ru;
+        $category->title_en = $request->title_en;
 
         $category->save();
 

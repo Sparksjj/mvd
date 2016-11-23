@@ -22,12 +22,12 @@
                     @if(count($categories) == 0)
                         <h3 class="text-center">{{trans('admin.now_cat')}} <a href="{{route('categories.create')}}">{{trans('admin.create_cat')}} </a></h3>
                     @else
-                        <h3 class="text-center">{{trans('admin.categoryes')}}</h3>
+                        <h3 class="text-center">{{trans('admin.categories')}}</h3>
                     @endif
 
                     @foreach($categories as $category)                    
                         <a href="{{ route('categories.show', $category) }}" class="col-sm-4">
-                            <h4 class="text-center">{{ $category['name_' . Lang::getLocale()] }}</h4>
+                            <h4 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h4>
                         </a>
                     @endforeach
 

@@ -22,14 +22,14 @@ class TreeHelper {
             $tree['categoryes']['have_child'] = true;
 
             if (count($value->documents) > 0) {
-                $tree['categoryes'][ 'children' ][ $value['name_' . Lang::getLocale()] ]['have_child'] = true;
+                $tree['categoryes'][ 'children' ][ $value['title_' . Lang::getLocale()] ]['have_child'] = true;
             }else{
-                $tree['categoryes'][ 'children' ][ $value['name_' . Lang::getLocale()] ]['have_child'] = false;
+                $tree['categoryes'][ 'children' ][ $value['title_' . Lang::getLocale()] ]['have_child'] = false;
             }
 
-            $tree['categoryes'][ 'children' ][ $value['name_' . Lang::getLocale()] ]['name'] = $value['name_' . Lang::getLocale()];
-            $tree['categoryes'][ 'children' ][ $value['name_' . Lang::getLocale()] ]['id'] = $value['id'];
-            $tree['categoryes'][ 'children' ][ $value['name_' . Lang::getLocale()] ]['children'] = $value->documents;
+            $tree['categoryes'][ 'children' ][ $value['title_' . Lang::getLocale()] ]['name'] = $value['title_' . Lang::getLocale()];
+            $tree['categoryes'][ 'children' ][ $value['title_' . Lang::getLocale()] ]['id'] = $value['id'];
+            $tree['categoryes'][ 'children' ][ $value['title_' . Lang::getLocale()] ]['children'] = $value->documents;
         }
         return $tree;
     }

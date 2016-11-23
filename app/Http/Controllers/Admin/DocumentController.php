@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Document;
+use App\Source;
 use App\Category;
 use App\Helpers\StrHelper;
 use App\Helpers\ControlHelper;
@@ -72,20 +73,27 @@ class DocumentController extends Controller
         ]);
 
         $cat = Category::where('id', $request->category)->first();
-        $catFolder = StrHelper::getCatFolder($cat);
-
-        $file = $request->file('document');
-        $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
-        $file->move('./documents/pdf/' . $catFolder . '/', $file_name);
-
+        $catFolder = StrHelper::getCatFolder($cat, $request->title_en) ;
+        $catPath = '/documents/' . $request->type . '/';
 
         $doc = new Document();
 
-        $doc->path = '/documents/pdf/' . $catFolder . '/' . $file_name;
+        $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
         $doc->title_en = $request->title_en;
-        /*$doc->save($cat);*/
+
         $cat->documents()->save($doc);
+
+        $files = $request->file('document');
+
+        foreach ($files as $key => $file) {
+            $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
+            $file->move('.' . $catPath . $catFolder, $file_name);
+            $source = new Source();
+            $source->path = $catPath . $catFolder . $file_name;
+            $doc->sources()->save($source);
+        }
+
         return redirect(route('documents.index'));
     }
 
@@ -101,6 +109,7 @@ class DocumentController extends Controller
             'document' => $document,
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
             'tree' => TreeHelper::getTree(),
+            'sources' => $document->sources,
         ];
         return view('admin.document.show', $data);
     }
@@ -115,6 +124,7 @@ class DocumentController extends Controller
     {
         $data = [
             'document' => $document,
+            'sources' => $document->sources,
             'catId' => $document->category->id,
             'categories' => Category::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
@@ -139,19 +149,25 @@ class DocumentController extends Controller
         ]);
 
         $cat = Category::where('id', $request->category)->first();
-        $catFolder = StrHelper::getCatFolder($cat);
-
-        $file = $request->file('document');
-        if ($file) {
-            $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
-            $file->move('./documents/pdf/' . $catFolder . '/', $file_name);
-            $document->path = '/documents/pdf/' . $catFolder . '/' . $file_name;
-        }
-
+        $catFolder = StrHelper::getCatFolder($cat, $document->title_en) . '/' . $request->type;
+        $catPath = '/documents/' . $document->type . '/';
+        $files = $request->file('document');
+    
         $document->title_ru = $request->title_ru;
         $document->title_en = $request->title_en;
         /*$doc->save($cat);*/
-        $cat->documents()->save($document);
+        $cat->documents()->save($document); 
+        if ($files) {
+            foreach ($files as $key => $file) {
+                $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
+                $file->move('.' . $catPath . $catFolder, $file_name);
+                $source = new Source();
+                $source->path = $catPath . $catFolder . $file_name;
+                $document->sources()->save($source);
+
+            }
+        }
+
         return redirect(route('documents.index'));
     }
 
@@ -165,5 +181,14 @@ class DocumentController extends Controller
     {
         $document->delete();
         return redirect(route('documents.index'));
+    }
+
+    public function destroySource($id)
+    {
+        $source = Source::where('id', $id)->first();
+        $doc = $source->document;
+        $source->document()->dissociate();
+        $source->delete();
+        return redirect(route('documents.show', $doc));
     }
 }

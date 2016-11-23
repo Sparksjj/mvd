@@ -17,7 +17,7 @@
                             <select name="categoryId" id="categoryId">
                                 <option value="null">все категории</option>
                                 @foreach($categories as $cat)
-                                    <option value="{{$cat->id}}" @if($cat->id == $category->id) selected @endif>{{ $cat['name_'.Lang::getLocale()] }}</option>
+                                    <option value="{{$cat->id}}" @if($cat->id == $category->id) selected @endif>{{ $cat['title_'.Lang::getLocale()] }}</option>
                                 @endforeach
 
                             </select>
@@ -28,7 +28,7 @@
                             <select name="categoryId" id="categoryId">
                                 <option value="null" selected>{{trans('admin.all_doc')}}</option>
                                 @foreach($categories as $cat)
-                                    <option value="{{$cat->id}}">{{ $cat['name_'.Lang::getLocale()] }}</option>
+                                    <option value="{{$cat->id}}">{{ $cat['title_'.Lang::getLocale()] }}</option>
                                 @endforeach
 
                             </select>
@@ -39,21 +39,19 @@
                 <div class="panel-body">
                     <form action="{{ route('documents.create') }}" method="GET">
                         <input type="hidden" value="@if($category){{$category->id}}@else{{'null'}}@endif" name="categoryId">
-                        <button type="submit" class="btn btn-success btn-block">{{trans('admin.all_doc')}}</button>
+                        <button type="submit" class="btn btn-success btn-block">{{trans('admin.create_doc')}}</button>
                     </form>
                     
 
                     @if(count($documents) == 0)
-                        <h3 class="text-center">{{trans('admin.now_doc')}}<a href="{{route('documents.create')}}">{{trans('admin.create_doc')}}</a></h3>
+                        <h3 class="text-center">{{trans('admin.now_doc')}}<!-- <a href="{{route('documents.create')}}">{{trans('admin.create_doc')}}</a> --></h3>
                     @else
                         <h3 class="text-center">{{trans('admin.documents')}}</h3>
                     @endif
 
                     @foreach($documents as $document)                    
                         <a href="{{ route('documents.show', $document) }}" class="col-sm-4">
-                            <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h4>
-                        
-                            <iframe src="{{ $document->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%"></iframe>
+                            <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }} ({{ $document->type }})</h4>
                         </a>
                     @endforeach
 

@@ -7,7 +7,7 @@
         @endforeach
         </li>
     @elseif($category['have_child'] === null)
-        <li id="{{$category->id}}" data-category="document" data-jstree='{"icon":"/images/file3.png"}'>{{$category->title_ru}}</li>
+        <li id="{{$category->id}}" data-category="document" data-jstree='{"icon":"/images/file3.png"}'>{{$category['title_' . Lang::getLocale()]}}</li>
     @else
         <li id="{{$category['name'].'_'.$category['id']}}" data-category="category" data-jstree='{ "opened" : false, "icon":"/images/folder2.png" }'> <a href="">{{$category['name']}}</a></li>
     @endif

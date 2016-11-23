@@ -20,8 +20,12 @@
         <li><a href="#">Link</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      @if (Auth::check())
+        <li class="not_a_href">Welcome {{Auth::user()->name}}</li>
+      @else
         <li><a href="{{ url('/login') }}">login</a></li>
         <li><a href="{{ url('/register') }}">registration</a></li>
+      @endif
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
