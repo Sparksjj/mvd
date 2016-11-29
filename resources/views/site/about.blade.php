@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-aaaaa
+<div style="height: 500px">
 {!!Mapper::render()!!}
-aaaaa
+</div>
 @endsection
