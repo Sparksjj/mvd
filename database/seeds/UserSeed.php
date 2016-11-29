@@ -18,10 +18,6 @@ class UserSeed extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@mail.ru',
                 'password' => bcrypt('qwerty'),
-            ]);         
-            Category::create([
-                'name_ru' => 'Тестовая категория',
-                'name_en' => 'Test category',
             ]);
     }
 }

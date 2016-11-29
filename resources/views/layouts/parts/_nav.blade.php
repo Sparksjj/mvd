@@ -1,32 +1,105 @@
-<nav class="navbar navbar-default navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{route('admin.index')}}">MVD</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      @if (Auth::check())
-        <li class="not_a_href">Welcome {{Auth::user()->name}}</li>
-      @else
-        <li><a href="{{ url('/login') }}">login</a></li>
-        <li><a href="{{ url('/register') }}">registration</a></li>
-      @endif
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<div class="site-header-wrapper">
+    <header class="site-header">
+        <div class="container sp-cont">
+            <div class="site-logo">
+                <h1><a href="index.html"><img src="images/logo.png" alt="Logo"></a></h1>
+            </div>
+            <a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
+            <!-- Main Navigation -->
+            <nav class="main-navigation dd-menu toggle-menu" role="navigation">
+                <ul class="sf-menu">
+                    <li><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Header Styles</a>
+                                <ul class="dropdown">
+                                    <li><a href="index.html">Style 1 (Default)</a></li>
+                                    <li><a href="index-header-style2.html">Style 2</a></li>
+                                    <li><a href="index-header-style3.html">Style 3</a></li>
+                                </ul>
+                          </li>
+                            <li><a href="index-header-style2.html">Slider Styles</a>
+                                <ul class="dropdown">
+                                    <li><a href="index.html">Slider Revolution</a></li>
+                                    <li><a href="index-flexslider.html">FlexSlider</a></li>
+                                    <li><a href="index-nivoslider.html">NivoSlider</a></li>
+                                </ul>
+                          </li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">Overview</a></li>
+                            <li><a href="internship.html">Internship</a></li>
+                            <li><a href="rentals.html">Rentals</a></li>
+                            <li><a href="donate.html">Donate</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        </ul>
+                    </li>
+                <li class="megamenu"><a href="shortcodes.html">Mega Menu</a>
+                    <ul class="dropdown">
+                      <li>
+                          <div class="megamenu-container container">
+                            <div class="row">
+                                <div class="col-md-4"> <span class="megamenu-sub-title">All Exhibitions</span>
+                                  <ul class="sub-menu">
+                                                <li><a href="exhibitions-grid.html">Exhibitions Grid</a></li>
+                                                <li><a href="exhibitions-list.html">Exhibitions List</a></li>
+                                                <li><a href="exhibitions-timetable.html">Exhibitions Timetable</a></li>
+                                                <li><a href="exhibition-single.html">Single Exhibition</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-md-4"> <span class="megamenu-sub-title">Our Venues</span>
+                                  <ul class="sub-menu">
+                                      <li><a href="venues-grid.html">Venues Grid</a></li>
+                                      <li><a href="venues-list.html">Venues List</a></li>
+                                      <li><a href="venue-single.html">Single Venue</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-md-4"> <span class="megamenu-sub-title">Features</span>
+                                  <ul class="sub-menu">
+                                      <li><a href="shortcodes.html">Shortcodes</a></li>
+                                      <li><a href="typography.html">Typography</a></li>
+                                  </ul>
+                                </div>
+                            </div>
+                          </div>
+                      </li>
+                    </ul>
+                </li>
+                    <li><a href="events-list.html">Events</a>
+                        <ul class="dropdown">
+                            <li><a href="events-list.html">Events List</a></li>
+                            <li><a href="events-grid.html">Events Grid</a></li>
+                            <li><a href="events-calendar.html">Events Calendar</a></li>
+                            <li><a href="event-single.html">Single Event</a></li>
+                        </ul>
+                  </li>
+                    <li><a href="artworks-list.html">Artworks</a>
+                        <ul class="dropdown">
+                            <li><a href="artworks-list.html">Artworks List</a></li>
+                            <li><a href="artworks-grid.html">Artworks Grid</a></li>
+                            <li><a href="artwork-single.html">Single Artwork</a></li>
+                        </ul>
+                  </li>
+                    <li><a href="gallery-3cols.html">Gallery</a>
+                        <ul class="dropdown">
+                            <li><a href="gallery-2cols.html">2 Columns</a></li>
+                            <li><a href="gallery-3cols.html">3 Columns</a></li>
+                            <li><a href="gallery-4cols.html">4 Columns</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog-classic.html">Blog</a>
+                        <ul class="dropdown">
+                            <li><a href="blog-classic.html">Blog Classic</a></li>
+                            <li><a href="blog-grid.html">Blog Grid</a></li>
+                            <li><a href="blog-single.html">Single Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="@if(url()->current() == route('about.index')) active @endif"><a href="{{route('about.index')}}">About</a></li>
+                    <li class="@if(url()->current() == route('contacts.index')) active @endif"><a href="{{route('contacts.index')}}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Site Header -->
+</div>

@@ -26,7 +26,7 @@ class AddForenToDocuments extends Migration
     public function down()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->dropForeign('category_id');
+            $table->dropForeign(['category_id']);
         });
     }
 }

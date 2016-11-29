@@ -16,10 +16,12 @@ Route::get('/lang/{locale}', function ($locale) {
 })->name('lang.set-locale');
 
 Route::get('/', 'Site\MainPageController@index')->name('main.index');
+Route::get('/contacts', 'Site\ContactsController@index')->name('contacts.index');
+Route::get('/about', 'Site\AboutController@index')->name('about.index');
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'prefix' => 'admin'], function () {
 	Route::get('/', 'Admin\MainController@index')->name('admin.index');
 	Route::resource('documents', 'Admin\DocumentController');
 	Route::resource('categories', 'Admin\CategoryController');
