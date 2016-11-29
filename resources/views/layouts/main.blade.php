@@ -43,7 +43,8 @@
         @include('layouts.parts._tolbar')
         @include('layouts.parts._nav')
             @yield('content')       
-        @include('layouts.parts._footer')
+        @include('layouts.parts._footer1')
+        @include('layouts.parts._footer2')
     </div>
 <script src="js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
 <script src="vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
