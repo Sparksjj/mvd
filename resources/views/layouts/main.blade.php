@@ -45,6 +45,7 @@
             @yield('content')       
         @include('layouts.parts._footer1')
         @include('layouts.parts._footer2')
+        <a id="back-to-top" style="z-index: 100;"><i class="fa fa-chevron-up"></i></a> 
     </div>
 <script src="js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
 <script src="vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
@@ -134,5 +135,6 @@
         });             
     }); //ready
 </script>
+<script src="js/custom.js"></script> <!-- All Scripts -->
 </body>
 </html>

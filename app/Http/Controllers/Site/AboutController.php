@@ -9,7 +9,7 @@ class AboutController extends Controller
 {
 
     public function index(){
-    	Mapper::map(53.381128999999990000, -1.470085000000040000);
+    	Mapper::map(53.8989461, 27.5486561,['zoom' => 14]);
     	return view('site.about');
     }
 }

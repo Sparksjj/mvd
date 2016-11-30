@@ -134,11 +134,6 @@
                                     <div class="grid-item-content">
                                         <h3>Ralph Burton</h3>
                                         <span class="meta-data">Director</span>
-                                        <ul class="social-icons-colored">
-                                            <li class="facebook"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li class="google"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </li>
@@ -151,11 +146,6 @@
                                     <div class="grid-item-content">
                                         <h3>Beverly Barnett</h3>
                                         <span class="meta-data">Education &amp; Visitors</span>
-                                        <ul class="social-icons-colored">
-                                            <li class="facebook"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li class="google"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </li>
@@ -168,11 +158,6 @@
                                     <div class="grid-item-content">
                                         <h3>Judith Bailey</h3>
                                         <span class="meta-data">Estate Manager</span>
-                                        <ul class="social-icons-colored">
-                                            <li class="facebook"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li class="google"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </li>
@@ -185,11 +170,6 @@
                                     <div class="grid-item-content">
                                         <h3>Tyler Wong</h3>
                                         <span class="meta-data">Director of Finance</span>
-                                        <ul class="social-icons-colored">
-                                            <li class="facebook"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li class="google"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </li>
