@@ -7,7 +7,7 @@
             		<!-- SLIDE  -->
                 	<li data-transition="fade" data-slotamount="1" data-masterspeed="100"  data-saveperformance="off"  data-title="{{trans('layout.slide')}} 1">
                     	<!-- MAIN IMAGE -->
-                    	<img src="/images/ms6.jpg"  alt="fullslide1"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    	<img src="/images/ms6.jpg"  alt="fullslide1"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
                     	<!-- LAYERS -->
             
 <!--                             LAYER NR. 1
@@ -45,7 +45,7 @@
             		<!-- SLIDE  -->
                 	<li data-transition="fade" data-slotamount="1" data-masterspeed="100"  data-saveperformance="off"  data-title="{{trans('layout.slide')}} 2">
                     	<!-- MAIN IMAGE -->
-                    	<img src="/images/ms5.jpg"  alt="fullslide1"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    	<img src="/images/ms5.jpg"  alt="fullslide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                     	<!-- LAYERS -->
             
                     	<!-- LAYER NR. 1 -->
