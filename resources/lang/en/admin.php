@@ -33,8 +33,8 @@ return [
     'add_doc' => 'Add document',
     'show_doc' => 'Show document',
     'now_doc' => "Have't documents yeat",
-    'update_doc' => "Update document",
-    'change_doc' => "Change document",
+    'update_doc' => "Update documents",
+    'change_doc' => "Change documents",
     'in_cat' => "in category",
 
     'title' => 'Title',
