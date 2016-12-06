@@ -6,8 +6,9 @@
         @include('admin.parts._tree_category')
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="text-center">{{trans('admin.show_doc')}}</h4>
+                <div class="panel-heading clearfix">
+                    <h4 class="text-left col-md-6">{{trans('admin.show_doc')}}</h4>
+                    @include('admin.document.parts._search')
                 </div>
 
                 <div class="panel-body">

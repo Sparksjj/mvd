@@ -5,8 +5,9 @@
         @include('admin.parts._tree_category')
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="text-center">{{trans('admin.update_doc')}}</h4>
+                <div class="panel-heading clearfix">
+                    <h4 class="text-left col-md-6">{{trans('admin.update_doc')}}</h4>
+                    @include('admin.document.parts._search')
                 </div>
 
                 <div class="panel-body">
@@ -52,7 +53,7 @@
     </select>
 </div> -->
 
-                        <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_doc')}}</button>
+                        <button type="submit" class="button btn btn-success btn-block">{{trans('admin.update_doc')}}</button>
 
                     </form>
 

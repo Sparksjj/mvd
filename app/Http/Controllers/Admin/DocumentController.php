@@ -26,11 +26,17 @@ class DocumentController extends Controller
             'categories' => Category::all(),
             'tree' => TreeHelper::getTree(),
         ];
-
+        $key = $request->key ?? '';
         if ($data['category'] == null) {
-            $data['documents'] = Document::paginate(15);
+            $data['documents'] = Document::
+                where('title_ru', 'like', '%' . $key . '%')
+                ->orWhere('title_en', 'like', '%' . $key . '%')
+                ->paginate(15);
         }else{
-            $data['documents'] = $data['category']->documents()->paginate(15);
+            $data['documents'] = $data['category']->documents()
+                ->where('title_ru', 'like', '%' . $key . '%')
+                ->where('title_en', 'like', '%' . $key . '%')
+                ->paginate(15);
         }
 
         return view('admin.document.index', $data);

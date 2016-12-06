@@ -93,5 +93,19 @@
     margin: 20px auto;
 }
 #image_holder_x > span{
-	display: block !important;
+	display: none !important;
+}
+
+/* search */
+.search{
+	position: relative;
+	margin-top: 7px;
+}
+.search button{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.search input{
+	padding-right: 60px;
 }

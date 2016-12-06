@@ -18,13 +18,21 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $key = $request->key ?? '';
         $data = [
-            'categories' => Category::paginate(15),
             'tree' => TreeHelper::getTree(),
         ];
-
+        if ($key) {
+            $data['categories'] = Category::
+                where('title_ru', 'like', '%' . $key . '%')
+                ->orWhere('title_en', 'like', '%' . $key . '%')
+                ->paginate(15);
+        }else{
+            $data['categories'] = Category::paginate(15);
+        }
+        
         return view('admin.category.index', $data);
     }
 
@@ -75,6 +83,7 @@ class CategoryController extends Controller
         $data = [
             'category' => $category,
             'tree' => TreeHelper::getTree(),
+            'documents' => $category->documents,
         ];
         return view('admin.category.show', $data);
     }

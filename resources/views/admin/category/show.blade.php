@@ -34,7 +34,14 @@
                         </div>
 
                     </div>
-                    <h3 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h3>      
+                    <h3 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h3>  
+                    <div class="text-center">
+                        @if(count($documents) > 0)
+                        <a href="{{route('documents.index') . '?' . 'categoryId=' . $category->id}}">документов - {{count($documents)}}</a>
+                        @else
+                        не содержит документов <a href="{{route('documents.create')}}">добавить новый</a>
+                        @endif
+                    </div>    
                 </div>
 
             </div>

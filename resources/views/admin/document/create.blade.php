@@ -7,8 +7,9 @@
 
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>{{trans('admin.create_doc')}}</h4>
+            <div class="panel-heading clearfix">
+                <h4 class="col-md-6">{{trans('admin.create_doc')}}</h4>
+                @include('admin.document.parts._search')
             </div>
 
             <div class="panel-body">

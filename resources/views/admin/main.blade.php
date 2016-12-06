@@ -23,14 +23,46 @@
                         <h3 class="text-center">Нет добавленныч категорий. <a href="{{route('categories.create')}}">создать новую</a></h3>
                     @else
                         <h3 class="text-center">Последние добавленные категории</h3>
-                    @endif
+                    
 
-                    @foreach($latest_categories as $category)                    
-                        <a href="{{ route('categories.show', $category) }}" class="col-sm-4">
-                            <h4 class="text-center">{{ $category['title_' . Lang::getLocale()] }}</h4>
-                        </a>
+                    <table class="table table-bordered">
+                        <thead> 
+                            <tr> 
+                                <th>id</th> 
+                                <th>Название</th> 
+                                <th colspan="3" class="text-center">Управление</th> 
+                            </tr> 
+                        </thead>
+                    @foreach($latest_categories as $category)  
+                        <tr>
+                            <td>{{ $category->id }}</td>
+                            <td style="width: 70%">{{ $category['title_' . Lang::getLocale()] }}</td>
+                            <td>
+                                <form class="" action="{{ route('categories.edit', $category) }}" method="get">
+                                     <button type="submit" class="btn btn-warning">Изменить</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form class="" action="{{ route('categories.show', $category) }}" method="get">
+                                     <button type="submit" class="btn btn-primary">Просмотр</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('categories.destroy', $category) }}" method="POST" class="destroy-news">
+                                    {{ csrf_field() }}
+
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-times" aria-hidden="true"></i> {{trans('admin.delete')}}
+                                    </button>
+
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
-
+                    </table>
+                    @endif
                 </div>
 
             </div>
@@ -50,14 +82,45 @@
                         <h3 class="text-center">Нет добавленныз документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
                     @else
                         <h3 class="text-center">Документы</h3>
-                    @endif
+                    
+                    <table class="table table-bordered">
+                        <thead> 
+                            <tr> 
+                                <th>id</th> 
+                                <th>Название</th> 
+                                <th colspan="3" class="text-center">Управление</th> 
+                            </tr> 
+                        </thead>
+                    @foreach($latest_documents as $document)  
+                        <tr>
+                            <td>{{ $document->id }}</td>
+                            <td style="width: 70%">{{ $document['title_' . Lang::getLocale()] }}</td>
+                            <td>
+                                <form class="" action="{{ route('documents.edit', $document) }}" method="GET">
+                                     <button type="submit" class="btn btn-warning">Изменить</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form class="" action="{{route('documents.edit', $document)}}" method="GET">
+                                     <button type="submit" class="btn btn-primary">Просмотр</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('documents.destroy', $document) }}" method="POST" class="destroy-news">
+                                    {{ csrf_field() }}
 
-                    @foreach($latest_documents as $document)                    
-                        <a href="{{ route('documents.show', $document) }}" class="col-sm-4">
-                            <h4 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h4>
-                        
-                        </a>
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-times" aria-hidden="true"></i> {{trans('admin.delete')}}
+                                    </button>
+
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
+                    </table>
+                    @endif
                 </div>
 
             </div>

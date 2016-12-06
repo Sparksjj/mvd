@@ -1,4 +1,4 @@
-<div class="col-md-4" id="category-tree-helper" >
+<!-- <div class="col-md-4" id="category-tree-helper" >
 <span class="label label-default" id="hide-category-tree-helper">K</span>
     <div id="jstree">
             @each('admin.parts._tree_category_children', $tree, 'category')
@@ -23,3 +23,4 @@
         margin-bottom: 20px;
     }
 </style>
+ -->
