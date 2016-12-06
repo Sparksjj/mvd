@@ -4,22 +4,22 @@
 
         	<div class="col-md-6 col-sm-6 text-center">
             	<div class="widget footer-widget widget_links text-center">
-            		<h4 class="widget-title">Navigation</h4>
+            		<h4 class="widget-title">{{trans("layout.navigation")}}</h4>
                     <ul>
-                        <li><a href="{{route('main.index')}}">Home</a></li><br />
-                        <li><a href="{{route('about.index')}}">About</a></li><br />
-                        <li><a href="{{route('contacts.index')}}">Contact</a></li>
+                        <li><a href="{{route('main.index')}}">{{trans("layout.home")}}</a></li><br />
+                        <li><a href="{{route('about.index')}}">{{trans("layout.about")}}</a></li><br />
+                        <li><a href="{{route('contacts.index')}}">{{trans("layout.contact")}}</a></li>
                     </ul>
                 </div>
             </div>
 
         	<div class="col-md-6 col-sm-6 text-center">
             	<div class="widget footer-widget">
-            		<h4 class="widget-title">Our Venues</h4>
+            		<h4 class="widget-title">{{trans("layout.ventues")}} </h4>
                     <address>
-                    	<a href="venue-single.html"><strong>Accrue Homestead</strong></a><br>
-                        <span>158 Marion Street<br>
-						Columbia, SC 29201</span>
+                    	<a href="{{route('about.index')}}"><strong>{{trans("layout.free")}}</strong></a><br>
+                        <span>{{trans("layout.adress1")}}<br>
+						{{trans("layout.adress2")}}</span>
                    	</address>
                 </div>
             </div>

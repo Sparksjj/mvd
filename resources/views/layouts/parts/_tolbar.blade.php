@@ -2,7 +2,7 @@
 	<div class="container">
     	<div class="row">
         	<div class="col-md-6  col-sm-6 col-xs-8">
-            	<p>Museum opening hours: 8AM to 7PM. Open all days</p>
+            	<p>{{trans('layout.opening_hours')}}</p>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-4">
             	<ul class="pull-right social-icons-colored">

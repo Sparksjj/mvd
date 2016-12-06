@@ -2,7 +2,7 @@
 	<div class="container">
     	<div class="row">
         	<div class="col-md-6 col-sm-6 copyrights-left">
-            	<p>&copy;2016 Vestige Museums. All rights reserved.</p>
+            	<p>{{trans("layout.reserved")}}</p>
             </div>
 <!--             <div class="col-md-6 col-sm-6 copyrights-right">
                 <ul class="pull-right social-icons-colored">
