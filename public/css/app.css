@@ -84,3 +84,14 @@
 		text-align: center;
 	}
 }
+
+/* 3d */
+.imageholder{
+    width:350px;
+    position:relative;
+    border: 1px solid #888;
+    margin: 20px auto;
+}
+#image_holder_x > span{
+	display: block !important;
+}

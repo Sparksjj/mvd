@@ -85,7 +85,9 @@ class DocumentController extends Controller
         $cat->documents()->save($doc);
 
         $files = $request->file('document');
-
+        usort($files, function($a,$b){
+            return $a->getClientOriginalName()>$b->getClientOriginalName();
+        });
         foreach ($files as $key => $file) {
             $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
             $file->move('.' . $catPath . $catFolder, $file_name);

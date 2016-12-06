@@ -21,6 +21,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
 </head>
 <body>
 
@@ -37,6 +38,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src='/js/jquery-3.1.1.min.js'></script>
+    <script src='/js/JavascriptViewer.js'></script>
     <script src="/css/bootstrap/js/bootstrap.min.js"></script>
 
     <script>
@@ -51,10 +53,11 @@
 
     </script>
     <script src='/uploader3/js/fileinput.min.js'></script>
+    
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
-
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
         <script type="text/javascript">
       $(function () {
