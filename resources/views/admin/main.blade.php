@@ -30,6 +30,7 @@
                             <tr> 
                                 <th>id</th> 
                                 <th>Название</th> 
+                                <th>Дата создания</th> 
                                 <th colspan="3" class="text-center">Управление</th> 
                             </tr> 
                         </thead>
@@ -37,6 +38,9 @@
                         <tr>
                             <td>{{ $category->id }}</td>
                             <td style="width: 70%">{{ $category['title_' . Lang::getLocale()] }}</td>
+                            <td>
+                                <span style="white-space: nowrap;">{{$category->created_at}}</span>
+                            </td>
                             <td>
                                 <form class="" action="{{ route('categories.edit', $category) }}" method="get">
                                      <button type="submit" class="btn btn-warning">Изменить</button>
@@ -88,6 +92,7 @@
                             <tr> 
                                 <th>id</th> 
                                 <th>Название</th> 
+                                <th>Дата создания</th> 
                                 <th colspan="3" class="text-center">Управление</th> 
                             </tr> 
                         </thead>
@@ -95,6 +100,9 @@
                         <tr>
                             <td>{{ $document->id }}</td>
                             <td style="width: 70%">{{ $document['title_' . Lang::getLocale()] }}</td>
+                            <td>
+                                <span style="white-space: nowrap;">{{$document->created_at}}</span>
+                            </td>
                             <td>
                                 <form class="" action="{{ route('documents.edit', $document) }}" method="GET">
                                      <button type="submit" class="btn btn-warning">Изменить</button>
