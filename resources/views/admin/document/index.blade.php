@@ -70,7 +70,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form class="" action="{{route('documents.edit', $document)}}" method="GET">
+                                    <form class="" action="{{route('documents.show', $document)}}" method="GET">
                                          <button type="submit" class="btn btn-primary">Просмотр</button>
                                     </form>
                                 </td>
