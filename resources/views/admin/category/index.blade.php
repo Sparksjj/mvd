@@ -24,43 +24,9 @@
                         <h3 class="text-center">{{trans('admin.now_cat')}} @if(Request::input('key')) с ключевым словом "{{Request::input('key')}}" @endif <a href="{{route('categories.create')}}">{{trans('admin.create_cat')}} </a></h3>
                     @else
                         <h3 class="text-center">{{trans('admin.categories')}} @if(Request::input('key')) с ключевым словом "{{Request::input('key')}}" @endif</h3>
-                        <table class="table table-bordered">
-                            <thead> 
-                                <tr> 
-                                    <th>id</th> 
-                                    <th>Название</th> 
-                                    <th colspan="3" class="text-center">Управление</th> 
-                                </tr> 
-                            </thead>
-                        @foreach($categories as $category)  
-                            <tr>
-                                <td>{{ $category->id }}</td>
-                                <td style="width: 70%">{{ $category['title_' . Lang::getLocale()] }}</td>
-                                <td>
-                                    <form class="" action="{{ route('categories.edit', $category) }}" method="get">
-                                         <button type="submit" class="btn btn-warning">Изменить</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form class="" action="{{ route('categories.show', $category) }}" method="get">
-                                         <button type="submit" class="btn btn-primary">Просмотр</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="{{ route('categories.destroy', $category) }}" method="POST" class="destroy-news">
-                                        {{ csrf_field() }}
 
-                                        <input name="_method" type="hidden" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-times" aria-hidden="true"></i> {{trans('admin.delete')}}
-                                        </button>
+                         @each('admin.category.parts._category_children', $categories, 'category')
 
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </table>
                     @endif
 
 

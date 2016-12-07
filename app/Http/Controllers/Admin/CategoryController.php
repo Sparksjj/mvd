@@ -25,14 +25,16 @@ class CategoryController extends Controller
             'tree' => TreeHelper::getTree(),
         ];
         if ($key) {
-            $data['categories'] = Category::
-                where('title_ru', 'like', '%' . $key . '%')
+            $data['categories'] = Category::orderBy('created_at', 'asc')
+                ->where('title_ru', 'like', '%' . $key . '%')
                 ->orWhere('title_en', 'like', '%' . $key . '%')
                 ->paginate(15);
         }else{
-            $data['categories'] = Category::paginate(15);
+            $max_depth = 10;
+            $slug = str_repeat('children.', $max_depth);
+            $slug = substr($slug, 0, -1);
+            $data['categories'] = Category::orderBy('created_at', 'asc')->select()->with($slug)->whereParentId(null)->paginate(15);
         }
-        
         return view('admin.category.index', $data);
     }
 
@@ -45,6 +47,7 @@ class CategoryController extends Controller
     {
         $data=[
             'tree' => TreeHelper::getTree(),
+            'categories' => Category::all(),
         ];
         
         return view('admin.category.create', $data);
@@ -66,7 +69,11 @@ class CategoryController extends Controller
         $cat = new Category();
         $cat->title_ru = $request->title_ru;
         $cat->title_en = $request->title_en;
-
+        if($request->parent_id == 'null') {
+            $cat->parent_id = Null;
+        } else if(is_numeric($request->parent_id)) {
+            $cat->parent_id = $request->parent_id;
+        }
         $cat->save();
 
         return redirect(route('categories.index'));
@@ -99,6 +106,7 @@ class CategoryController extends Controller
         $data = [
             'category' => $category,
             'tree' => TreeHelper::getTree(),
+            'categories' => Category::all(),
         ];
         return view('admin.category.edit', $data);
     }
@@ -119,6 +127,7 @@ class CategoryController extends Controller
 
         $category->title_ru = $request->title_ru;
         $category->title_en = $request->title_en;
+        $category->parent_id = $request->parent_id;
 
         $category->save();
 

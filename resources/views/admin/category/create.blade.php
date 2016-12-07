@@ -31,6 +31,17 @@
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ old('title_en') }}">
                         </div>
 
+                        <div class="form-group">
+                        
+                        <label for="option">Родительская категория</label>
+                            <select name="parent_id" class="form-control">
+                                <option value="null">...</option>
+                                @foreach ($categories as $cat) 
+                                    <option value="{{ $cat->id }}">{{ $cat['title_' . Lang::getLocale()] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_cat')}}</button>
 
                     </form>

@@ -30,6 +30,15 @@
                             <label for="title_en">{{trans('admin.name')}} (англ.)</label>
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ $category->title_en }}">
                         </div>
+                        
+                        <label for="option">Родительская категория</label>
+                            <select name="parent_id" class="form-control">
+                                <option value="null">...</option>
+                                @foreach ($categories as $cat) 
+                                   @if($cat->id != $category->id) <option value="{{ $cat->id }}"  @if($cat->id == $category->parent_id) selected @endif>{{ $cat['title_' . Lang::getLocale()] }}</option> @endif
+                                @endforeach
+                            </select>
+                        </div>
 
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.update_cat')}}</button>
 

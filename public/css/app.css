@@ -109,3 +109,39 @@
 .search input{
 	padding-right: 60px;
 }
+
+.my_lists {
+    margin: 2px 0;
+    padding: 5px;
+    font-size: 18px;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.panel-body ul {
+    list-style: circle;
+}
+.my_lists_bold {
+    font-weight: bold;
+    margin: 2px 0;
+    padding: 5px;
+    font-size: 18px;
+    border-bottom: 1px solid #F5F5F5;
+}
+.panel-body li form {
+    display: inline;
+}
+.panel-body  .del_item {
+    color: red;
+    float: right;
+    margin-right: 10px;
+    padding: 3px 4px 0px 4px;
+}
+
+.panel-body .change_item {
+    color: #337AB7;
+    float: right;
+    padding: 3px 4px 0px 4px;
+}
+.panel-body .glyphicon {
+    top: 3px;
+}

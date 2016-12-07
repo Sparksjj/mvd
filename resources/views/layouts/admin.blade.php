@@ -32,7 +32,7 @@
             @yield('content')
         </div>        
         
-        @include('layouts.parts._adminFooter')
+        <!-- @include('layouts.parts._adminFooter') -->
     </div>
 
     <!-- Scripts -->
