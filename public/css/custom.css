@@ -55,3 +55,32 @@
 	display: inline-block;
 	padding: 5px 20px;
 }
+
+/* show resource */
+.show-full{
+	background-color: #dabc74;
+	padding: 10px;
+	text-align: center;
+	color: #333;
+	font-size: 20px;
+	opacity: .3;
+	margin-top: -6px;
+	-webkit-transition: all .2s;
+     -moz-transition: all .2s;
+     -o-transition: all .2s;
+     transition: all .2s;
+     cursor: pointer;
+}
+.show-full:hover{
+	opacity: .8;
+}
+/* 3d */
+.imageholder{
+    width:350px;
+    position:relative;
+    border: 1px solid #888;
+    margin: 20px auto;
+}
+#image_holder_x > span{
+	display: none !important;
+}
