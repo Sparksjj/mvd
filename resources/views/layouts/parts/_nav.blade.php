@@ -5,8 +5,8 @@
     <h1><a href="index.html"><img src="images/logo.png" alt="Logo"></a></h1>
 </div> -->
             <div class="pull-left" id="search-wrapper">
-                <form action="#" id="search-form">
-                    <input type="text" placeholder="{{trans('layout.search')}}">
+                <form action="{{route('search.index')}}" method="get" id="search-form">
+                    <input type="text" placeholder="{{trans('layout.search')}}" name="keywords" required>
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
                 <i class="fa fa-search" aria-hidden="true" id="search-button"></i>
@@ -18,6 +18,7 @@
                     <li class="@if(url()->current() == route('main.index')) active @endif"><a href="{{route('main.index')}}">{{trans('layout.home')}}</a></li>
                     <li class="@if(url()->current() == route('about.index')) active @endif"><a href="{{route('about.index')}}">{{trans('layout.about')}}</a></li>
                     <li class="@if(url()->current() == route('contacts.index')) active @endif"><a href="{{route('contacts.index')}}">{{trans('layout.contact')}}</a></li>
+                    <li class="@if(stristr( url()->current(), 'resource')) active @endif"><a href="{{route('resource.index')}}">{{trans('layout.resources')}}</a></li>
                 </ul>
             </nav>
         </div>

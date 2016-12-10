@@ -14,4 +14,11 @@ return [
     'adress1' => '7 Gorodskoy Val Street',
     'adress2' => 'Minsk, Belarus',
     'slide' => 'Slide',
+    'resources' => 'Resources',
+    'submit' => 'Submit',
+    'documents' => 'documents',
+    'page' => 'Page',
+    'from' => 'from',
+    'search_error' => "We didn't find any result",
+    'on_request' => "on request",
 ];

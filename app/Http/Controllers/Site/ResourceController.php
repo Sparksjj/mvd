@@ -15,7 +15,10 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'documents' => Document::paginate(20),
+        ];
+        return view( 'site.resource.index', $data );
     }
 
     /**

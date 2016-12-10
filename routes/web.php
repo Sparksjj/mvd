@@ -18,8 +18,8 @@ Route::get('/lang/{locale}', function ($locale) {
 Route::get('/', 'Site\MainPageController@index')->name('main.index');
 Route::get('/contacts', 'Site\ContactsController@index')->name('contacts.index');
 Route::get('/about', 'Site\AboutController@index')->name('about.index');
-Route::get('/about', 'Site\AboutController@index')->name('about.index');
-Route::resource('resource', 'Site\ResourceController', ['only' => ['show']]);
+Route::get('/search', 'Site\SearchController@index')->name('search.index');
+Route::resource('resource', 'Site\ResourceController', ['only' => ['show', 'index']]);
 
 Auth::routes();
 
