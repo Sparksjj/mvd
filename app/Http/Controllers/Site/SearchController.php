@@ -22,23 +22,29 @@ class SearchController extends Controller
 				where('title_ru', 'like', '%' . $request->keywords . '%')
 				->orWhere('title_en', 'like', '%' . $request->keywords . '%')->get();
 				
+
 		
 		if(count($categories)>0){
+
 			foreach ($categories as $index => $value) {
 				if ($index == 0) {
-					$result = $value->documents();
+					$result = $value->documents->toArray();
 				}else{
-					$result = $value->documents()->union($result);
+					$result = array_merge($result, $value->documents->toArray());
 				}
 			}
-			$result = $result->get();
-			foreach ($result as $key => $value) {
-				$addId[]= $value->id;
+			
+			if (count($result)>0) {
+				foreach ($result as $key => $value) {
+					$addId[]= $value['id'];
+				}
+			}else{
+				$addId = [];
 			}
+
 		}else{
 			$addId = [];
 		}
-
         $data ['documents'] = Document::orderBy($orderArr[0], $orderArr[1])
         		->whereIn('id', $addId)
 				->orWhere('title_ru', 'like', '%' . $request->keywords . '%')

@@ -12,6 +12,14 @@
   	<div class="main" role="main" >
     	<div id="content" class="content full" style="padding-top: 0;">
 
+            <div class="col-md-12 breadcrumbs-wrapper">
+                <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
+                <span class="separator">/</span>
+                <a href="{{route('resource.index')}}">{{trans('layout.documents')}}</a>
+                <span class="separator">/</span>
+                <span class="breadcrumbs-current">{{$document['title_' . Lang::getLocale()]}}</span>
+            </div>
+        
             <div class="dgray-bg">
             	<div class="skewed-title-bar">
                 	<div class="container">

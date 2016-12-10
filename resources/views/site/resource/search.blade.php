@@ -10,7 +10,12 @@
     <!-- Start Body Content -->
   	<div class="main" role="main" >
     	<div id="content" class="content full">
-            <div class="spacer-50"></div>
+            <div class="col-md-12 breadcrumbs-wrapper">
+                <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
+                <span class="separator">/</span>
+                <span class="breadcrumbs-current">{{trans('layout.documents')}} {{trans('layout.on_request')}} "{{$key}}"
+                </span>
+            </div>
             <div class="container all-documents-wrapper">
                 <h3 class="widget-title">{{trans('layout.documents')}} {{trans('layout.on_request')}} "{{$key}}"</h3>
                 <div class="col-md-12 pagination-info ">
