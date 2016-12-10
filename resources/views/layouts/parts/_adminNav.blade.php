@@ -17,6 +17,8 @@
 <!--         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
         <li class="@if(stristr( url()->current(), '/documents')) active @endif"><a href="{{ route('documents.index') }}">{{trans('admin.documents')}}</a></li>
         <li class="@if(stristr( url()->current(), '/categories')) active @endif"><a href="{{ route('categories.index') }}">{{trans('admin.categories')}}</a></li>
+        <li class="@if(stristr( url()->current(), '/aboutadmin')) active @endif"><a href="{{ route('aboutadmin.show', 1) }}">Страница "О нас"</a></li>
+        <li class="@if(stristr( url()->current(), '/contactadmin')) active @endif"><a href="{{ route('contactadmin.show', 1) }}">Страница "Контакты"</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

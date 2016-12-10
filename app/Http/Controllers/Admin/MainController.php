@@ -21,4 +21,15 @@ class MainController extends Controller
         ];
 		return view('admin.main', $data);
 	}
+    public function uploadImage(Request $request)
+    {
+        $file = $request->file('fileToUpload');
+
+        $image_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
+
+        $file->move('./images/staticPage/', $image_name);
+
+        $url_img = '/images/staticPage/' . $image_name;
+        return $url_img;
+    }
 }

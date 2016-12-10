@@ -145,3 +145,23 @@
 .panel-body .glyphicon {
     top: 3px;
 }
+.nav-tabs {
+	font-size: 0;
+	margin: 0;
+}
+.nav-tabs li{
+	font-size: 14px;
+	color: #333;
+	display: inline-block;
+	padding: 15px 30px;
+	background: #eee;
+	cursor: pointer;
+}
+.nav-tabs li:hover{
+	background-color: #999;
+	color: white;
+}
+.nav-tabs li.active{
+	background-color: #999;
+	color: white;
+}

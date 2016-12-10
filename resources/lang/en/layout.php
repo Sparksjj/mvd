@@ -21,4 +21,5 @@ return [
     'from' => 'from',
     'search_error' => "We didn't find any result",
     'on_request' => "on request",
+    'email_success' => 'E-mail has sent!',
 ];
