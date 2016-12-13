@@ -20,8 +20,11 @@
             <div class="container all-documents-wrapper">
                 <h3 class="widget-title"> {{trans('layout.documents')}} </h3>
                 <div class="col-md-12 pagination-info ">
+                    @if(count($documents) == 0)
+                        <div class="col-sm-6">{{trans('layout.search_error')}}</div>
+                    @else
                     <div class="col-sm-6">{{trans('layout.page')}}  {{ $documents->currentPage() }} {{trans('layout.from')}}  {{ $documents->lastPage() }}</div>
-
+                    @endif
                     @include('site.resource.parts._searchForm')           
 
                 </div>
