@@ -28,8 +28,8 @@ class TestPermission extends Seeder
         	$u = User::where('email', 'device@mail.ru')->first();
         	$u->groups()->attach($g->id);
 
-            $2g = Group::where('id', 1)->first();
-        	$2u = User::where('email', 'user@mail.ru')->first();
-        	$2u->groups()->attach($2g->i2d);
+            $g2 = Group::where('id', 1)->first();
+        	$u2 = User::where('email', 'user@mail.ru')->first();
+        	$u2->groups()->attach($g2->id2);
     }
 }
