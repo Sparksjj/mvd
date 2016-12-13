@@ -108,3 +108,12 @@
 		width: 100%;
 	}
 }
+.navigation-button{
+    border: none; 
+    background-color: transparent;    
+    color: rgba(255,255,255,.8);
+    line-height: 45px;
+}
+.navigation-button:hover{
+    color: #dabc74
+}

@@ -25,7 +25,7 @@ class CategoryController extends Controller
             'tree' => TreeHelper::getTree(),
         ];
         if ($key) {
-            $data['categories'] = Category::orderBy('created_at', 'asc')
+            $data['categories'] = Category::orderBy('created_at', 'desc')
                 ->where('title_ru', 'like', '%' . $key . '%')
                 ->orWhere('title_en', 'like', '%' . $key . '%')
                 ->paginate(15);
@@ -33,7 +33,7 @@ class CategoryController extends Controller
             $max_depth = 10;
             $slug = str_repeat('children.', $max_depth);
             $slug = substr($slug, 0, -1);
-            $data['categories'] = Category::orderBy('created_at', 'asc')->select()->with($slug)->whereParentId(null)->paginate(15);
+            $data['categories'] = Category::orderBy('created_at', 'desc')->select()->with($slug)->whereParentId(null)->paginate(15);
         }
         return view('admin.category.index', $data);
     }

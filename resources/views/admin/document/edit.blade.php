@@ -20,6 +20,11 @@
 
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
+
+                        <div class="form-group with-radio">
+                            <label><input type="radio" name="is_public" value="" @if(!$document->is_public) checked @endif>Приватный документ</label>
+                            <label><input type="radio" name="is_public" value="true" @if($document->is_public) checked @endif>Общий доступ</label>
+                        </div>
                         
                         <div class="form-group {{ $errors->has('title_ru') ? 'has-error' : '' }}">
                             <label for="title_ru">{{trans('admin.title')}} (рус.)</label>

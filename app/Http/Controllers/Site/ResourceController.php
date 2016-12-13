@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Site;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Document;
+use App\Group;
+use Auth;
 
 class ResourceController extends Controller
 {
@@ -15,9 +17,16 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        $data = [
-            'documents' => Document::paginate(20),
-        ];
+
+        if (self::isAdmin()) {
+            $data = [
+                'documents' => Document::orderBy('created_at', 'desc')->paginate(20),
+            ];
+        }else{
+            $data = [
+                'documents' => Document::orderBy('created_at', 'desc')->where('is_public', true)->paginate(20),
+            ];
+        }
         return view( 'site.resource.index', $data );
     }
 
@@ -50,44 +59,32 @@ class ResourceController extends Controller
      */
     public function show(Document $resource)
     {
-        $data = [
-            'document' => $resource,
-            'sources' => $resource->sources,
-        ];
+ 
+        if (self::isAdmin() || $resource->is_public) {
+            $data = [
+                'document' => $resource,
+                'sources' => $resource->sources,
+            ];
+        }else{
+            return view('site.noSuccess');
+        }
         return view('site.resource.show', $data );
     }
+    #private function
+    private function isAdmin(){
+        if (Auth::user()) {
+            $haveGroups = Auth::user()->groups;
+        }else{
+            $haveGroups = [Group::where('id', 1)->first()];
+        }
+        
+        $havSucsess = false;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        foreach ($haveGroups as $value) {
+            if ($value->id == 2) {
+                $havSucsess = true;
+            }
+        }
+        return $havSucsess;
     }
 }

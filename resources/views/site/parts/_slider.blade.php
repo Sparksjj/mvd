@@ -39,7 +39,7 @@
                         	data-endelementdelay="0.1"
                         	data-endspeed="500"
                         	data-endeasing="Power4.easeIn"
-                        	style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Музей Министерства внутренних дел Республики Беларусь
+                        	style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap; font-family: inherit">Музей Министерства внутренних дел Республики Беларусь
                     	</div>
                 	</li>
             		<!-- SLIDE  -->
@@ -61,7 +61,7 @@
                             data-endelementdelay="0.1"
                             data-endspeed="500"
                             data-endeasing="Power4.easeIn"
-                            style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Музей Министерства внутренних дел Республики Беларусь
+                            style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap; font-family: inherit">Музей Министерства внутренних дел Республики Беларусь
                         </div>
                 	</li>
                 	<!-- SLIDE  -->
@@ -83,7 +83,7 @@
                             data-endelementdelay="0.1"
                             data-endspeed="500"
                             data-endeasing="Power4.easeIn"
-                            style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Музей Министерства внутренних дел Республики Беларусь
+                            style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap; font-family: inherit">Музей Министерства внутренних дел Республики Беларусь
                         </div>
                 	</li>
             	</ul>	

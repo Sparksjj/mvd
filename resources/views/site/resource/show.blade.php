@@ -12,7 +12,7 @@
   	<div class="main" role="main" >
     	<div id="content" class="content full" style="padding-top: 0;">
 
-            <div class="col-md-12 breadcrumbs-wrapper">
+            <div class="col-md-12 breadcrumbs-wrapper" style="background-color: white;">
                 <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
                 <span class="separator">/</span>
                 <a href="{{route('resource.index')}}">{{trans('layout.documents')}}</a>

@@ -22,6 +22,11 @@
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         
+                        <div class="form-group with-radio">
+                            <label><input type="radio" name="is_public" value="" checked>Приватный документ</label>
+                            <label><input type="radio" name="is_public" value="true">Общий доступ</label>
+                        </div>
+                        
                         <div class="form-group {{ $errors->has('title_ru') ? 'has-error' : '' }}">
                             <label for="title_ru">{{trans('admin.title')}} (рус.)</label>
                             <input type="text" class="form-control" id="title_ru" name="title_ru" required value="{{ old('title_ru') }}">

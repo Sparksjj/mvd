@@ -28,12 +28,13 @@ class DocumentController extends Controller
         ];
         $key = $request->key ?? '';
         if ($data['category'] == null) {
-            $data['documents'] = Document::
-                where('title_ru', 'like', '%' . $key . '%')
+            $data['documents'] = Document::orderBy('created_at', 'desc')
+                ->where('title_ru', 'like', '%' . $key . '%')
                 ->orWhere('title_en', 'like', '%' . $key . '%')
                 ->paginate(15);
         }else{
             $data['documents'] = $data['category']->documents()
+                ->orderBy('created_at', 'desc')
                 ->where('title_ru', 'like', '%' . $key . '%')
                 ->where('title_en', 'like', '%' . $key . '%')
                 ->paginate(15);
@@ -87,6 +88,7 @@ class DocumentController extends Controller
         $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
         $doc->title_en = $request->title_en;
+        $doc->is_public = (bool) $request->is_public;
 
         $cat->documents()->save($doc);
 
@@ -163,7 +165,7 @@ class DocumentController extends Controller
     
         $document->title_ru = $request->title_ru;
         $document->title_en = $request->title_en;
-        /*$doc->save($cat);*/
+        $document->is_public = (bool) $request->is_public;
         $cat->documents()->save($document); 
         if ($files) {
             foreach ($files as $key => $file) {

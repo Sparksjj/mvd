@@ -15,8 +15,8 @@ class MainController extends Controller
 {
 	public function index(){
         $data = [
-            'latest_categories' => Category::orderBy('created_at', 'asc')->take(10)->get(),
-            'latest_documents' => Document::orderBy('created_at', 'asc')->take(10)->get(),
+            'latest_categories' => Category::orderBy('created_at', 'desc')->take(10)->get(),
+            'latest_documents' => Document::orderBy('created_at', 'desc')->take(10)->get(),
             'tree' => TreeHelper::getTree(),
         ];
 		return view('admin.main', $data);
