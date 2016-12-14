@@ -1,8 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+
 <div class="container">
+
     <div class="row">
+    <div class="spacer-50"></div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
@@ -65,6 +68,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                                 <a href="{{url('/login')}}" style="margin-left: 20px">Login</a>
                             </div>
                         </div>
                     </form>
@@ -72,5 +76,6 @@
             </div>
         </div>
     </div>
+    <div class="spacer-50"></div>
 </div>
 @endsection

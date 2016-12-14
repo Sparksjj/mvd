@@ -30,6 +30,6 @@ class TestPermission extends Seeder
 
             $g2 = Group::where('id', 1)->first();
         	$u2 = User::where('email', 'user@mail.ru')->first();
-        	$u2->groups()->attach($g2->id2);
+        	$u2->groups()->attach($g2->id);
     }
 }
