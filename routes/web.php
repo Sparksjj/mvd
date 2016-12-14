@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'pref
 	Route::resource('documents', 'Admin\DocumentController');
 	Route::resource('aboutadmin', 'Admin\AboutController', ['only' => ['show', 'edit', 'update']]);
 	Route::resource('contactadmin', 'Admin\ContactController', ['only' => ['show', 'edit', 'update']]);
+	Route::resource('adminuser', 'Admin\UserController', ['only' => ['index', 'update', 'destroy']]);
 	Route::resource('categories', 'Admin\CategoryController');
 	Route::delete('destroySource/{id}', 'Admin\DocumentController@destroySource')->name('sources.destroy');
 	Route::post('uploadImage', 'Admin\MainController@uploadImage')->name('uploadImage');

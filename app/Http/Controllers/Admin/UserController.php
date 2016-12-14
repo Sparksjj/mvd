@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Group;
+use Auth;
 
 class UserController extends Controller
 {
@@ -14,62 +17,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'users' => User::orderBy('created_at', 'desc')->whereNotIn('id', [Auth::user()->id])->paginate(15),
+        ];
+        return view('admin.user.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function update(Request $request, User $adminuser)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $adminuser->groups()->sync([$request->group_id]);
+        return redirect(route('adminuser.index'));
     }
 
     /**
@@ -80,6 +38,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $u = User::where('id', $id)->first();
+        $u -> groups() ->detach();
+        $u -> delete();
+        return redirect(route('adminuser.index'));
     }
 }
