@@ -27,7 +27,7 @@ class UserController extends Controller
     public function update(Request $request, User $adminuser)
     {
         $adminuser->groups()->sync([$request->group_id]);
-        return redirect(route('adminuser.index'));
+        return redirect(route('adminuser.index'))->with('flash_note', 'Пользователь успешно изменен')->with('type', 'alert-success');
     }
 
     /**
@@ -41,6 +41,6 @@ class UserController extends Controller
         $u = User::where('id', $id)->first();
         $u -> groups() ->detach();
         $u -> delete();
-        return redirect(route('adminuser.index'));
+        return redirect(route('adminuser.index'))->with('flash_note', 'Пользователь успешно удален')->with('type', 'alert-success');
     }
 }

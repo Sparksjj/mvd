@@ -29,6 +29,10 @@
         @include('layouts.parts._adminNav')
 
         <div class="container-fluid no-indent" id="content-wrapper">
+        @if(session('flash_note'))
+          @include('layouts.parts._flash')
+        @endif
+
             @yield('content')
         </div>        
         
