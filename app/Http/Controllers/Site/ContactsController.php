@@ -10,7 +10,7 @@ use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 class ContactsController extends Controller
 {
     public function index(){
-    	Mapper::map(53.8989739, 27.5519058,['zoom' => 15, 'markers' => ['title' => 'Музей mvd', 'animation' => 'DROP']]);
+    	Mapper::map(53.8989739, 27.5519058,['zoom' => 15, 'markers' => ['title' => trans('layout.adress1'), 'animation' => 'DROP']]);
         $data = [
             'contact' => Contact::first(),
         ];
