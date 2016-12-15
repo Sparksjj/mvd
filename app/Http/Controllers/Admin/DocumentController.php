@@ -93,7 +93,7 @@ class DocumentController extends Controller
         $cat->documents()->save($doc);
 
         $files = $request->file('document');
-        usort($files, function($a,$b){
+            usort($files, function($a,$b){
             return $a->getClientOriginalName()>$b->getClientOriginalName();
         });
         foreach ($files as $key => $file) {
@@ -166,8 +166,13 @@ class DocumentController extends Controller
         $document->title_ru = $request->title_ru;
         $document->title_en = $request->title_en;
         $document->is_public = (bool) $request->is_public;
-        $cat->documents()->save($document); 
+        $cat->documents()->save($document);
+
         if ($files) {
+            usort($files, function($a,$b){
+                return $a->getClientOriginalName()>$b->getClientOriginalName();
+            });
+            $document->sources()->delete();
             foreach ($files as $key => $file) {
                 $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
                 $file->move('.' . $catPath . $catFolder, $file_name);
