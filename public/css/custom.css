@@ -113,6 +113,10 @@
     background-color: transparent;    
     color: rgba(255,255,255,.8);
     line-height: 45px;
+     -webkit-transition: all 0.3s ease 0.1s;;
+     -moz-transition: all 0.3s ease 0.1s;;
+     -o-transition: all 0.3s ease 0.1s;;
+     transition: all 0.3s ease 0.1s;;
 }
 .navigation-button:hover{
     color: #dabc74

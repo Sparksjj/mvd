@@ -11,7 +11,7 @@
     <!-- Start Body Content -->
   	<div class="main" role="main" >
     	<div id="content" class="content full">
-            <div class="col-md-12 breadcrumbs-wrapper">
+            <div class="container breadcrumbs-wrapper">
                 <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
                 <span class="separator">/</span>
                 <span class="breadcrumbs-current">{{trans('layout.documents')}}

@@ -8,7 +8,7 @@
             @if(Auth::user())
             <div class="text-right col-sm-7">{{trans('layout.greeting') . ' ' . Auth::user()->name}}</div>
             @endif
-                <div @if(Auth::user()) class="col-sm-4" @endif>
+                <div @if(Auth::user()) class="col-sm-4"  @endif>
                     <ul class="pull-right social-icons-colored">
                         <li class="@if(Lang::getLocale()=='en') current @endif"><a href="{{url('/lang/en')}}">en</a></li>
                         <li class="@if(Lang::getLocale()=='ru') current @endif"><a href="{{url('/lang/ru')}}">ru</a></li>

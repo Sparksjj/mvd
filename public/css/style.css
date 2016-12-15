@@ -3280,11 +3280,23 @@ ul.slot-exhibitions li h5{
 	.header-style3 .main-navigation > ul > li{
 		margin:0;
 	}
-	.dd-menu > ul > li > a{
+	.dd-menu > ul > li > a
+	{
 		display:block;
 		padding:15px 30px 15px 20px;
 		line-height:normal;
 		color:#222;
+	}
+	.navigation-button
+	{
+		color:#222 !important;
+		padding-right: 30px;
+		width: 100%;
+		text-align: right;
+	}
+	.navigation-button:hover
+	{
+		color:#dabc74 !important;
 	}
 	.header-style2 .dd-menu > ul > li > a{
 		line-height:normal!important;
