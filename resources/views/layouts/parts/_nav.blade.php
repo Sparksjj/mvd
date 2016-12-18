@@ -19,6 +19,7 @@
                     <li class="@if(url()->current() == route('about.index')) active @endif"><a href="{{route('about.index')}}">{{trans('layout.about')}}</a></li>
                     <li class="@if(url()->current() == route('contacts.index')) active @endif"><a href="{{route('contacts.index')}}">{{trans('layout.contact')}}</a></li>
                     <li class="@if(stristr( url()->current(), 'resource')) active @endif"><a href="{{route('resource.index')}}">{{trans('layout.resources')}}</a></li>
+                    <li class="@if(stristr( url()->current(), '3d')) active @endif"><a href="{{route('3d.index')}}">{{trans('layout.threeD')}}</a></li>
                     @if(Auth::user())
                         <li>
                             <form action="{{route('logout')}}" method="POST" class="logout">

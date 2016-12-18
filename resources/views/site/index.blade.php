@@ -12,21 +12,22 @@
     	<div id="content" class="content full">
             <div class="container">
             	<div class="row">
-                	<div class="col-md-3 col-sm-6">
+                	<div class="col-md-7 col-sm-7">
             			<h3 class="widget-title">{{trans('layout.about_title')}}</h3>
                 		<p>{{trans('layout.about_text')}}</p>
                 	</div>
-                	<div class="col-md-3 col-sm-6">
+                	<div class="col-md-5 col-sm-5">
                     	<div class="featured-block">
                             <figure>
-                            	<a>
+                            	<a href="{{ route('3d.index') }}">
                                     <img src="/images/test1.jpg" alt="Learn">
+                                    <span class="caption" style="text-shadow: black 0px 0px 3px;">{{trans('layout.threeD')}}</span>
                                 </a>
-                            </figure>
-                            <p>The Vestige, museum of antiquity has a variety of year-round internship programs available for students of all ages.</p>
+                            </figure><!-- 
+                            <p>The Vestige, museum of antiquity has a variety of year-round internship programs available for students of all ages.</p> -->
                         </div>
                     </div>
-                	<div class="col-md-3 col-sm-6">
+                	<!-- <div class="col-md-4 col-sm-4">
                     	<div class="featured-block">
                             <figure>
                             	<a>
@@ -36,21 +37,21 @@
                             <p>Our memberships provide wonderful benefits and supports our goal to preserve and conserve our local history.</p>
                         </div>
                     </div>
-                	<div class="col-md-3 col-sm-6">
-                    	<div class="featured-block">
+                                        <div class="col-md-4 col-sm-4">
+                        <div class="featured-block">
                             <figure>
-                            	<a>
+                                <a>
                                     <img src="/images/test1.jpg" alt="Experience">
                                 </a>
                             </figure>
                             <p>Our beautiful historic properties are the ideal year-round location to host your wedding or special event.</p>
                         </div>
-                    </div>
+                    </div> -->
                	</div>
             </div>
             
-            <div class="spacer-50"></div>
 
+            <div class="spacer-50"></div>
             <!-- VISITORS SAY -->
             <div class="latest-testimonials accent-bg padding-tb45">
             	<div class="container">

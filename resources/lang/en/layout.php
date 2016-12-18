@@ -4,6 +4,7 @@ return [
 
     'opening_hours' => 'Opening hours: 9 a.m. – 6 p.m., Mon – Fri, break: 1p.m. – 2p.m',
     'search' => 'Search',
+    'threeD' => '3D tour',
     'home' => 'Home',
     'about' => 'About',
     'contact' => 'Contact',

@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 text-right">
             @if(Auth::user())
-            <div class="text-right col-sm-7">{{trans('layout.greeting') . ' ' . Auth::user()->name}}</div>
+            <div class="text-right col-xs-7">{{trans('layout.greeting') . ' ' . Auth::user()->name}}</div>
             @endif
                 <div @if(Auth::user()) class="col-sm-4"  @endif>
                     <ul class="pull-right social-icons-colored">

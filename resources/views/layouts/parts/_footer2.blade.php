@@ -1,7 +1,7 @@
 <footer class="site-footer-bottom">
 	<div class="container">
     	<div class="row">
-        	<div class="col-md-6 col-sm-6 copyrights-left">
+        	<div class=" copyrights-left" style="padding-left: 10px">
             	<p>{{trans("layout.reserved")}}</p>
             </div>
 <!--             <div class="col-md-6 col-sm-6 copyrights-right">
