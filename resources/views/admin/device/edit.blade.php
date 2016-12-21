@@ -44,8 +44,12 @@
                         <div class="form-group {{ $errors->has('permitted_page') ? 'has-error' : '' }}">
                             <label>Разрешенная страница</label>
                             <select name="permitted_page">
-                                    <option value="memory_book" @if($device->permitted_page == 'memory_book') selected @endif>Книга памяти</option>
-                                    <option value="video_presentation" @if($device->permitted_page == 'video_presentation') selected @endif>Видео презентация</option>
+                                @foreach($books as $book)
+                                    <option value="memory_book/{{$book->id}}" @if($device->permitted_page == 'memory_book/{{$book->id}}') selected @endif>{{$book['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
+                                @foreach($projectors as $projector)
+                                    <option value="projectors/{{$projector->id}}" @if($device->permitted_page == 'projectors/{{$projectors->id}}') selected @endif>{{$projector['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
                             </select>
                         </div>
 

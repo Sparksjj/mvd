@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Device;
 use App\User;
+use App\Projector;
+use App\Book;
 use App\Group;
 
 class DeviceController extends Controller
@@ -32,6 +34,8 @@ class DeviceController extends Controller
     {
         $data = [
             'users' => Group::where('id', 3)->first()->users,
+            'books' => Book::orderBy('created_at', 'desc')->get(),
+            'projectors' => Projector::orderBy('created_at', 'desc')->get(),
         ];
         return view('admin.device.create', $data);
     }
@@ -54,7 +58,7 @@ class DeviceController extends Controller
 
         $device->title_ru = $request->title_ru;
         $device->title_en = $request->title_en;
-        $device->permitted_page = 'device/' . $request->permitted_page;
+        $device->permitted_page = $request->permitted_page;
 
         $u = User::where('id', $request->user_id)->first();
         $u->devices()->save($device);
@@ -72,6 +76,8 @@ class DeviceController extends Controller
         $data = [
             'device' => $admindevice,
             'users' => Group::where('id', 3)->first()->users,
+            'books' => Book::orderBy('created_at', 'desc')->get(),
+            'projectors' => Projector::orderBy('created_at', 'desc')->get(),
         ];
         return view('admin.device.edit', $data);
     }
@@ -94,7 +100,7 @@ class DeviceController extends Controller
 
         $admindevice->title_ru = $request->title_ru;
         $admindevice->title_en = $request->title_en;
-        $admindevice->permitted_page = 'device/' . $request->permitted_page;
+        $admindevice->permitted_page = $request->permitted_page;
 
         $u = User::where('id', $request->user_id)->first();
         $u->devices()->save($admindevice);

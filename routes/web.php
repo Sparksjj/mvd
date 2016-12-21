@@ -26,15 +26,13 @@ Route::resource('resource',  'Site\ResourceController', ['only' => ['show', 'ind
 
 Auth::routes();
 
-Route::resource('memory_book',  'Site\BookController', ['only' => ['show', 'index']]);
 
 Route::group(['middleware' => ['auth', 'checkPermission:museum_device']], function () {
 
-	Route::get('/test', function(){
-		return view('site.test');
-	});
+	Route::resource('memory_book',  'Site\BookController', ['only' => ['show', 'index']]);
 
 });
+
 Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'prefix' => 'admin'], function () {
 	Route::get('/', 'Admin\MainController@index')->name('admin.index');
 	Route::resource('documents', 'Admin\DocumentController');

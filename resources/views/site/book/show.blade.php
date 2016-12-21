@@ -88,6 +88,29 @@
 .padding-tb45{
     padding: 10px 0 20px 0;
 }
+.content-links{
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    margin: 0px;
+    padding: 3px 0;
+}
+.content-links .points{
+    position: absolute;
+    display: block;
+    background: url(/images/point.png) repeat-x 0 84%;
+    background-size: auto 11px;
+    width: 100%;
+    height: 100%;
+    bottom: 5px;
+    z-index: -1;
+}
+.content-links .p-number, .content-links .p-name{
+    z-index: 10;
+    background-color: #fff;
+    padding: 0 5px;
+    height: 100%;
+}
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
@@ -96,6 +119,17 @@
             $('#preloader').hide();
             $('#flipbook').show();
             $('#flipbook').turn({width: '100%', height: $('.book-wrapper').height(), page: 2});
+            $('#pre-page').on('click', function(){
+                $('#flipbook').turn('previous');
+            })
+            $('#next-page').on('click', function(){
+                $('#flipbook').turn('next');
+            })
+            $('.content-links').on('click', function(e){
+                console.log(+$(e.target).attr('data-position')+3);
+                var p = (+$(e.target).parent('p').attr('data-position')+4);
+                $('#flipbook').turn("page", p);
+            })
         }
 
 
@@ -142,8 +176,8 @@
                             <div class="row" style="padding: 0 50px">
  
                                     <div id="controll-items" class="col-md-12">
-                                        <div class="col-xs-6"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
-                                        <div class="col-xs-6 text-right">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+                                        <div class="col-xs-6" id="pre-page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
+                                        <div class="col-xs-6 text-right" id="next-page">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
                                     </div>
 
                                     <div class=" text-center book-wrapper" style="margin-top: 55px;">
@@ -151,9 +185,29 @@
                                                   <div class="hard"> <h1 style="padding-top: 40%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
                                                   <div class="hard"></div>
 
+                                                
+
+                                                  <div class="asdasdasdasd"> 
+                                                      <div class="page_wrapper" style="padding: 20px;padding-left:50px; ">
+                                                @foreach($content as $index => $link)
+
+                                                            @if($index==0) <h2>Оглавление</h2> @endif
+                                                            <p class="text-left content-links"  data-position="{{$link->position}}">
+                                                                <span class="points"></span>
+                                                                <span class="p-name">{{$link['title_'.Lang::getLocale()]}}</span>
+                                                                <span class="pull-right p-number">{{$link->position+4}}</span>
+                                                            </p>
+                                                
+                                                @endforeach
+                                                      </div>
+                                                  </div>
+
+                                                  <div > 
+                                                  </div>
+
                                                 @foreach($pages as $index=>$page)
                                                   <div > 
-                                                  <div class="page_wrapper" style="padding: 20px; @if($index%2) padding-right:40px; @else padding-left:40px;  @endif">
+                                                  <div class="page_wrapper" style="padding: 20px; @if($index%2) padding-right:40px; @else padding-left:50px;  @endif">
                                                     {!! $page['content_' . Lang::getLocale()] !!}
                                                       
                                                   </div>

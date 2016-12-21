@@ -44,8 +44,12 @@
                         <div class="form-group {{ $errors->has('permitted_page') ? 'has-error' : '' }}">
                             <label>Разрешенная страница</label>
                             <select name="permitted_page">
-                                    <option value="memory_book">Книга памяти</option>
-                                    <option value="video_presentation">Видео презентация</option>
+                                @foreach($books as $book)
+                                    <option value="memory_book/{{$book->id}}">{{$book['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
+                                @foreach($projectors as $projector)
+                                    <option value="projectors/{{$projector->id}}">{{$projector['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
                             </select>
                         </div>
                         
