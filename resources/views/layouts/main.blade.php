@@ -60,6 +60,7 @@
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="/vendor/revslider/js/jquery.themepunch.tools.min.js"></script>   
 <script type="text/javascript" src="/vendor/revslider/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/yepnope/dist/yepnope-2.0.0.js"></script>
 <script type="text/javascript">
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -132,7 +133,8 @@
             hideCaptionAtLimit:0,
             hideAllCaptionAtLilmit:0,
             startWithSlide:0
-        });             
+        });   
+
     }); //ready
 </script>
 <script src="/js/custom.js"></script> <!-- All Scripts -->

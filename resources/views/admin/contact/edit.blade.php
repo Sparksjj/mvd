@@ -20,7 +20,7 @@
                         
                         
                         <div class="form-group {{ ($errors->has('content_ru') || $errors->has('content_en')) ? 'has-error' : '' }}">
-                            <label>Полное описание</label>
+                            <label>Контент</label>
                             <div>
                                 
                                 <ul class="nav nav-tabs textarea" role="tablist">

@@ -20,7 +20,15 @@
         <li class="@if(stristr( url()->current(), '/aboutadmin')) active @endif"><a href="{{ route('aboutadmin.show', 1) }}">"О нас"</a></li>
         <li class="@if(stristr( url()->current(), '/contactadmin')) active @endif"><a href="{{ route('contactadmin.show', 1) }}">"Контакты"</a></li>
         <li class="@if(stristr( url()->current(), '/adminuser')) active @endif"><a href="{{ route('adminuser.index') }}">Пользователи</a></li>
+        <li class="@if(stristr( url()->current(), '/admindevice')) active @endif"><a href="{{ route('admindevice.index') }}">Устройства</a></li>
+
+        <li class="@if(stristr( url()->current(), '/book')) active @endif"><a href="{{ route('book.index') }}">Книги</a></li>
+        <li class="@if(stristr( url()->current(), '/projector')) active @endif"><a href="{{ route('projector.index') }}">Проекторы</a></li>
+
       </ul>
+
+
+
       <ul class="nav navbar-nav navbar-right">
         <li>
             <form action="{{route('logout')}}" method="POST" class="logout">
