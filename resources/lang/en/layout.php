@@ -30,4 +30,11 @@ return [
     'lorem' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.',
     'about_text' => 'In the museum you can get acquainted with the rich history of the Belarusian police from the XVI century up to the present day.Here you can see vintage cars, instruments of torture, material evidence of crimes. The exhibition presents collections of weapons, orders and medals.',
     'about_title' => 'GET INVOLVED',
+    'memory_books' => 'Memory books',
+    'page' => 'p.',
+    'memory_books_eror' => 'There are no books',
+    'projectors' => 'All projectors',
+    'projector_eror' => 'There are no projectors',
+    'videos' => 'v.',
+    'start' => 'start',
 ];

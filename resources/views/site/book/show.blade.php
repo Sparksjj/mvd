@@ -111,10 +111,21 @@
     padding: 0 5px;
     height: 100%;
 }
+.lang-link.current, .lang-link:hover{
+    background: #2e2e2e;
+}
+.lang-link{
+    
+    padding: 0;
+}
+.lang-link a{
+    padding: 15px 0;
+    width: 100%;
+}
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
-        $('.book-wrapper').css('min-height', $(window).height()-85)
+        $('.book-wrapper').css('min-height', $(window).height()-90)
         function loadApp() {
             $('#preloader').hide();
             $('#flipbook').show();
@@ -125,9 +136,11 @@
             $('#next-page').on('click', function(){
                 $('#flipbook').turn('next');
             })
-            $('.content-links').on('click', function(e){
-                console.log(+$(e.target).attr('data-position')+3);
-                var p = (+$(e.target).parent('p').attr('data-position')+4);
+            $('#content-page').on('click', function(){
+                $('#flipbook').turn("page", 2);
+            })
+            $('body').on('click', '.content-links', function(e){
+                var p = (+$(e.target).parent('p').attr('data-position')+3+{{ ceil(ceil(count($content)/15)/2) }});
                 $('#flipbook').turn("page", p);
             })
         }
@@ -176,20 +189,26 @@
                             <div class="row" style="padding: 0 50px">
  
                                     <div id="controll-items" class="col-md-12">
-                                        <div class="col-xs-6" id="pre-page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
-                                        <div class="col-xs-6 text-right" id="next-page">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+                                        <div class="col-xs-3 text-center" id="pre-page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
+                                        <div class="col-xs-3 text-center" id="next-page">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+                                        <div class="col-xs-3 text-center" id="content-page">К оглавлению</div>
+                                        <div class="col-xs-1 text-center @if(Lang::getLocale()=='en') current @endif lang-link"><a href="{{url('/lang/en')}}" >en</a></div>
+                                        <div class="col-xs-1 text-center @if(Lang::getLocale()=='ru') current @endif lang-link"><a href="{{url('/lang/ru')}}" >ru</a></div>
                                     </div>
 
-                                    <div class=" text-center book-wrapper" style="margin-top: 55px;">
+                                    <div class=" text-center book-wrapper" style="margin-top: 60px;">
                                                 <div id="flipbook">
                                                   <div class="hard"> <h1 style="padding-top: 40%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
                                                   <div class="hard"></div>
 
                                                 
-
-                                                  <div class="asdasdasdasd"> 
-                                                      <div class="page_wrapper" style="padding: 20px;padding-left:50px; ">
+                                                @if(count($content)>0)
+                                                
                                                 @foreach($content as $index => $link)
+                                                @if($index%15 == 0)
+                                                  <div class="asdasdasdasd"> 
+                                                      <div class="page_wrapper" style="padding: 20px 50px;">
+                                                @endif
 
                                                             @if($index==0) <h2>Оглавление</h2> @endif
                                                             <p class="text-left content-links"  data-position="{{$link->position}}">
@@ -198,13 +217,17 @@
                                                                 <span class="pull-right p-number">{{$link->position+4}}</span>
                                                             </p>
                                                 
-                                                @endforeach
+                                                
+                                                @if($index%15 == 14 || ($index == count($content)-1 && $index%15 != 14))
                                                       </div>
                                                   </div>
-
-                                                  <div > 
-                                                  </div>
-
+                                                @endif
+                                                @endforeach
+                                                    @if( ceil(count($content)/15)%2 )
+                                                      <div > 
+                                                      </div>
+                                                    @endif
+                                                @endif
                                                 @foreach($pages as $index=>$page)
                                                   <div > 
                                                   <div class="page_wrapper" style="padding: 20px; @if($index%2) padding-right:40px; @else padding-left:50px;  @endif">
