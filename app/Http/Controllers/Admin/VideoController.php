@@ -18,7 +18,7 @@ class VideoController extends Controller
     {
         $projector = Projector::where('id', $projector)->first();
         $data = [
-            'videos' => $projector->videos()->orderBy('position', 'asc')->paginate(15),
+            'videos' => $projector->videos()->orderBy('position', 'desc')->paginate(15),
             'projector' => $projector,
         ];
         return view('admin.projector.video.index', $data);

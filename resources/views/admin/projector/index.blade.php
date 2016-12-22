@@ -49,7 +49,7 @@
                                 </td>
                                 <td>
                                     <form class="" action="{{ route('projector.video.index', $projector) }}" method="GET">
-                                         <button type="submit" class="btn btn-primary">Просмотр</button>
+                                         <button type="submit" class="btn btn-primary">Управление содержимым</button>
                                     </form>
                                 </td>
                                 <td>
