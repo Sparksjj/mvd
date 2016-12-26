@@ -220,6 +220,9 @@
                     $('.rotate-buttons').on('mouseup', function(){
                         clearInterval(interval);
                     });
+                    $('.rotate-buttons').on('mouseout', function(){
+                        clearInterval(interval);
+                    });
                     function rotate(direction){                        
                         var current = presentation.getCurrentNumber();
                         if (direction == 'left') {
