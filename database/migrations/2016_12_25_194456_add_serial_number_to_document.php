@@ -14,7 +14,7 @@ class AddSerialNumberToDocument extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->string('inventory_number')->unique();
+            $table->string('inventory_number');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSerialNumberToDocument extends Migration
     public function down()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->dropUnique('inventory_number_unique');
+            $table->dropColumn('inventory_number');
         });
     }
 }
