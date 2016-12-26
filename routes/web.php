@@ -46,8 +46,8 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'pref
 	Route::resource('book', 'Admin\BookController', ['except' => ['show']]);
 	Route::resource('book.page', 'Admin\PageController', ['except' => ['show']]);
 
-	Route::resource('projector', 'Admin\ProjectorController', ['except' => ['show']]);
-	Route::resource('projector.video', 'Admin\VideoController', ['except' => ['show']]);
+/*	Route::resource('projector', 'Admin\ProjectorController', ['except' => ['show']]);
+	Route::resource('projector.video', 'Admin\VideoController', ['except' => ['show']]);*/
 
 	Route::delete('destroySource/{id}', 'Admin\DocumentController@destroySource')->name('sources.destroy');
 	Route::post('uploadImage', 'Admin\MainController@uploadImage')->name('uploadImage');

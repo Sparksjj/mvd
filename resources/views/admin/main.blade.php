@@ -20,7 +20,7 @@
                     
 
                     @if(count($latest_categories) == 0)
-                        <h3 class="text-center">Нет добавленныч категорий. <a href="{{route('categories.create')}}">создать новую</a></h3>
+                        <h3 class="text-center">Нет добавленных категорий. <a href="{{route('categories.create')}}">создать новую</a></h3>
                     @else
                         <h3 class="text-center">Последние добавленные категории</h3>
                     
@@ -83,7 +83,7 @@
                     
 
                     @if(count($latest_documents) == 0)
-                        <h3 class="text-center">Нет добавленныз документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
+                        <h3 class="text-center">Нет добавленных документов. <a href="{{route('documents.create')}}">создать новый</a></h3>
                     @else
                         <h3 class="text-center">Документы</h3>
                     
@@ -92,6 +92,7 @@
                             <tr> 
                                 <th>id</th> 
                                 <th>Название</th> 
+                                <th>Инвентарный номер</th> 
                                 <th>Дата создания</th> 
                                 <th colspan="3" class="text-center">Управление</th> 
                             </tr> 
@@ -100,6 +101,7 @@
                         <tr>
                             <td>{{ $document->id }}</td>
                             <td style="width: 70%">{{ $document['title_' . Lang::getLocale()] }}</td>
+                            <td style="width: 70%">{{ $document->inventory_number }}</td>
                             <td>
                                 <span style="white-space: nowrap;">{{$document->created_at}}</span>
                             </td>

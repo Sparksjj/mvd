@@ -35,6 +35,11 @@
                             <label for="title_en">{{trans('admin.title')}} (en.)</label>
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ $document->title_en }}">
                         </div>
+                        
+                        <div class="form-group {{ $errors->has('inventory_number') ? 'has-error' : '' }}">
+                            <label for="inventory_number">{{trans('admin.title')}} (en.)</label>
+                            <input type="text" class="form-control" id="inventory_number" name="inventory_number" required value="{{ $document->inventory_number }}">
+                        </div>
 
                         <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}" id="category-wrapper">
                             <label for="category">{{trans('admin.category')}}</label>

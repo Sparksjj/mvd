@@ -57,6 +57,7 @@
                                 <tr> 
                                     <th>id</th> 
                                     <th>Название</th> 
+                                    <th>Инвентарный номер</th> 
                                     <th>Дата создания</th> 
                                     <th colspan="3" class="text-center">Управление</th> 
                                 </tr> 
@@ -65,6 +66,7 @@
                             <tr>
                                 <td>{{ $document->id }}</td>
                                 <td style="width: 70%">{{ $document['title_' . Lang::getLocale()] }}</td>
+                                <td>{{ $document->inventory_number }}</td>
                                 <td>
                                     <span style="white-space: nowrap;">{{$document->created_at}}</span>
                                 </td>

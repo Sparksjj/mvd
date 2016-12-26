@@ -34,8 +34,11 @@
                             </form>
                         </div>
 
+                           
                     </div>
                     <h3 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h3>
+
+                    <div class="col-md-12 text-center">Инвентарный номер: "{{ $document->inventory_number }}"</div>
 
                     @if($document->type == '3d')
 

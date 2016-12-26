@@ -37,6 +37,11 @@
                             <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ old('title_en') }}">
                         </div>
 
+                        <div class="form-group {{ $errors->has('inventory_number') ? 'has-error' : '' }}">
+                            <label for="inventory_number">Инвентарный номер</label>
+                            <input type="text" class="form-control" id="inventory_number" name="inventory_number" required value="{{ old('inventory_number') }}">
+                        </div>
+
                         <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}">
                             <label for="category">{{trans('admin.category')}}</label>
                             <select name="category">

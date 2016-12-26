@@ -23,7 +23,7 @@
         <li class="@if(stristr( url()->current(), '/admindevice')) active @endif"><a href="{{ route('admindevice.index') }}">Устройства</a></li>
 
         <li class="@if(stristr( url()->current(), '/book')) active @endif"><a href="{{ route('book.index') }}">Книги</a></li>
-        <li class="@if(stristr( url()->current(), '/projector')) active @endif"><a href="{{ route('projector.index') }}">Проекторы</a></li>
+       <!--  <li class="@if(stristr( url()->current(), '/projector')) active @endif"><a href=" route('projector.index') ">Проекторы</a></li> -->
 
       </ul>
 

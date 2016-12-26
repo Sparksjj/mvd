@@ -75,6 +75,7 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
+            'inventory_number' => 'required|max:255|unique:documents,inventory_number',
             'category' => 'required',
             'document' => 'required',
         ]);
@@ -88,6 +89,7 @@ class DocumentController extends Controller
         $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
         $doc->title_en = $request->title_en;
+        $doc->inventory_number = $request->inventory_number;
         $doc->is_public = (bool) $request->is_public;
 
         $cat->documents()->save($doc);
@@ -155,6 +157,7 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
+            'inventory_number' => 'required|max:255|unique:documents,inventory_number',
             'category' => 'required',
         ]);
 
@@ -165,6 +168,7 @@ class DocumentController extends Controller
     
         $document->title_ru = $request->title_ru;
         $document->title_en = $request->title_en;
+        $document->inventory_number = $request->inventory_number;
         $document->is_public = (bool) $request->is_public;
         $cat->documents()->save($document);
 
