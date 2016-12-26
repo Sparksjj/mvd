@@ -30,7 +30,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth', 'checkPermission:museum_device']], function () {
 
 	Route::resource('memory_book',  'Site\BookController', ['only' => ['show', 'index']]);
-	Route::resource('projectors',  'Site\ProjectorController', ['only' => ['show', 'index']]);
+	/*Route::resource('projectors',  'Site\ProjectorController', ['only' => ['show', 'index']]);*/
 
 });
 

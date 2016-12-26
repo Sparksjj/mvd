@@ -157,7 +157,7 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
-            'inventory_number' => 'required|max:255|unique:documents,inventory_number',
+            'inventory_number' => 'required|max:255|unique:documents,inventory_number,' . $document->id,
             'category' => 'required',
         ]);
 

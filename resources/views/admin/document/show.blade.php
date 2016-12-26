@@ -42,8 +42,8 @@
 
                     @if($document->type == '3d')
 
-                        <div id="image_holder_x" class="imageholder">
-                            <img id="product_image_x" src="{{$sources[0]->path}}"  />
+                        <div id="image_holder_x" class="imageholder" style="margin-top: 45px;">
+                            <img id="product_image_x" src="{{$sources[0]->path}}"  style="max-height: 500px;" />
                         </div>
 
                         @foreach($sources as $index => $source)
