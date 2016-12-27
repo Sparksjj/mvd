@@ -130,9 +130,10 @@
                                     <div class="description-col">
                                         <div><span class="round-border">Cвязанные документы</span></div>
                                         <div class="description-wrapper">
-                                        @foreach($join_documents as $join_document)
-                                            <a href="{{route('resource.show', $join_document)}}">{{$join_document['title_'.lang::getLocale()]}}</a>
-                                        @endforeach
+                                            @foreach($join_documents as $join_document)
+                                                <a href="{{route('resource.show', $join_document)}}">{{$join_document['title_'.lang::getLocale()]}}</a>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 @endif    
                             </div>
