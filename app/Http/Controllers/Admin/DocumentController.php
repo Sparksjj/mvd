@@ -159,7 +159,7 @@ class DocumentController extends Controller
      */
     public function show(Document $document)
     {
-        
+
         $document->get_data = substr($document->get_data, 0, 10);
         $document->fzk_data = substr($document->fzk_data, 0, 10);
         $data = [
@@ -254,6 +254,16 @@ class DocumentController extends Controller
 
         $document->description_ru = $request->description_ru;
         $document->description_en = $request->description_en;
+
+        if (isset($request->join_item)){
+            if (count($request->join_item) != 0) {
+                $document->join_documents()->sync($request->join_item);
+            } else if ( count($request->join_item) == 0) {
+                $document->join_documents()->sync([]);
+            }
+        } else {
+            $document->join_documents()->sync([]);
+        }
 
         $cat->documents()->save($document);
 
