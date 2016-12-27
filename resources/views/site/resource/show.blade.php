@@ -40,6 +40,9 @@
         .description-col .description-wrapper{
             padding-left: 10px;
         }
+        .pagination-info.search-center .col-sm-6{
+            text-align: center;
+        }
     </style>
     <!-- Start Body Content -->
   	<div class="main" role="main" >
@@ -64,29 +67,29 @@
                         </div>
                     </div>
                     <div class="container">
-                    <div class="col-md-12 pagination-info" style="padding-top: 20px">
+                    <div class="col-md-12 pagination-info search-center" style="padding-top: 20px">
                         
                         <div class="col-sm-6">
                         </div>
                         @include('site.resource.parts._searchForm')
                     </div>
                         <div class="col-sm-6">
-                            <div style="padding: 25px 0">
+                            <div style="padding-bottom: 25px">
                                 @if(Auth::user() && Auth::user()->groups[0]->id == 2)
                                     <div class="description-col">
-                                        <div><span class="round-border">Инвентарный номер</span></div>
+                                        <div><span class="round-border">{{trans('layout.i_number')}}</span></div>
                                         <div class="description-wrapper">
                                             &#8470; {{$document->inventory_number}}
                                         </div>
                                     </div>
                                     <div class="description-col">
-                                        <div><span class="round-border">номер / дата акта приема</span></div>
+                                        <div><span class="round-border">{{trans('layout.number')}} / {{trans('layout.get_date')}}</span></div>
                                         <div class="description-wrapper">
                                             &#8470; {{ $document->get_number . ' / ' . $document->get_data}}
                                         </div>
                                     </div>
                                     <div class="description-col">
-                                        <div><span class="round-border">номер / дата протокола ФЗК</span></div>
+                                        <div><span class="round-border">{{trans('layout.number')}} / {{trans('layout.fzk_date')}}</span></div>
                                         <div class="description-wrapper">
                                             &#8470; {{ $document->fzk_number . ' / ' . $document->fzk_data}}
                                         </div>
@@ -94,41 +97,41 @@
                                 @endif
 
                                     <div class="description-col">
-                                        <div><span class="round-border">Описание</span></div>
+                                        <div><span class="round-border">{{trans('layout.description')}}</span></div>
                                         <div class="description-wrapper">
                                             {{$document['description_'.lang::getLocale()]}}
                                         </div>
                                         <div class="description-wrapper">
-                                            Автор: {{$document->author}}
+                                            {{trans('layout.author')}}: {{$document->author}}
                                         </div>
                                         <div class="description-wrapper">
-                                            Дата создания: {{$created_at}}
+                                            {{trans('layout.created_at')}}: {{$created_at}}
                                         </div>
                                         <div class="description-wrapper">
-                                            Количество частей: {{$document->parts_count}}
+                                            {{trans('layout.pats_number')}}: {{$document->parts_count}}
                                         </div>
                                         @if(Auth::user() && Auth::user()->groups[0]->id == 2)
 
                                             <div class="description-wrapper">
-                                                Материал и техника: {{$document->material}}
+                                                {{trans('layout.material')}}: {{$document->material}}
                                             </div>
 
                                             <div class="description-wrapper">
-                                                Размер, вес: высота: {{$height}} мм., ширина {{$width}} мм., длина {{$length}} мм., вес {{$document->weight}} г.
+                                                {{trans('layout.size_weight')}}: {{trans('layout.height')}}: {{$height}} мм., {{trans('layout.width')}} {{$width}} мм., {{trans('layout.length')}} {{$length}} мм., {{$document->weight}} г.
                                             </div>
 
                                             <div class="description-wrapper">
-                                                Сохранность: {{$document->safety}}
+                                                {{trans('layout.safety')}}: {{$document->safety}}
                                             </div>
 
                                             <div class="description-wrapper">
-                                                Место хранения: {{$document->storage}}
+                                                {{trans('layout.storage')}}: {{$document->storage}}
                                             </div>
                                         @endif
                                     </div>
                                 @if(count($join_documents)>0)
                                     <div class="description-col">
-                                        <div><span class="round-border">Cвязанные документы</span></div>
+                                        <div><span class="round-border">{{trans('layout.join_doc')}}</span></div>
                                         <div class="description-wrapper">
                                             @foreach($join_documents as $join_document)
                                                 <a href="{{route('resource.show', $join_document)}}">{{$join_document['title_'.lang::getLocale()]}}</a>
