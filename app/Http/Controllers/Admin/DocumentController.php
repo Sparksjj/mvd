@@ -11,6 +11,7 @@ use App\Helpers\StrHelper;
 use App\Helpers\ControlHelper;
 use App\Helpers\TreeHelper;
 use Route;
+use Carbon\Carbon;
 
 class DocumentController extends Controller
 {
@@ -52,6 +53,7 @@ class DocumentController extends Controller
     {
         $data=[
             'categories' => Category::all(),
+            'documents' => Document::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
             'tree' => TreeHelper::getTree(),
         ];
@@ -75,6 +77,25 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
+
+            'author' => 'required|max:255',
+            'get_number' => 'required|max:255',
+            'get_data' => 'required|max:255',
+            'fzk_number' => 'required|max:255',
+            'fzk_data' => 'required|max:255',
+
+            'width' => 'required|max:255',
+            'height' => 'required|max:255',
+            'length' => 'required|max:255',
+            'weight' => 'required|max:255',
+
+            'parts_count' => 'required|max:255',
+            'safety' => 'required|max:255',
+            'storage' => 'required|max:255',
+            'material' => 'required|max:255',
+
+            'description_ru' => 'required',
+            'description_en' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number',
             'category' => 'required',
             'document' => 'required',
@@ -89,8 +110,23 @@ class DocumentController extends Controller
         $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
         $doc->title_en = $request->title_en;
+        $doc->description_ru = $request->description_ru;
+        $doc->description_en = $request->description_en;
         $doc->inventory_number = $request->inventory_number;
         $doc->is_public = (bool) $request->is_public;
+
+
+        $doc->author = $request->author;
+        $doc->get_number = $request->get_number;
+        $doc->get_data = Carbon::createFromFormat('Y-m-d H:i:s', $request->get_data)->format('Y-m-d');
+        $doc->fzk_number = $request->fzk_number;        
+        $doc->fzk_data = Carbon::createFromFormat('Y-m-d H:i:s', $request->fzk_data)->format('Y-m-d');
+        $doc->size = $request->height . 'x' . $request->width . 'x' . $request->length;
+        $doc->parts_count = $request->parts_count;
+        $doc->safety = $request->safety;
+        $doc->storage = $request->storage;
+        $doc->material = $request->material;
+        $doc->weight = $request->weight;
 
         $cat->documents()->save($doc);
 
@@ -106,6 +142,12 @@ class DocumentController extends Controller
             $doc->sources()->save($source);
         }
 
+        if (isset($request->join_item)){
+            if (count($request->join_item) != 0) {
+                $doc->join_documents()->sync($request->join_item);
+            }
+        }
+
         return redirect(route('documents.index'));
     }
 
@@ -117,6 +159,9 @@ class DocumentController extends Controller
      */
     public function show(Document $document)
     {
+        
+        $document->get_data = substr($document->get_data, 0, 10);
+        $document->fzk_data = substr($document->fzk_data, 0, 10);
         $data = [
             'document' => $document,
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
@@ -134,13 +179,20 @@ class DocumentController extends Controller
      */
     public function edit(Document $document)
     {
+        $size = explode('x', $document->size);
+        $document->get_data = substr($document->get_data, 0, 10);
+        $document->fzk_data = substr($document->fzk_data, 0, 10);
         $data = [
             'document' => $document,
+            'documents' => Document::whereNotIn('id', [$document->id])->get(),
             'sources' => $document->sources,
             'catId' => $document->category->id,
             'categories' => Category::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
             'tree' => TreeHelper::getTree(),
+            'height' => $size[0],
+            'width' => $size[1],
+            'length' => $size[2],
         ];
         return view('admin.document.edit', $data);
     }
@@ -157,8 +209,24 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
+            'description_ru' => 'required',
+            'description_en' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number,' . $document->id,
             'category' => 'required',
+
+            'author' => 'required|max:255',
+            'get_number' => 'required|max:255',
+            'get_data' => 'required|max:255',
+            'fzk_number' => 'required|max:255',
+            'fzk_data' => 'required|max:255',
+            'width' => 'required|max:255',
+            'height' => 'required|max:255',
+            'length' => 'required|max:255',
+            'weight' => 'required|max:255',
+            'parts_count' => 'required|max:255',
+            'safety' => 'required|max:255',
+            'storage' => 'required|max:255',
+            'material' => 'required|max:255',
         ]);
 
         $cat = Category::where('id', $request->category)->first();
@@ -170,6 +238,23 @@ class DocumentController extends Controller
         $document->title_en = $request->title_en;
         $document->inventory_number = $request->inventory_number;
         $document->is_public = (bool) $request->is_public;
+
+
+        $document->author = $request->author;
+        $document->get_number = $request->get_number;
+        $document->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
+        $document->fzk_number = $request->fzk_number;        
+        $document->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
+        $document->size = $request->height . 'x' . $request->width . 'x' . $request->length;
+        $document->parts_count = $request->parts_count;
+        $document->safety = $request->safety;
+        $document->storage = $request->storage;
+        $document->material = $request->material;
+        $document->weight = $request->weight;
+
+        $document->description_ru = $request->description_ru;
+        $document->description_en = $request->description_en;
+
         $cat->documents()->save($document);
 
         if ($files) {
@@ -198,6 +283,7 @@ class DocumentController extends Controller
      */
     public function destroy(Document $document)
     {
+        $document->join_documents()->detach();
         $document->delete();
         return redirect(route('documents.index'));
     }

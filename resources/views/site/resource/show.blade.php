@@ -24,6 +24,7 @@
         .description-col{
             padding: 10px 0;
             color: #eee;
+            padding-bottom: 0 !important;
         }
         .description-col .round-border{
             padding: 5px 10px;
@@ -70,7 +71,7 @@
                         @include('site.resource.parts._searchForm')
                     </div>
                         <div class="col-sm-6">
-                            <div style="padding-top: 25px">
+                            <div style="padding: 25px 0">
                                 @if(Auth::user() && Auth::user()->groups[0]->id == 2)
                                     <div class="description-col">
                                         <div><span class="round-border">Инвентарный номер</span></div>
@@ -78,20 +79,62 @@
                                             &#8470; {{$document->inventory_number}}
                                         </div>
                                     </div>
+                                    <div class="description-col">
+                                        <div><span class="round-border">номер / дата акта приема</span></div>
+                                        <div class="description-wrapper">
+                                            &#8470; {{ $document->get_number . ' / ' . $document->get_data}}
+                                        </div>
+                                    </div>
+                                    <div class="description-col">
+                                        <div><span class="round-border">номер / дата протокола ФЗК</span></div>
+                                        <div class="description-wrapper">
+                                            &#8470; {{ $document->fzk_number . ' / ' . $document->fzk_data}}
+                                        </div>
+                                    </div>
                                 @endif
 
                                     <div class="description-col">
                                         <div><span class="round-border">Описание</span></div>
                                         <div class="description-wrapper">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                                            {{$document['description_'.lang::getLocale()]}}
                                         </div>
+                                        <div class="description-wrapper">
+                                            Автор: {{$document->author}}
+                                        </div>
+                                        <div class="description-wrapper">
+                                            Дата создания: {{$created_at}}
+                                        </div>
+                                        <div class="description-wrapper">
+                                            Количество частей: {{$document->parts_count}}
+                                        </div>
+                                        @if(Auth::user() && Auth::user()->groups[0]->id == 2)
+
+                                            <div class="description-wrapper">
+                                                Материал и техника: {{$document->material}}
+                                            </div>
+
+                                            <div class="description-wrapper">
+                                                Размер, вес: высота: {{$height}} мм., ширина {{$width}} мм., длина {{$length}} мм., вес {{$document->weight}} г.
+                                            </div>
+
+                                            <div class="description-wrapper">
+                                                Сохранность: {{$document->safety}}
+                                            </div>
+
+                                            <div class="description-wrapper">
+                                                Место хранения: {{$document->storage}}
+                                            </div>
+                                        @endif
                                     </div>
+                                @if(count($join_documents)>0)
                                     <div class="description-col">
                                         <div><span class="round-border">Cвязанные документы</span></div>
                                         <div class="description-wrapper">
-                                            <a href="#">asdas asd </a>
-                                            <a href="#">asdas asd </a>
+                                        @foreach($join_documents as $join_document)
+                                            <a href="{{route('resource.show', $join_document)}}">{{$join_document['title_'.lang::getLocale()]}}</a>
+                                        @endforeach
                                     </div>
+                                @endif    
                                     </div>
                             </div>
                         </div>
@@ -103,13 +146,13 @@
                                 <div class="carousel-wrapper">
                                     <div class="row">
                                     @if($document->type == 'pdf')
-                                        <ul class="owl-carousel carousel-fw" id="venues-slider" data-columns="2" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="2" data-items-desktop-small="1" data-items-tablet="2" data-items-mobile="1">
+                                        <ul class="owl-carousel carousel-fw" id="venues-slider" data-columns="@if(count($sources) == 1) 1 @else 2 @endif" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="@if(count($sources) == 1) 1 @else 2 @endif" data-items-desktop-small="1" data-items-tablet="@if(count($sources) == 1) 1 @else 2 @endif" data-items-mobile="1">
                                             
                                                 @foreach($sources as $source)
                                                     <li class="item">
                                                         <div class="featured-block featured-block-secondary format-standard">
                                                             <figure>
-                                                                <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; height: 350px;"></iframe>
+                                                                <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; @if(count($sources) == 1) height: 450px; @else height: 350px; @endif"></iframe>
                                                                 <div class="show-full" data-toggle="modal" data-target="#show-full-source-{{$source->id}}"><i class="fa fa-eye" aria-hidden="true"></i></div>
                                                             </figure>
                                                         </div>

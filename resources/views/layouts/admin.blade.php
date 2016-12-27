@@ -11,8 +11,11 @@
     <title>Admin</title>
 
     <!-- Styles -->
+
+    <link href="{{ url('/css/select2.css') }}" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/datepicker/css/datepicker.css" rel="stylesheet">
     
     <link href='/uploader3/css/fileinput.min.css' rel="stylesheet">
     <!-- Scripts -->
@@ -119,5 +122,8 @@
         }
       });
     </script>
+    <script src="/datatime/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="{{ url('/js/select2.js') }}"></script>
 </body>
 </html>

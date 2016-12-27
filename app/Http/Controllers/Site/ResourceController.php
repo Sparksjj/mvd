@@ -30,40 +30,20 @@ class ResourceController extends Controller
         return view( 'site.resource.index', $data );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show(Document $resource)
     {
- 
+        $size = explode('x', $resource->size);
+        $resource->get_data = substr($resource->get_data, 0, 10);
+        $resource->fzk_data = substr($resource->fzk_data, 0, 10);
         if (self::isAdmin() || $resource->is_public) {
             $data = [
                 'document' => $resource,
+                'join_documents' => $resource->join_documents,
                 'sources' => $resource->sources,
+                'height' => $size[0],
+                'width' => $size[1],
+                'length' => $size[2],
+                'created_at' => substr(strval($resource->created_at), 0, 10),
             ];
         }else{
             return view('site.noSuccess');

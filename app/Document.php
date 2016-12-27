@@ -14,4 +14,7 @@ class Document extends Model
 	{
 		return $this->hasMany('App\Source');
 	}
+    public function join_documents() {
+        return $this->belongsToMany('App\Document', 'documents_documents', 'document_id_from', 'document_id_to');
+    }
 }

@@ -39,6 +39,16 @@
                     <h3 class="text-center">{{ $document['title_' . Lang::getLocale()] }}</h3>
 
                     <div class="col-md-12 text-center">Инвентарный номер: "{{ $document->inventory_number }}"</div>
+                    <div class="col-md-12 text-center">№/дата акта приема: "{{ $document->get_number . ' / ' . $document->get_data}}"</div>
+                    <div class="col-md-12 text-center">№/дата протокола ФЗК: "{{ $document->fzk_number . ' / ' . $document->fzk_data}}"</div>
+
+                    <div class="col-md-12 text-center">Автор: "{{ $document->author }}"</div>
+                    <div class="col-md-12 text-center">Кол-во частей: "{{ $document->parts_count }}"</div>
+                    <div class="col-md-12 text-center">Материал и техника: "{{ $document->material }}"</div>
+
+                    <div class="col-md-12 text-center">Размер (длина x ширина х высота мм.) - вес: "{{ $document->size . ' - ' . $document->weight }}" г.</div>
+                    <div class="col-md-12 text-center">Сохранность: "{{ $document->safety }}"</div>
+                    <div class="col-md-12 text-center">Место хранения: "{{ $document->storage }}"</div>
 
                     @if($document->type == '3d')
 
