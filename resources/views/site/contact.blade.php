@@ -9,24 +9,24 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-8">
                     @if(!session('status'))
-                        <h4 class="accent-color short">Thanks for your visit</h4>
-                        <h2>We would love to hear abour your experience and suggestions</h2>
+                        <h4 class="accent-color short">{{trans('layout.contact_thank')}}</h4>
+                        <h2>{{trans('layout.contact_mes')}}</h2>
                         <div class="spacer-20"></div>
                         <form action="{{route('contacts.sendEmail')}}" method="POST">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <input type="text" name="First Name"  class="form-control input-lg" placeholder="First name*">
+                                        <input type="text" name="First Name"  class="form-control input-lg" placeholder="{{trans('layout.name')}}*">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email"  class="form-control input-lg" placeholder="Email*">
                                     </div>
-                                    <input name="submit" type="submit" class="btn btn-primary btn-lg pull-left" value="Submit now!">
+                                    <input name="submit" type="submit" class="btn btn-primary btn-lg pull-left" value="{{trans('layout.submit_now')}}!">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <textarea cols="6" rows="8" name="comments" class="form-control input-lg" placeholder="Message"></textarea>
+                                        <textarea cols="6" rows="8" name="comments" class="form-control input-lg" placeholder="{{trans('layout.message')}}"></textarea>
                                     </div>                                    
                                 </div>
                             </div>

@@ -8,7 +8,9 @@
                     <ul>
                         <li><a href="{{route('main.index')}}">{{trans("layout.home")}}</a></li><br />
                         <li><a href="{{route('about.index')}}">{{trans("layout.about")}}</a></li><br />
-                        <li><a href="{{route('contacts.index')}}">{{trans("layout.contact")}}</a></li>
+                        <li><a href="{{route('contacts.index')}}">{{trans("layout.contact")}}</a></li><br />
+                        <li><a href="{{route('resource.index')}}">{{trans('layout.resources')}}</a></li><br />
+                        <li><a href="{{route('3d.index')}}">{{trans('layout.threeD')}}</a></li><br />
                     </ul>
                 </div>
             </div>
@@ -17,7 +19,7 @@
             	<div class="widget footer-widget">
             		<h4 class="widget-title">{{trans("layout.ventues")}} </h4>
                     <address>
-                    	<a href="{{route('about.index')}}"><strong>{{trans("layout.free")}}</strong></a><br>
+                    	<a href="{{route('contacts.index')}}"><strong>{{trans("layout.free")}}</strong></a><br>
                         <span>{{trans("layout.adress1")}}<br>
 						{{trans("layout.adress2")}}</span>
                    	</address>
