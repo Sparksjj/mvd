@@ -69,7 +69,7 @@
 
                 	<div class="skewed-title-bar" style="background-color: transparent">
                     	<div class="container">
-                            <h4  style="background-color: transparent; color: #444" class="text-center">
+                            <h4  style="background-color: transparent; color: #444; border-bottom: 4px solid #999;" class="text-center">
                                 <span>{{$document['title_' . Lang::getLocale()]}}</span>
                                 
                             </h4>                               
