@@ -23,12 +23,12 @@
         }
         .description-col{
             padding: 10px 0;
-            color: #eee;
+            color: #454545;
             padding-bottom: 0 !important;
         }
         .description-col .round-border{
             padding: 5px 10px;
-            border: 1px solid #999;
+            border: 1px solid #dabc74;
             border-radius: 15px;
             width: auto;
             display: inline-block;
@@ -43,6 +43,15 @@
         .pagination-info.search-center .col-sm-6{
             text-align: center;
         }
+        .pagination-info.search-center .col-sm-6.text-right{
+            position: relative;
+            top: -65px;
+        }
+        @media only screen and (max-width: 767px){
+            .pagination-info.search-center .col-sm-6.text-right{
+                top: 0;
+            }
+        }
     </style>
     <!-- Start Body Content -->
   	<div class="main" role="main" >
@@ -56,11 +65,11 @@
                 <span class="breadcrumbs-current">{{$document['title_' . Lang::getLocale()]}}</span>
             </div>
         
-            <div class="dgray-bg">
+            <div class="dgray-bg" style="background-color: transparent">
 
-                	<div class="skewed-title-bar">
+                	<div class="skewed-title-bar" style="background-color: transparent">
                     	<div class="container">
-                            <h4>
+                            <h4  style="background-color: transparent; color: #444" class="text-center">
                                 <span>{{$document['title_' . Lang::getLocale()]}}</span>
                                 
                             </h4>                               
@@ -144,7 +153,11 @@
 
                     <div class="col-sm-6">
                         
-                        <div class="padding-tb45">
+                        <div class="padding-tb45" style="padding: 20px;
+    margin: 20px 0;
+    box-shadow: 6px 0px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;">
                             <div class="">
                                 <div class="carousel-wrapper">
                                     <div class="row">
