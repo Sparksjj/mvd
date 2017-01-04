@@ -78,7 +78,7 @@
 .imageholder{
     width:350px;
     position:relative;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     margin: 20px auto;
 }
 #image_holder_x > span{
