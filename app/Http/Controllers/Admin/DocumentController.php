@@ -118,9 +118,9 @@ class DocumentController extends Controller
 
         $doc->author = $request->author;
         $doc->get_number = $request->get_number;
-        $doc->get_data = Carbon::createFromFormat('Y-m-d H:i:s', $request->get_data)->format('Y-m-d');
+        $doc->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
         $doc->fzk_number = $request->fzk_number;        
-        $doc->fzk_data = Carbon::createFromFormat('Y-m-d H:i:s', $request->fzk_data)->format('Y-m-d');
+        $doc->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
         $doc->size = $request->height . 'x' . $request->width . 'x' . $request->length;
         $doc->parts_count = $request->parts_count;
         $doc->safety = $request->safety;
