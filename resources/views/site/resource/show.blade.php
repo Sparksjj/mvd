@@ -53,6 +53,7 @@
             }
         }
     </style>
+
     <!-- Start Body Content -->
   	<div class="main" role="main" >
     	<div id="content" class="content full" style="padding-top: 0;">
@@ -91,51 +92,67 @@
                                             &#8470; {{$document->inventory_number}}
                                         </div>
                                     </div>
+
+                                    @if($document->get_data && $document->get_number)
                                     <div class="description-col">
                                         <div><span class="round-border">{{trans('layout.number')}} / {{trans('layout.get_date')}}</span></div>
                                         <div class="description-wrapper">
                                             &#8470; {{ $document->get_number . ' / ' . $document->get_data}}
                                         </div>
                                     </div>
+                                    @endif
+
+                                    @if($document->fzk_data && $document->fzk_number)
                                     <div class="description-col">
                                         <div><span class="round-border">{{trans('layout.number')}} / {{trans('layout.fzk_date')}}</span></div>
                                         <div class="description-wrapper">
                                             &#8470; {{ $document->fzk_number . ' / ' . $document->fzk_data}}
                                         </div>
                                     </div>
+                                    @endif
                                 @endif
 
                                     <div class="description-col">
                                         <div><span class="round-border">{{trans('layout.description')}}</span></div>
+                                        @if($document['description_'.lang::getLocale()])
                                         <div class="description-wrapper">
                                             {{$document['description_'.lang::getLocale()]}}
                                         </div>
+                                        @endif
+                                        @if($document->author)
                                         <div class="description-wrapper">
                                             {{trans('layout.author')}}: {{$document->author}}
                                         </div>
+                                        @endif
                                         <div class="description-wrapper">
                                             {{trans('layout.created_at')}}: {{$created_at}}
                                         </div>
+                                        @if($document->pats_number)
                                         <div class="description-wrapper">
                                             {{trans('layout.pats_number')}}: {{$document->parts_count}}
                                         </div>
+                                        @endif
                                         @if(Auth::user() && Auth::user()->groups[0]->id == 2)
-
+                                            @if($document->material)
                                             <div class="description-wrapper">
                                                 {{trans('layout.material')}}: {{$document->material}}
                                             </div>
-
+                                            @endif
+                                            @if($document->size)
                                             <div class="description-wrapper">
                                                 {{trans('layout.size_weight')}}: {{trans('layout.height')}}: {{$height}} мм., {{trans('layout.width')}} {{$width}} мм., {{trans('layout.length')}} {{$length}} мм., {{$document->weight}} г.
                                             </div>
-
+                                            @endif
+                                            @if($document->safety)
                                             <div class="description-wrapper">
                                                 {{trans('layout.safety')}}: {{$document->safety}}
                                             </div>
-
+                                            @endif
+                                            @if($document->storage)
                                             <div class="description-wrapper">
                                                 {{trans('layout.storage')}}: {{$document->storage}}
                                             </div>
+                                            @endif
                                         @endif
                                     </div>
                                 @if(count($join_documents)>0)
@@ -169,6 +186,23 @@
                                                         <div class="featured-block featured-block-secondary format-standard">
                                                             <figure>
                                                                 <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; @if(count($sources) == 1) height: 450px; @else height: 350px; @endif"></iframe>
+                                                                <div class="show-full" data-toggle="modal" data-target="#show-full-source-{{$source->id}}"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                                                            </figure>
+                                                        </div>
+                                                    </li>
+
+                                                @endforeach
+                                        </ul>
+
+                                    @elseif($document->type == 'image')
+                                        
+                                        <ul class="owl-carousel carousel-fw" id="venues-slider" data-columns="@if(count($sources) == 1) 1 @else 2 @endif" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="@if(count($sources) == 1) 1 @else 2 @endif" data-items-desktop-small="1" data-items-tablet="@if(count($sources) == 1) 1 @else 2 @endif" data-items-mobile="1">
+                                            
+                                                @foreach($sources as $source)
+                                                    <li class="item">
+                                                        <div class="featured-block featured-block-secondary format-standard">
+                                                            <figure>
+                                                                <img src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; @if(count($sources) == 1) height: 450px; @else height: 350px; @endif">
                                                                 <div class="show-full" data-toggle="modal" data-target="#show-full-source-{{$source->id}}"><i class="fa fa-eye" aria-hidden="true"></i></div>
                                                             </figure>
                                                         </div>
@@ -225,6 +259,25 @@
               </div>
             </div>
         @endforeach
+    @elseif($document->type == 'image')
+
+        <!-- Modals -->
+        @foreach($sources as $source)    
+            <div class="modal fade" id="show-full-source-{{$source->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document" style="width:99%; bottom: 0; height: 90%;">
+                <div class="modal-content" style="height: 100%;">
+                  <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{$document['title_' . Lang::getLocale()]}}</h4>
+                  </div>
+                  <div class="modal-body text-center" style="height: 90%;">
+                    <img src="{{ $source->path }}" title="{{ $document['title_' . Lang::getLocale()] }}" style="width: auto; height: 100%; margin: 0 auto">
+                  </div>
+                </div>
+              </div>
+            </div>
+        @endforeach
+
     @elseif($document->type == '3d')
         <script>
         

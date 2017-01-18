@@ -91,12 +91,12 @@
                         
                         <div class="form-group {{ $errors->has('author') ? 'has-error' : '' }}">
                             <label for="author">Автор</label>
-                            <input type="text" class="form-control" id="author" name="author" required value="{{ old('author') }}">
+                            <input type="text" class="form-control" id="author" name="author" value="{{ old('author') }}">
                         </div>  
 
                         <div class="form-group {{ $errors->has('get_number') ? 'has-error' : '' }}">
                             <label for="get_number">Номер акта приема</label>
-                            <input type="text" class="form-control" id="get_number" name="get_number" required value="{{ old('get_number') }}">
+                            <input type="text" class="form-control" id="get_number" name="get_number" value="{{ old('get_number') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('get_data') ? 'has-error' : '' }}" >
@@ -112,7 +112,7 @@
                         
                         <div class="form-group {{ $errors->has('fzk_number') ? 'has-error' : '' }}">
                             <label for="fzk_number">Номер акта ФЗК</label>
-                            <input type="text"  maxlength="3" minlength="3" class="form-control" id="fzk_number" name="fzk_number" required value="{{ old('fzk_number') }}">
+                            <input type="text"  maxlength="3" minlength="3" class="form-control" id="fzk_number" name="fzk_number" value="{{ old('fzk_number') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('fzk_data') ? 'has-error' : '' }}">
@@ -130,40 +130,40 @@
                             <label>Размер (мм.)</label>
                             <div class="col-md-12">
                                 <label for="height">Высота (мм.)</label>
-                                <input type="number" min="0" class="form-control" id="height" name="height" required value="{{ old('height') }}">
+                                <input type="number" min="0" class="form-control" id="height" name="height" value="{{ old('height') }}">
                             </div>
                             <div class="col-md-12">
                                 <label for="width">Ширина (мм.)</label>
-                                <input type="number" min="0" class="form-control" id="width" name="width" required value="{{ old('width') }}">
+                                <input type="number" min="0" class="form-control" id="width" name="width" value="{{ old('width') }}">
                             </div>
                             <div class="col-md-12"  style="margin-bottom: 10px;">
                                 <label for="length">Длина (мм.)</label>
-                                <input type="number" min="0" class="form-control" id="length" name="length" required value="{{ old('length') }}">
+                                <input type="number" min="0" class="form-control" id="length" name="length" value="{{ old('length') }}">
                             </div>
                         </div>
                         
                         <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}">
                             <label for="weight">Вес (гр.)</label>
-                            <input type="number" min="0" class="form-control" id="weight" name="weight" required value="{{ old('weight') }}">
+                            <input type="number" min="0" class="form-control" id="weight" name="weight" value="{{ old('weight') }}">
                         </div>
                         <div class="form-group {{ $errors->has('parts_count') ? 'has-error' : '' }}">
                             <label for="parts_count">Кол-во частей</label>
-                            <input type="number" min="0" class="form-control" id="parts_count" name="parts_count" required value="{{ old('parts_count') }}">
+                            <input type="number" min="0" class="form-control" id="parts_count" name="parts_count"  value="{{ old('parts_count') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('safety') ? 'has-error' : '' }}">
                             <label for="safety">Состояние</label>
-                            <input type="text" class="form-control" id="safety" name="safety" required value="{{ old('safety') }}">
+                            <input type="text" class="form-control" id="safety" name="safety"  value="{{ old('safety') }}">
                         </div>
 
 
                         <div class="form-group {{ $errors->has('storage') ? 'has-error' : '' }}">
                             <label for="storage">Место хранения</label>
-                            <input type="text" class="form-control" id="storage" name="storage" required value="{{ old('storage') }}">
+                            <input type="text" class="form-control" id="storage" name="storage"  value="{{ old('storage') }}">
                         </div>
                         <div class="form-group {{ $errors->has('material') ? 'has-error' : '' }}">
                             <label for="material">Материал и техника</label>
-                            <input type="text" class="form-control" id="material" name="material" required value="{{ old('material') }}">
+                            <input type="text" class="form-control" id="material" name="material"  value="{{ old('material') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('type') ? 'has-error' : '' }}" id="type-wrapper">
@@ -171,6 +171,7 @@
                             <select name="type" id="type">
 
                                     <option value="pdf" selected >pdf</option>
+                                    <option value="image">image</option>
                                     <option value="3d">3d</option>
                                     <option value="video">video</option>
 
@@ -179,12 +180,12 @@
 
                         <div class="form-group {{ $errors->has('description_ru') ? 'has-error' : '' }}">
                             <label for="description_ru">Описание (рус.)</label>
-                            <textarea class="form-control" id="description_ru" name="description_ru" required>{{ old('description_ru') }}</textarea>
+                            <textarea class="form-control" id="description_ru" name="description_ru" >{{ old('description_ru') }}</textarea>
                         </div>
 
                         <div class="form-group {{ $errors->has('description_en') ? 'has-error' : '' }}">
                             <label for="description_en">Описание (англ.)</label>
-                            <textarea class="form-control" id="description_en" name="description_en" required>{{ old('description_en') }}</textarea>
+                            <textarea class="form-control" id="description_en" name="description_en" >{{ old('description_en') }}</textarea>
                         </div>
 
                         <button type="submit" class="button btn btn-success btn-block">{{trans('admin.add_doc')}}</button>
@@ -213,6 +214,9 @@
             switch($('#type').val()){
                 case 'pdf':
                     attr = '["pdf"]';
+                break;
+                case 'image':
+                    attr = '["jpg", "png", "gif", "jpeg"]';
                 break;
                 case '3d':
                     attr = '["jpg", "png", "gif", "jpeg"]';

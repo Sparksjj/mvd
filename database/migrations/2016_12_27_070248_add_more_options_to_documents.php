@@ -15,17 +15,17 @@ class AddMoreOptionsToDocuments extends Migration
     {
         Schema::table('documents', function (Blueprint $table) {
             $table->timestamp('get_data')->nullable();
-            $table->string('get_number');
+            $table->string('get_number')->nullable();
             $table->timestamp('fzk_data')->nullable();
-            $table->string('fzk_number');
+            $table->string('fzk_number')->nullable();
             
-            $table->string('size');
-            $table->integer('weight');
-            $table->integer('parts_count');
-            $table->string('storage');
-            $table->string('material');
-            $table->string('safety');
-            $table->string('author');
+            $table->string('size')->nullable();
+            $table->integer('weight')->nullable();
+            $table->integer('parts_count')->nullable();
+            $table->string('storage')->nullable();
+            $table->string('material')->nullable();
+            $table->string('safety')->nullable();
+            $table->string('author')->nullable();
         });
     }
 

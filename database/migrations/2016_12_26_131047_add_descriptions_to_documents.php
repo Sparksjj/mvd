@@ -14,8 +14,8 @@ class AddDescriptionsToDocuments extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->text('description_ru');
-            $table->text('description_en');
+            $table->text('description_ru')->nullable();
+            $table->text('description_en')->nullable();
         });
     }
 

@@ -49,20 +49,25 @@ class PageController extends Controller
     {
         $this->validate($request,[
             'title_ru' => 'required|max:255',
-            'title_en' => 'required|max:255',
+            'title_en' => 'max:255',
             'position' => 'required',
             'content_ru' => 'required',
-            'content_en' => 'required',
         ]);
         $book = Book::where('id', $book)->first();
         $all_pages = $book->pages;
         
         $p = new Page();
         $p->title_ru = $request->title_ru;
-        $p->title_en = $request->title_en;
+
+        if ($request->has('title_en')) {
+            $p->title_en = $request->title_en;
+        }
 
         $p->content_ru = $request->content_ru;
-        $p->content_en = $request->content_en;
+
+        if ($request->has('content_en')) {
+            $p->content_en = $request->content_en;
+        }
 
         $p->is_link = (bool) $request->is_link;
         $p->position = $request->position;
@@ -102,18 +107,23 @@ class PageController extends Controller
     {
         $this->validate($request,[
             'title_ru' => 'required|max:255',
-            'title_en' => 'required|max:255',
+            'title_en' => 'max:255',
             'position' => 'required',
             'content_ru' => 'required',
-            'content_en' => 'required',
         ]);
         $book = Book::where('id', $book)->first();
 
         $page->title_ru = $request->title_ru;
-        $page->title_en = $request->title_en;
+        
+        if ($request->has('title_en')) {
+            $page->title_en = $request->title_en;
+        }
+
+        if ($request->has('content_en')) {
+            $page->content_en = $request->content_en;
+        }
 
         $page->content_ru = $request->content_ru;
-        $page->content_en = $request->content_en;
 
         $page->is_link = (bool) $request->is_link;
 

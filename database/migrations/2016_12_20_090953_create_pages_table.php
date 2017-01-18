@@ -17,9 +17,9 @@ class CreatePagesTable extends Migration
             $table->increments('id');
             $table->mediumInteger('position')->unsigned();
             $table->text('title_ru');
-            $table->text('title_en');
+            $table->text('title_en')->nullable();
             $table->boolean('is_link')->default(false);
-            $table->text('content_en');
+            $table->text('content_en')->nullable();
             $table->text('content_ru');
             $table->timestamps();
         });

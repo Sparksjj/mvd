@@ -40,11 +40,17 @@ class ResourceController extends Controller
                 'document' => $resource,
                 'join_documents' => $resource->join_documents,
                 'sources' => $resource->sources,
-                'height' => $size[0],
-                'width' => $size[1],
-                'length' => $size[2],
+                'height' => 0,
+                'width' => 0,
+                'length' => 0,
                 'created_at' => substr(strval($resource->created_at), 0, 10),
             ];
+
+            if ($resource->size) {
+                $data->height = $size[0];
+                $data->width = $size[1];
+                $data->length = $size[2];
+            }
         }else{
             return view('site.noSuccess');
         }

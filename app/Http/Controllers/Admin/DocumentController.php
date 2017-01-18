@@ -77,27 +77,7 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
-
-            'author' => 'required|max:255',
-            'get_number' => 'required|max:255',
-            'get_data' => 'required|max:255',
-            'fzk_number' => 'required|max:255',
-            'fzk_data' => 'required|max:255',
-
-            'width' => 'required|max:255',
-            'height' => 'required|max:255',
-            'length' => 'required|max:255',
-            'weight' => 'required|max:255',
-
-            'parts_count' => 'required|max:255',
-            'safety' => 'required|max:255',
-            'storage' => 'required|max:255',
-            'material' => 'required|max:255',
-
-            'description_ru' => 'required',
-            'description_en' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number',
-            'category' => 'required',
             'document' => 'required',
         ]);
 
@@ -110,23 +90,48 @@ class DocumentController extends Controller
         $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
         $doc->title_en = $request->title_en;
-        $doc->description_ru = $request->description_ru;
-        $doc->description_en = $request->description_en;
         $doc->inventory_number = $request->inventory_number;
         $doc->is_public = (bool) $request->is_public;
 
-
-        $doc->author = $request->author;
-        $doc->get_number = $request->get_number;
-        $doc->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
-        $doc->fzk_number = $request->fzk_number;        
-        $doc->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
-        $doc->size = $request->height . 'x' . $request->width . 'x' . $request->length;
-        $doc->parts_count = $request->parts_count;
-        $doc->safety = $request->safety;
-        $doc->storage = $request->storage;
-        $doc->material = $request->material;
-        $doc->weight = $request->weight;
+        if ($request->has('description_ru')) {
+            $doc->description_ru = $request->description_ru;
+        }
+        if ($request->has('description_en')) {
+            $doc->description_en = $request->description_en;
+        }        
+        if ($request->has('author')) {
+            $doc->author = $request->author;
+        }        
+        if ($request->has('get_number')) {
+            $doc->get_number = $request->get_number;
+        }
+        if ($request->has('get_data')) {
+            $doc->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
+        }
+        if ($request->has('fzk_number')) {
+            $doc->fzk_number = $request->fzk_number;
+        }
+        if ($request->has('fzk_data')) {
+            $doc->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
+        }
+        if ($request->has('height') || $request->has('width')  || $request->has('length')) {
+            $doc->size = $request->input('height', '0') . 'x' . $request->input('width', '0') . 'x' . $request->input('length', '0');
+        }        
+        if ($request->has('parts_count')) {
+            $doc->parts_count = $request->parts_count;
+        }
+        if ($request->has('safety')) {
+            $doc->safety = $request->safety;
+        }
+        if ($request->has('storage')) {
+            $doc->storage = $request->storage;
+        }
+        if ($request->has('material')) {
+            $doc->material = $request->material;
+        }
+        if ($request->has('weight')) {
+            $doc->weight = $request->weight;
+        }
 
         $cat->documents()->save($doc);
 
@@ -190,10 +195,16 @@ class DocumentController extends Controller
             'categories' => Category::all(),
             'hrefs' => ControlHelper::getControllPathis(Route::getCurrentRequest()->path()),
             'tree' => TreeHelper::getTree(),
-            'height' => $size[0],
-            'width' => $size[1],
-            'length' => $size[2],
+            'height' => '',
+            'width' => '',
+            'length' => '',
         ];
+
+        if ($document->size) {
+            $data->height = $size[0];
+            $data->width = $size[1];
+            $data->length = $size[2];
+        }
         return view('admin.document.edit', $data);
     }
 
@@ -209,24 +220,7 @@ class DocumentController extends Controller
         $this->validate($request,[
             'title_ru' => 'required|max:255',
             'title_en' => 'required|max:255',
-            'description_ru' => 'required',
-            'description_en' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number,' . $document->id,
-            'category' => 'required',
-
-            'author' => 'required|max:255',
-            'get_number' => 'required|max:255',
-            'get_data' => 'required|max:255',
-            'fzk_number' => 'required|max:255',
-            'fzk_data' => 'required|max:255',
-            'width' => 'required|max:255',
-            'height' => 'required|max:255',
-            'length' => 'required|max:255',
-            'weight' => 'required|max:255',
-            'parts_count' => 'required|max:255',
-            'safety' => 'required|max:255',
-            'storage' => 'required|max:255',
-            'material' => 'required|max:255',
         ]);
 
         $cat = Category::where('id', $request->category)->first();
@@ -239,21 +233,45 @@ class DocumentController extends Controller
         $document->inventory_number = $request->inventory_number;
         $document->is_public = (bool) $request->is_public;
 
-
-        $document->author = $request->author;
-        $document->get_number = $request->get_number;
-        $document->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
-        $document->fzk_number = $request->fzk_number;        
-        $document->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
-        $document->size = $request->height . 'x' . $request->width . 'x' . $request->length;
-        $document->parts_count = $request->parts_count;
-        $document->safety = $request->safety;
-        $document->storage = $request->storage;
-        $document->material = $request->material;
-        $document->weight = $request->weight;
-
-        $document->description_ru = $request->description_ru;
-        $document->description_en = $request->description_en;
+        if ($request->has('description_ru')) {
+            $document->description_ru = $request->description_ru;
+        }
+        if ($request->has('description_en')) {
+            $document->description_en = $request->description_en;
+        }        
+        if ($request->has('author')) {
+            $document->author = $request->author;
+        }        
+        if ($request->has('get_number')) {
+            $document->get_number = $request->get_number;
+        }
+        if ($request->has('get_data')) {
+            $document->get_data = Carbon::createFromFormat('Y-m-d', $request->get_data)->format('Y-m-d');
+        }
+        if ($request->has('fzk_number')) {
+            $document->fzk_number = $request->fzk_number;
+        }
+        if ($request->has('fzk_data')) {
+            $document->fzk_data = Carbon::createFromFormat('Y-m-d', $request->fzk_data)->format('Y-m-d');
+        }
+        if ($request->has('height') || $request->has('width')  || $request->has('length')) {
+            $document->size = $request->input('height', '0') . 'x' . $request->input('width', '0') . 'x' . $request->input('length', '0');
+        }        
+        if ($request->has('parts_count')) {
+            $document->parts_count = $request->parts_count;
+        }
+        if ($request->has('safety')) {
+            $document->safety = $request->safety;
+        }
+        if ($request->has('storage')) {
+            $document->storage = $request->storage;
+        }
+        if ($request->has('material')) {
+            $document->material = $request->material;
+        }
+        if ($request->has('weight')) {
+            $document->weight = $request->weight;
+        }
 
         if (isset($request->join_item)){
             if (count($request->join_item) != 0) {

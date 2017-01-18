@@ -87,7 +87,7 @@
 }
 #controll-items div{
     cursor: pointer;
-    padding: 15px 0;
+    padding: 0;
 }
 .padding-tb45{
     padding: 10px 0 20px 0;
@@ -125,6 +125,7 @@
 .lang-link a{
     padding: 15px 0;
     width: 100%;
+    display: block;
 }
     </style>
     <script>

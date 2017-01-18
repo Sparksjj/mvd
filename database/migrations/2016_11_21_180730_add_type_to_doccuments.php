@@ -14,7 +14,7 @@ class AddTypeToDoccuments extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->enum('type', ['pdf', '3d', 'video']);
+            $table->enum('type', ['pdf', '3d', 'video', 'image']);
         });
     }
 
