@@ -165,3 +165,6 @@
 	background-color: #999;
 	color: white;
 }
+table img{
+	max-width: 100%;
+}
