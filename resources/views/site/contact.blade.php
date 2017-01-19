@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('pageTitle', trans('layout.contact'))
+@section('meta_description', trans('layout.title'))
+@section('meta_keywords', trans('layout.title'))
+@section('og_image', '/iamges/15.png')
+@section('og_type', 'article')
+
 @section('content')
     @include('site.parts._slider')
     <!-- Start Body Content -->
