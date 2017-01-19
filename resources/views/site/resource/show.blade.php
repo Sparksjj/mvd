@@ -3,7 +3,7 @@
 @section('pageTitle', $document['title_'.Lang::getLocale()])
 @section('meta_description', trans('layout.title'))
 @section('meta_keywords', trans('layout.title'))
-@section('og_image', '/iamges/15.png')
+@section('og_image', '/images/15.png')
 @section('og_type', 'article')
 
 @section('content')
