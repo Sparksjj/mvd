@@ -260,7 +260,7 @@
                                                   </div>
                                                   <div><div class="gerb"></div></div>
                                                 @endforeach
-                                                @if(count($pages)%2 == 0) <div class="hard"></div> @endif
+                                                <div class="hard"></div>
                                                   <div class="hard gerb_smal"> <h1 style="padding-top: 10%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
                                                 </div>
                                     </div>
