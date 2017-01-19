@@ -53,6 +53,20 @@
     box-shadow:inset 0 0 5px #666;
     font-weight:bold;
 }
+#flipbook .hard.gerb{
+    background:#ccc url('../images/15.png') no-repeat 50% 50% !important;
+    background-size: auto 90% !important;
+}
+#flipbook .hard.gerb_smal{
+    background:#ccc url('../images/15.png') no-repeat 50% 65% !important;
+    background-size: auto 70% !important;
+}
+#flipbook .gerb{
+    height: 100%;
+    width: 100%;
+    background: url('../images/15.png') no-repeat 50% 50% !important;
+    background-size: auto 90% !important;
+}
 
 #flipbook .odd{
     background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
@@ -88,6 +102,10 @@
 #controll-items div{
     cursor: pointer;
     padding: 0;
+}
+#controll-items div.padd{
+    cursor: pointer;
+    padding: 15px 0;
 }
 .padding-tb45{
     padding: 10px 0 20px 0;
@@ -145,8 +163,9 @@
                 $('#flipbook').turn("page", 2);
             })
             $('body').on('click', '.content-links', function(e){
-                var p = (+$(e.target).parent('p').attr('data-position')+3+{{ ceil(ceil(count($content)/15)/2) }});
-                $('#flipbook').turn("page", p);
+                var p = (+$(e.target).parent('p').attr('data-position')+3+{{ ceil(ceil(count($content)/20)/2) }});
+                console.log(+$(e.target).parent('p').attr('data-position'));
+                $('#flipbook').turn("page", p+(+$(e.target).parent('p').attr('data-position'))-1);
             })
         }
 
@@ -194,24 +213,24 @@
                             <div class="row" style="padding: 0 50px">
  
                                     <div id="controll-items" class="col-md-12">
-                                        <div class="col-xs-3 text-center" id="pre-page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
-                                        <div class="col-xs-3 text-center" id="next-page">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
-                                        <div class="col-xs-3 text-center" id="content-page">К оглавлению</div>
+                                        <div class="col-xs-3 text-center padd" id="pre-page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Предыдущая</div>
+                                        <div class="col-xs-3 text-center padd" id="next-page">Следующая <i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+                                        <div class="col-xs-3 text-center padd" id="content-page">К оглавлению</div>
                                         <div class="col-xs-1 text-center @if(Lang::getLocale()=='en') current @endif lang-link"><a href="{{url('/lang/en')}}" >en</a></div>
                                         <div class="col-xs-1 text-center @if(Lang::getLocale()=='ru') current @endif lang-link"><a href="{{url('/lang/ru')}}" >ru</a></div>
                                     </div>
 
                                     <div class=" text-center book-wrapper" style="margin-top: 60px;">
                                                 <div id="flipbook">
-                                                  <div class="hard"> <h1 style="padding-top: 40%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
-                                                  <div class="hard"></div>
+                                                  <div class="hard gerb_smal"> <h1 style="padding-top: 10%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
+                                                  <div class="hard gerb"></div>
 
                                                 
                                                 @if(count($content)>0)
                                                 
                                                 @foreach($content as $index => $link)
-                                                @if($index%15 == 0)
-                                                  <div class="asdasdasdasd"> 
+                                                @if($index%20 == 0)
+                                                  <div class=""> 
                                                       <div class="page_wrapper" style="padding: 20px 50px;">
                                                 @endif
 
@@ -219,18 +238,17 @@
                                                             <p class="text-left content-links"  data-position="{{$link->position}}">
                                                                 <span class="points"></span>
                                                                 <span class="p-name">{{$link['title_'.Lang::getLocale()]}}</span>
-                                                                <span class="pull-right p-number">{{$link->position+4}}</span>
+                                                                <span class="pull-right p-number">{{($link->position+4)+($link->position-1)}}</span>
                                                             </p>
                                                 
                                                 
-                                                @if($index%15 == 14 || ($index == count($content)-1 && $index%15 != 14))
+                                                @if($index%20 == 19 || ($index == count($content)-1 && $index%20 != 19))
                                                       </div>
                                                   </div>
                                                 @endif
                                                 @endforeach
-                                                    @if( ceil(count($content)/15)%2 )
-                                                      <div > 
-                                                      </div>
+                                                    @if( ceil(count($content)/20)%2 )
+                                                      <div><div class="gerb"></div></div>
                                                     @endif
                                                 @endif
                                                 @foreach($pages as $index=>$page)
@@ -240,9 +258,10 @@
                                                       
                                                   </div>
                                                   </div>
+                                                  <div><div class="gerb"></div></div>
                                                 @endforeach
                                                 @if(count($pages)%2 == 0) <div class="hard"></div> @endif
-                                                  <div class="hard"> <h1 style="padding-top: 40%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
+                                                  <div class="hard gerb_smal"> <h1 style="padding-top: 10%">{{$book['title_' . Lang::getLocale()]}}</h1> </div>
                                                 </div>
                                     </div>
                                     <div id="preloader"><i class="fa fa-spinner fa-spin"></i></div>
