@@ -45,11 +45,11 @@ class ResourceController extends Controller
                 'length' => 0,
                 'created_at' => substr(strval($resource->created_at), 0, 10),
             ];
-
+            
             if ($resource->size) {
-                $data->height = $size[0];
-                $data->width = $size[1];
-                $data->length = $size[2];
+                $data['height'] = $size[0];
+                $data['width'] = $size[1];
+                $data['length'] = $size[2];
             }
         }else{
             return view('site.noSuccess');

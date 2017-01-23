@@ -201,9 +201,9 @@ class DocumentController extends Controller
         ];
 
         if ($document->size) {
-            $data->height = $size[0];
-            $data->width = $size[1];
-            $data->length = $size[2];
+            $data['height'] = $size[0];
+            $data['width'] = $size[1];
+            $data['length'] = $size[2];
         }
         return view('admin.document.edit', $data);
     }
