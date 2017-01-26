@@ -300,9 +300,9 @@
                     attr = '["pdf"]';
                 break;
                 case '3d':
-                    attr = '["jpg", "png", "gif", "jpeg"]';
+                    attr = '["jpg", "png", "gif", "jpeg", "svg"]';
                 case 'image':
-                    attr = '["jpg", "png", "gif", "jpeg"]';
+                    attr = '["jpg", "png", "gif", "jpeg", "svg"]';
                 break;
                 case 'video':
                     attr = '["ogv", "mp4", "webm"]';

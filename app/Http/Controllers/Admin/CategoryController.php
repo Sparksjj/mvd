@@ -127,7 +127,12 @@ class CategoryController extends Controller
 
         $category->title_ru = $request->title_ru;
         $category->title_en = $request->title_en;
-        $category->parent_id = $request->parent_id;
+
+        if($request->parent_id == 'null') {
+            $category->parent_id = Null;
+        } else if(is_numeric($request->parent_id)) {
+            $category->parent_id = $request->parent_id;
+        }
 
         $category->save();
 
