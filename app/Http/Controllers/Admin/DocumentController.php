@@ -75,8 +75,7 @@ class DocumentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title_ru' => 'required|max:255',
-            'title_en' => 'required|max:255',
+            'title_ru' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number',
             'document' => 'required',
         ]);
@@ -89,10 +88,12 @@ class DocumentController extends Controller
 
         $doc->type = $request->type;
         $doc->title_ru = $request->title_ru;
-        $doc->title_en = $request->title_en;
         $doc->inventory_number = $request->inventory_number;
         $doc->is_public = (bool) $request->is_public;
 
+        if ($request->has('title_en')) {
+            $doc->title_en = $request->title_en;
+        }
         if ($request->has('description_ru')) {
             $doc->description_ru = $request->description_ru;
         }
@@ -218,8 +219,7 @@ class DocumentController extends Controller
     public function update(Request $request, Document $document)
     {
         $this->validate($request,[
-            'title_ru' => 'required|max:255',
-            'title_en' => 'required|max:255',
+            'title_ru' => 'required',
             'inventory_number' => 'required|max:255|unique:documents,inventory_number,' . $document->id,
         ]);
 
@@ -229,12 +229,16 @@ class DocumentController extends Controller
         $files = $request->file('document');
     
         $document->title_ru = $request->title_ru;
-        $document->title_en = $request->title_en;
         $document->inventory_number = $request->inventory_number;
         $document->is_public = (bool) $request->is_public;
 
         if ($request->has('description_ru')) {
             $document->description_ru = $request->description_ru;
+        }
+        if ($request->has('title_en')) {
+            $document->title_en = $request->title_en;
+        }else{
+            $document->title_en = null;
         }
         if ($request->has('description_en')) {
             $document->description_en = $request->description_en;

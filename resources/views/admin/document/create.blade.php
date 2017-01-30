@@ -59,7 +59,7 @@
 
                         <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
                             <label for="title_en">{{trans('admin.title')}} (англ.)</label>
-                            <input type="text" class="form-control" id="title_en" name="title_en" required value="{{ old('title_en') }}">
+                            <input type="text" class="form-control" id="title_en" name="title_en" value="{{ old('title_en') }}">
                         </div>
 
                         <div class="form-group {{ $errors->has('inventory_number') ? 'has-error' : '' }}">
