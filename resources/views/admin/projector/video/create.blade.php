@@ -8,12 +8,12 @@
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
             <div class="panel-heading clearfix">
-                <h4 class="">Новая страница</h4>
+                <h4 class="">Новый видео файл</h4>
             </div>
 
             <div class="panel-body">
         
-                    <h3 class="text-center">Новая страница</h3>
+                    <h3 class="text-center">Новый видео файл</h3>
 
                     @include('admin.parts._formErorr')
 
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('position') ? 'has-error' : '' }}">
-                            <label>Номер страницы</label>
+                            <label>Порядок воспроизведения</label>
                             <select name="position">
 
                                 @foreach( $videos as $index => $video )
@@ -51,7 +51,7 @@
                         <button type="submit" class="button btn btn-success btn-block">Создать</button>
 
                     </form>
-                    <a href="{{route('projector.video.index', $projector)}}" class="help-href">Все страницы</a>
+                    <a href="{{route('projector.video.index', $projector)}}" class="help-href">Все видео файлы</a>
                 </div> 
             </div>
         </div>

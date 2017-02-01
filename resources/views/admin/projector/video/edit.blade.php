@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('position') ? 'has-error' : '' }}">
-                            <label>Номер страницы</label>
+                            <label>Порядок воспроизведения</label>
                             <select name="position">
 
                                 @foreach( $videos as $index => $v )
