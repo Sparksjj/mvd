@@ -9,6 +9,7 @@ use App\User;
 use App\Projector;
 use App\Book;
 use App\Group;
+use App\Article;
 
 class DeviceController extends Controller
 {
@@ -36,6 +37,7 @@ class DeviceController extends Controller
             'users' => Group::where('id', 3)->first()->users,
             'books' => Book::orderBy('created_at', 'desc')->get(),
             'projectors' => Projector::orderBy('created_at', 'desc')->get(),
+            'articles' => Article::orderBy('created_at', 'desc')->get(),
         ];
         return view('admin.device.create', $data);
     }
@@ -78,6 +80,7 @@ class DeviceController extends Controller
             'users' => Group::where('id', 3)->first()->users,
             'books' => Book::orderBy('created_at', 'desc')->get(),
             'projectors' => Projector::orderBy('created_at', 'desc')->get(),
+            'articles' => Article::orderBy('created_at', 'desc')->get(),
         ];
         return view('admin.device.edit', $data);
     }

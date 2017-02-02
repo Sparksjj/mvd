@@ -32,7 +32,7 @@
 
                         <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
                             <label>Акаунт</label>
-                            <select name="user_id">
+                            <select name="user_id" class="form-control">
 
                                 @foreach( $users as $index => $user )
                                     <option value="{{$user->id}}" @if($device->user_id == $user->id) selected @endif>{{ $user->email }}</option>
@@ -43,12 +43,15 @@
 
                         <div class="form-group {{ $errors->has('permitted_page') ? 'has-error' : '' }}">
                             <label>Разрешенная страница</label>
-                            <select name="permitted_page">
+                            <select name="permitted_page" class="form-control">
                                 @foreach($books as $book)
-                                    <option value="memory_book/{{$book->id}}" @if($device->permitted_page == 'memory_book/{{$book->id}}') selected @endif>{{$book['title_' . Lang::getLocale()]}}</option>
+                                    <option value="memory_book/{{$book->id}}" @if($device->permitted_page == 'memory_book/'.$book->id) selected @endif>{{$book['title_' . Lang::getLocale()]}}</option>
                                 @endforeach
                                 @foreach($projectors as $projector)
-                                    <option value="projectors/{{$projector->id}}" @if($device->permitted_page == 'projectors/{{$projectors->id}}') selected @endif>{{$projector['title_' . Lang::getLocale()]}}</option>
+                                    <option value="projectors/{{$projector->id}}" @if($device->permitted_page == 'projectors/'.$projector->id) selected @endif>{{$projector['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
+                                @foreach($articles as $article)
+                                    <option value="articles/{{$article->id}}" @if($device->permitted_page == 'articles/'.$article->id) selected @endif>{{$article['title_' . Lang::getLocale()]}}</option>
                                 @endforeach
                             </select>
                         </div>

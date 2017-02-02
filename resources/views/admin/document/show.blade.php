@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="container">   
-        @include('admin.parts._tree_category')
         <div class="col-md-12 content-wrapper" id="main-content">
             <div class="panel panel-default">
                 <div class="panel-heading clearfix">

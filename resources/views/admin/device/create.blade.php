@@ -32,7 +32,7 @@
 
                         <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
                             <label>Акаунт</label>
-                            <select name="user_id">
+                            <select name="user_id" class="form-control">
 
                                 @foreach( $users as $index => $user )
                                     <option value="{{$user->id}}">{{ $user->email }}</option>
@@ -43,12 +43,15 @@
 
                         <div class="form-group {{ $errors->has('permitted_page') ? 'has-error' : '' }}">
                             <label>Разрешенная страница</label>
-                            <select name="permitted_page">
+                            <select name="permitted_page" class="form-control">
                                 @foreach($books as $book)
                                     <option value="memory_book/{{$book->id}}">{{$book['title_' . Lang::getLocale()]}}</option>
                                 @endforeach
                                 @foreach($projectors as $projector)
                                     <option value="projectors/{{$projector->id}}">{{$projector['title_' . Lang::getLocale()]}}</option>
+                                @endforeach
+                                @foreach($articles as $article)
+                                    <option value="articles/{{$article->id}}">{{$article['title_' . Lang::getLocale()]}}</option>
                                 @endforeach
                             </select>
                         </div>

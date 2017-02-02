@@ -63,4 +63,5 @@ return [
     'width' => 'ширина',
     'height' => 'высота',
     'weight' => 'вес',
+    'articles' => 'Статьи',
 ];

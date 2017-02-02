@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_device']], functi
 
 	Route::resource('memory_book',  'Site\BookController', ['only' => ['show', 'index']]);
 	Route::resource('projectors',  'Site\ProjectorController', ['only' => ['show', 'index']]);
+	Route::resource('articles',  'Site\ArticlesController', ['only' => ['show', 'index']]);
 
 });
 
@@ -51,4 +52,6 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'pref
 
 	Route::delete('destroySource/{id}', 'Admin\DocumentController@destroySource')->name('sources.destroy');
 	Route::post('uploadImage', 'Admin\MainController@uploadImage')->name('uploadImage');
+
+	Route::resource('adminarticle', 'Admin\ArticleController');
 });
