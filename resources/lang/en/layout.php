@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'book_eror' => 'Sorry, but this resource is empty',
     'opening_hours' => 'Opening hours: 9 a.m. – 6 p.m., Mon – Fri, break: 1p.m. – 2p.m',
     'search' => 'Search',
     'threeD' => '3D tour',
