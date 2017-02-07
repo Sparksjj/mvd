@@ -17,6 +17,10 @@
 	body > div > div.topbar > div > div > div.col-md-6.col-sm-6.col-xs-12.text-right > div.col-sm-4{
 		float: right;
 	}
+	body,
+	blockquote p{
+		color: #333;
+	}
 </style>
 <div class="main" role="main">
 	<div id="content" class="content full single-post">
@@ -39,7 +43,7 @@
 	                                	@foreach($sl_images as $image)
 	                                    <li class="item">
 	                                    	<a href="{{$image->src}}" data-rel="prettyPhoto[postname]">
-	                                    		<img src="{{$image->src}}" alt="sl_image" style="display: block; margin: 0 auto">
+	                                    		<img src="{{$image->src}}" alt="" style="display: block; margin: 0 auto">
 	                                    	</a>
 	                                    </li>
 	                                    @endforeach
