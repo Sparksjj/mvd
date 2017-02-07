@@ -21,6 +21,7 @@ class ArticlesController extends Controller
     {
         $data = [
             'article'=>$article,
+            'sl_images'=>$article->images,
         ];
         return view('site.article.show', $data);
     }

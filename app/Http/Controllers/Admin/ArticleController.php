@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
+use App\Image;
 
 class ArticleController extends Controller
 {
@@ -70,6 +71,7 @@ class ArticleController extends Controller
     {
         $data = [
             'article' => $adminarticle,
+            'images' => $adminarticle->images,
         ];
         return view('admin.article.show', $data);
     }
@@ -128,5 +130,32 @@ class ArticleController extends Controller
     {
         $adminarticle->delete();
         return redirect(route('adminarticle.index'));
+    }
+
+    public function uploadImage(Request $request, $id)
+    {
+        $files = $request->file('sl_images');
+        $article = Article::where('id', $id)->first();
+
+        if (count($files) > 0) {
+            foreach ($files as $key => $file) {
+                $file_name = md5($file->getClientOriginalName() . rand(0, 9999)) . '.' . $file->getClientOriginalExtension();
+                $file->move('./images/article_slider/', $file_name);
+                $image = new Image();
+                $image->src = '/images/article_slider/'. $file_name;
+                $article->images()->save($image);
+            }
+        }
+
+        return redirect(route('adminarticle.show', $article));
+    }
+
+    public function destroySlImage($id)
+    {
+        $image = Image::where('id', $id)->first();
+        $article = $image->imageable;
+        $image->imageable()->dissociate();
+        $image->delete();
+        return redirect(route('adminarticle.show', $article));
     }
 }

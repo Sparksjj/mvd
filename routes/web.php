@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'pref
 
 	Route::delete('destroySource/{id}', 'Admin\DocumentController@destroySource')->name('sources.destroy');
 	Route::post('uploadImage', 'Admin\MainController@uploadImage')->name('uploadImage');
-
+	Route::delete('deleteImage/{id}', 'Admin\ArticleController@destroySlImage')->name('article.image.delete');
+	Route::post('uploadSliderArticle/{id}', 'Admin\ArticleController@uploadImage')->name('uploadSImage');
 	Route::resource('adminarticle', 'Admin\ArticleController');
 });
