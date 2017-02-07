@@ -21,6 +21,7 @@
 	blockquote p{
 		color: #333;
 	}
+	img{ max-width: 100% ;}
 </style>
 <div class="main" role="main">
 	<div id="content" class="content full single-post">
