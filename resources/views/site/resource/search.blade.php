@@ -6,7 +6,18 @@
 <![endif]-->
 
     @include('site.parts._slider')
-        
+      
+    <style>
+        .pre_img{
+            width: auto;
+            height: 60px;
+            padding-right: 10px;
+            display: inline-block;
+        }
+        .all-documents-wrapper .exhibition-time{
+            margin-top: 15px;
+        }
+    </style>  
     <!-- Start Body Content -->
   	<div class="main" role="main" >
     	<div id="content" class="content full">
@@ -34,7 +45,20 @@
                         <li class="venue1">
                             <span class="exhibition-time">{{$document->type}}</span>
                             <div class="exhibition-teaser">
-                                <h5 class="post-title"><a href="{{route('resource.show', $document)}}">{{$document['title_' . Lang::getLocale()]}}</a></h5>
+                                <h5 class="post-title">
+                                    <a href="{{route('resource.show', $document)}}">
+
+                                        @if($document->type == 'pdf')
+                                            <img src="/images/pdf_preload.png" alt="" class="pre_img">
+                                        @elseif(!$document->sources()->first()['path'])
+                                            <img src="/images/no_img_preload.png" alt="" class="pre_img">
+                                        @else
+                                            <img src="{{$document->sources()->first()['path']}}" alt="" class="pre_img">
+                                        @endif
+
+                                        {{$document['title_' . Lang::getLocale()]}}
+                                    </a>
+                                </h5>
                             </div>
                         </li>
                     @endforeach

@@ -17,7 +17,6 @@ class ResourceController extends Controller
      */
     public function index()
     {
-
         if (self::isAdmin()) {
             $data = [
                 'documents' => Document::orderBy('created_at', 'desc')->paginate(20),
