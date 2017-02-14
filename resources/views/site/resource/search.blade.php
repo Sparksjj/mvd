@@ -6,18 +6,52 @@
 <![endif]-->
 
     @include('site.parts._slider')
-      
+
     <style>
         .pre_img{
             width: auto;
             height: 60px;
             padding-right: 10px;
             display: inline-block;
+            float: left;
+            width: 70px;
+            position: relative;
+        }
+        .pre_img img{
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
         .all-documents-wrapper .exhibition-time{
             margin-top: 15px;
         }
-    </style>  
+        .title_doc{
+            margin-left: 80px;
+            display: block;
+        }
+        .exhibition-teaser{
+            padding-left: 100px;
+        }
+        @media only screen and (max-width: 767px){            
+            .title_doc{
+                margin-left: 0px;
+                clear: both;
+            }
+            .exhibition-teaser{
+                padding-left: 0;
+            }
+            .pre_img{
+                float: right;
+            }
+        }
+    </style>
     <!-- Start Body Content -->
   	<div class="main" role="main" >
     	<div id="content" class="content full">
@@ -47,16 +81,19 @@
                             <div class="exhibition-teaser">
                                 <h5 class="post-title">
                                     <a href="{{route('resource.show', $document)}}">
+                                        <div class="pre_img">
+                                            @if($document->type == 'pdf')
+                                                <img src="/images/pdf_preload.png" alt="">
+                                            @elseif($document->type == 'video')
+                                                <img src="/images/video_preload.png" alt="">
+                                            @elseif(!$document->sources()->first()['path'])
+                                                <img src="/images/no_img_preload.png" alt="">
+                                            @else
+                                                <img src="{{$document->sources()->first()['path']}}" alt="">
+                                            @endif                                            
+                                        </div>
 
-                                        @if($document->type == 'pdf')
-                                            <img src="/images/pdf_preload.png" alt="" class="pre_img">
-                                        @elseif(!$document->sources()->first()['path'])
-                                            <img src="/images/no_img_preload.png" alt="" class="pre_img">
-                                        @else
-                                            <img src="{{$document->sources()->first()['path']}}" alt="" class="pre_img">
-                                        @endif
-
-                                        {{$document['title_' . Lang::getLocale()]}}
+                                        <span class="title_doc">{{$document['title_' . Lang::getLocale()]}}</span>
                                     </a>
                                 </h5>
                             </div>

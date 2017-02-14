@@ -39,8 +39,11 @@
             margin-top: 15px;
         }
         .title_doc{
-            margin-left: 70px;
+            margin-left: 80px;
             display: block;
+        }
+        .exhibition-teaser{
+            padding-left: 100px;
         }
         @media only screen and (max-width: 767px){            
             .title_doc{
@@ -86,6 +89,8 @@
                                         <div class="pre_img">
                                             @if($document->type == 'pdf')
                                                 <img src="/images/pdf_preload.png" alt="">
+                                            @elseif($document->type == 'video')
+                                                <img src="/images/video_preload.png" alt="">
                                             @elseif(!$document->sources()->first()['path'])
                                                 <img src="/images/no_img_preload.png" alt="">
                                             @else
