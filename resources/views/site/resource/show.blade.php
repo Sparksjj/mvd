@@ -51,7 +51,11 @@
         }
         .pagination-info.search-center .col-sm-6.text-right{
             position: relative;
-            top: -65px;
+            /* top: -65px; */
+        }
+        .skewed-title-bar h4 span,
+        .skewed-title-bar h4{
+            transform: none !important;
         }
         @media only screen and (max-width: 767px){
             .pagination-info.search-center .col-sm-6.text-right{
@@ -64,7 +68,7 @@
     <div class="main" role="main" >
         <div id="content" class="content full" style="padding-top: 0;">
 
-            <div class="container breadcrumbs-wrapper" style="background-color: white;">
+            <div class="container breadcrumbs-wrapper" style="background-color: white; overflow: hidden">
                 <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
                 <span class="separator">/</span>
                 <a href="{{route('resource.index')}}">{{trans('layout.documents')}}</a>
@@ -75,7 +79,7 @@
             <div class="dgray-bg" style="background-color: transparent">
 
                     <div class="skewed-title-bar" style="background-color: transparent">
-                        <div class="container">
+                        <div class="container text-center">
                             <h4  style="background-color: transparent; color: #444; border-bottom: 4px solid #999;" class="text-center">
                                 <span>{{$document['title_' . Lang::getLocale()]}}</span>
                                 
@@ -85,7 +89,7 @@
                     <div class="container">
                     <div class="col-md-12 pagination-info search-center" style="padding-top: 20px">
                         
-                        <div class="col-sm-6">
+                        <div class="col-sm-3">
                         </div>
                         @include('site.resource.parts._searchForm')
                     </div>
