@@ -8,7 +8,7 @@
 
 @section('content')
 <!--[if lt IE 7]>
-	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 <![endif]-->
 
     @include('site.parts._slider')
@@ -61,8 +61,8 @@
     </style>
 
     <!-- Start Body Content -->
-  	<div class="main" role="main" >
-    	<div id="content" class="content full" style="padding-top: 0;">
+    <div class="main" role="main" >
+        <div id="content" class="content full" style="padding-top: 0;">
 
             <div class="container breadcrumbs-wrapper" style="background-color: white;">
                 <a href="{{route('main.index')}}">{{trans('layout.home')}}</a>
@@ -74,8 +74,8 @@
         
             <div class="dgray-bg" style="background-color: transparent">
 
-                	<div class="skewed-title-bar" style="background-color: transparent">
-                    	<div class="container">
+                    <div class="skewed-title-bar" style="background-color: transparent">
+                        <div class="container">
                             <h4  style="background-color: transparent; color: #444; border-bottom: 4px solid #999;" class="text-center">
                                 <span>{{$document['title_' . Lang::getLocale()]}}</span>
                                 
@@ -177,10 +177,10 @@
                     <div class="col-sm-6">
                         
                         <div class="padding-tb45" style="padding: 20px;
-    margin: 20px 0;
-    box-shadow: 6px 0px 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;">
+                            margin: 20px 0;
+                            box-shadow: 6px 0px 10px;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;">
                             <div class="">
                                 <div class="carousel-wrapper">
                                     <div class="row">
@@ -246,7 +246,7 @@
                 </div>
             </div>
         </div>
-   	</div>
+    </div>
 
     @if($document->type == 'pdf')
         <!-- Modals -->
@@ -258,13 +258,23 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">{{$document['title_' . Lang::getLocale()]}}</h4>
                   </div>
-                  <div class="modal-body" style="height: 90%;">
-                    <iframe src="{{ $source->path }}" name="{{ $document['title_' . Lang::getLocale()] }}" style="width: 100%; height: 100%;"></iframe>
+                  <div class="modal-body" data-src="{{$source->path}}" style="height: 90%;">
+                    
                   </div>
                 </div>
               </div>
             </div>
         @endforeach
+        <script type="text/javascript">
+            addEventListener('load', function(e){
+                $('.modal').on('show.bs.modal', function (e) {
+                    var src = $(e.currentTarget).find('.modal-body');
+                    if (src.find('iframe').length == 0) {
+                        $('<iframe src="'+src.attr('data-src')+'" name="{{ $document->title_en }}" style="width: 100%; height: 100%;"></iframe>').appendTo(src);
+                    }
+                });
+            })
+        </script>
     @elseif($document->type == 'image')
 
         <!-- Modals -->
