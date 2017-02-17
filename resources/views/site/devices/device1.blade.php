@@ -37,6 +37,9 @@
         padding: 0;
         margin: 0;
     }
+    body{
+        background: url('/images/subtle_white_mini_waves.png');
+    }
     body,
     .main,
     .content,
@@ -76,7 +79,7 @@
     #content_2d > .container .flex_img{
         width: 50%;
         padding: 10px;
-        border: 1px solid #999;
+        border: 4px solid #fff;
         display: block;
         margin-right: 20px;
         border-radius: 20px;
@@ -107,8 +110,8 @@
         font-size: 60px;
         opacity: .5;
         text-shadow: 0 0 10px #000;
-        color: #dabc74;
-    } */
+        color: #fff;
+    }  */
     .carousel-control.right,
     .carousel-control.left{
         background: transparent;
@@ -151,10 +154,10 @@
                 <div role="tabpanel" class="tab-pane active" id="content_2d">
                     <div class="container">
                         <div class="flex_img">                            
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
+                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_state_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
                         </div>
                         <div class="flex_img">                            
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
+                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_ground_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
                         </div>
                     </div>
                 </div>
@@ -168,11 +171,24 @@
                     #slider{
                         height: 100% !important;
                     }
-
+                    #carousel .flex-viewport{
+                        border: 4px solid #fff;
+                        border-radius: 5px;
+                    }
                     .slider img
                     {
                         max-height: 100%;
                     }
+                    .flexslider{
+                        background-color: transparent;
+                        border: none;
+                    }
+                    #slider .slides img{
+
+                        border: 4px solid #fff;
+                        border-radius: 10px;
+                    }
+
                     #carousel .flex-direction-nav  a,
                     #slider .flex-direction-nav  a{
                         display: block;
@@ -212,11 +228,17 @@
                         display: flex !important;
                         align-items: center;
                     }
+                    .slider #carousel li{
+                        height: auto !important;
+                        margin: 0 !important;
+                        border-right: 4px solid #fff;
+                        padding: 0 10px;
+                    }
                 </style>
                 <div class="container">
                   <section class="slider" style="height: 100%; position: relative">
                     <div id="slider" class="flexslider" style="padding-bottom: 190px; max-height: 100%">
-                      <ul class="slides" style="">
+                      <ul class="slides" style="padding-top: 5px">
                         <li>
                             <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
                             </li>
@@ -258,7 +280,7 @@
                     <div id="carousel" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0;">
                       <ul class="slides" style="
     display: flex;
-    align-items: center;">
+    align-items: stretch;">
                         <li>
                             <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
                             </li>
@@ -329,7 +351,7 @@
 <script>
     addEventListener('load', function(){
         $('.show-more').on('click', function(e){
-            var src = $(e.target).attr('data-src');
+            var src = $(e.target).attr('src');
             $('.modal .modal-content .modal-body').empty();
             $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
             $('.modal').modal('show')
