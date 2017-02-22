@@ -177,7 +177,7 @@
                                 @endif    
                             </div>
                         </div>
-
+                    @if(count($sources)>0)
                     <div class="col-sm-6">
                         
                         <div class="padding-tb45" style="padding: 20px;
@@ -250,6 +250,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
