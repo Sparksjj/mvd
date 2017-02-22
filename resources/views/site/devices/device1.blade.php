@@ -30,15 +30,31 @@
 <![endif]-->
 <div class="body">
 <style>
+    body{
+        background: url('/images/Background.jpg') 50% 50% no-repeat;
+        background-size: cover;
+    }
+    .big_title_main{
+        background: url('/images/btn2.png') 50% 50% no-repeat;
+        background-size: cover;
+        line-height: 120px;
+        text-align: center;
+        height: 120px;
+        color: #ede2c6;
+        font-size: 32px;
+        text-shadow: 0 0 10px #333;
+        box-shadow: 0 0 20px #333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
     .nav-pills>li+li{
         margin-left: 10px;
     }
     .main div#container{
         padding: 0;
         margin: 0;
-    }
-    body{
-        background: url('/images/subtle_white_mini_waves.png');
     }
     body,
     .main,
@@ -68,7 +84,7 @@
         right: 0;
     }
     .main{
-        padding-top: 195px;
+        padding-top: 270px;
     }
     #content_2d > .container{
         display: flex;
@@ -127,24 +143,61 @@
     .carousel-inner{
         margin-top: 10%;
     }
+    .device_buttom{
+        background: url('/images/btn.png') 50% 50% no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+        width: 100%;
+        display: block;
+        border-radius:  10px;        
+        box-shadow: 0 0 20px #333;
+        height: 100px;
+        line-height: 100px;
+        color: #ede2c6 !important;
+    }
+    .device_buttom:hover{
+        color: #ede2c6;
+    }
+    .device_buttom:visited{
+        color: #ede2c6;
+    }
 </style>
-    <div class="hero-area">
-    	<div class="page-header">
-            <div style="height: auto">
-                <div style="vertical-align: top">
-                    <span style="margin-top: 30px; color: #222; background-color: #eee; border-radius: 4px; padding: 15px ">Планшет в холле</span>
-                    <div class="grid-filter" style="margin: 30px">
-                        <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
-                            <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
-                            <li data-option-value=".format-image"><a href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
-                            <li data-option-value=".format-link"><a href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a></li>
-<!--                             <li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a></li>
-<li data-option-value=".format-video"><a href="#"><i class="fa fa-play"></i> <span>Videos</span></a></li> -->
-                        </ul>
-                    </div>
-                </div>
+
+
+<!--         <div class="page-header">
+    <div style="height: auto">
+        <div style="vertical-align: top">
+            <span style="margin-top: 30px; color: #222; background-color: #eee; border-radius: 4px; padding: 15px ">Планшет в холле</span>
+            <div class="grid-filter" style="margin: 30px">
+                <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
+                    <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
+                    <li data-option-value=".format-image"><a href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
+                    <li data-option-value=".format-link"><a href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a></li>
+<li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a></li>
+<li data-option-value=".format-video"><a href="#"><i class="fa fa-play"></i> <span>Videos</span></a></li>
+                </ul>
             </div>
         </div>
+    </div>
+</div> -->
+
+
+    <div class="container-fluid big_title_main">
+     МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
+     <div class="container-fluid text-center"> 
+        <div class="col-sm-3 ">     
+            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="device_buttom" href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a>
+        </div>
+     </div>
     </div>
     <!-- Start Body Content -->
   	<div class="main" role="main">
@@ -235,7 +288,7 @@
                         padding: 0 10px;
                     }
                 </style>
-                <div class="container">
+                <div class="container" style="width: 85%">
                   <section class="slider" style="height: 100%; position: relative">
                     <div id="slider" class="flexslider" style="padding-bottom: 190px; max-height: 100%">
                       <ul class="slides" style="padding-top: 5px">
