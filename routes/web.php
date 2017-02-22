@@ -64,8 +64,9 @@ Route::get('parser', function(){
         $csv = array_map('str_getcsv', file($path_app . '/test.csv'));
         foreach($csv as $document)
         {
+        		$document = array_merge($document, ['','','','','','','','','','','','','','','','','']);
         	/*category */
-                $category_id = null;
+                $category_id = 19;
                 if ($document[7]) $category_id = 19;
 
                 else if ($document[8]==1) $category_id = 16;
@@ -96,7 +97,7 @@ Route::get('parser', function(){
                 else if ($document[17]) $category_id = 3;
 
             /*type*/
-            	$type;
+            	$type = 'pdf';
                      if ($document[5]==2) $type = 'video';
                 else if ($document[5]==3) $type = '3d';
                 else if ($document[5]==1) $type = 'image';
@@ -125,7 +126,8 @@ Route::get('parser', function(){
                                 'storage' 				=> $storage,
                         ]
                 );
-
+                
+                $document->sources()->delete();
                 if ($type != '3d') {
 
                 	$files_url = glob( $path_app . '/files/' . $number . '.*');
