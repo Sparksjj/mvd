@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
+    protected $fillable = ['inventory_number', 'type', 'storage', 'title_ru', 'category_id', 'description_ru'];
     public function category()
     {
         return $this->belongsTo('App\Category');
