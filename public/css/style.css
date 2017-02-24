@@ -3415,8 +3415,8 @@ ul.slot-exhibitions li h5{
 		padding-right:20px;
 	}
 	.hero-area, .page-header{
-		top:0;
-		margin-bottom:0;
+		/* top:0;
+		margin-bottom:0; */
 	}
 	.site-logo{
 		left:20px;
@@ -3670,6 +3670,14 @@ blockquote cite{
 }
 .site-footer-bottom p{
 	font-size: 16px !important;
+}
+@media only screen and (max-width: 567px) {
+	.some_text{
+		left: 10px;
+	}
+	.some_text h1{
+		font-size: 15px;
+	}
 }
 // 951d1d
 // dabc74

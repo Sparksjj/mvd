@@ -86,12 +86,21 @@
 <script type="text/javascript">
 
     document.addEventListener("DOMContentLoaded", function() {
+        console.log($(window).width())
+        $(window).on('resize', function(){
+            setTimeout(function(){         
+            var height = ($(window).width()*815)/1575;       
+                $('.tp-banner').css({
+                    'min-height': height,
+                    'height': height});
+            }, 300)
+        })
         jQuery('.tp-banner').show().revolution(
         {
             dottedOverlay:"none",
             delay:9000,
-            startwidth:1060,
-            startheight:970,
+            startwidth:$(window).width(),
+            startheight:($(window).width()*815)/1575,
             hideThumbs:200,
             
             thumbWidth:100,
