@@ -48,6 +48,8 @@
         top: 0;
         left: 0;
         right: 0;
+        font-weight: bold;
+        font-size: 40px;
     }
     .nav-pills>li+li{
         margin-left: 10px;
