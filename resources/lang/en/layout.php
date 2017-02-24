@@ -28,7 +28,7 @@ return [
     'noSuccess' => 'Sorry, but you do not have permission to view.',
     'enter' => 'Sign in',
     'greeting' => 'Welcome',
-    'visitors_saying' => 'What our visitors saying about their experience',
+    'visitors_saying' => 'Reviews',
     'lorem' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.',
     'about_text' => 'In the museum you can get acquainted with the rich history of the Belarusian police from the XVI century up to the present day.Here you can see vintage cars, instruments of torture, material evidence of crimes. The exhibition presents collections of weapons, orders and medals.',
     'about_title' => 'GET INVOLVED',

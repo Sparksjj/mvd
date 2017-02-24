@@ -43,9 +43,26 @@
 <script src="/js/modernizr.js"></script><!-- Modernizr -->
 </head>
 <body class="home header-style1">
-
+<style>
+    .site-header{
+        background-color: rgba(91,91,91,.4);
+    }
+    .site-header{
+        color: #fff;
+    }
+    .navigation-button,
+    .main-navigation > ul > li > a{
+        font-size: 20px;
+    }
+    .navigation-button,
+    .main-navigation > ul > li > a{
+        font-family: 'Beans', 'Roboto', sans-serif;
+        font-weight: bold;
+        text-shadow: 0 0 20px #767676;
+    }
+</style>
     <div class="body">
-        @include('layouts.parts._tolbar')
+       <!--  @include('layouts.parts._tolbar') -->
         @include('layouts.parts._nav')
             @yield('content')       
         @include('layouts.parts._footer1')
@@ -74,7 +91,7 @@
             dottedOverlay:"none",
             delay:9000,
             startwidth:1060,
-            startheight:500,
+            startheight:970,
             hideThumbs:200,
             
             thumbWidth:100,

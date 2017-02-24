@@ -11,7 +11,20 @@ Author:	imithemes
 @import url("animations.css");
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
-
+@font-face {
+	font-family: 'Beans';
+	src: url('/css/fonts/BebasNeue Book.ttf') format('truetype'),
+	url('/css/fonts/BebasNeue Book.oft') format('oft');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Beans';
+	src: url('/css/fonts/BebasNeue Regular.ttf') format('truetype'),
+	url('/css/fonts/BebasNeue Regular.oft') format('oft');
+	font-weight: bold;
+	font-style: normal;
+}
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -1267,7 +1280,7 @@ body{
 	color:#999;
 	font-size:14px;
 	font-weight:400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Beans', 'Roboto', sans-serif;
 	line-height:1.5em;
 	background-attachment:fixed;
 	overflow-x:hidden;
@@ -1703,8 +1716,8 @@ body.boxed .body{
 }
 .hero-area{
 	position:relative;
-	top:-45px;
-	margin-bottom:-45px;
+	top:-80px;
+	margin-bottom:-80px;
 	z-index:2;
 	background:#ccc;
 	min-height:200px;
@@ -1777,7 +1790,7 @@ body.boxed .body{
 	margin-bottom:18px;
 }
 .content{
-	padding:50px 0;
+	padding:0px 0;
 }
 .home .content{
 	padding-bottom:0;
@@ -3536,3 +3549,127 @@ ul.slot-exhibitions li h5{
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
 	
 }
+.some_text{
+	float: left;
+	position: absolute;
+	top 20px;
+}
+.some_text h1{
+	color: #fff;
+	font-size: 24px;
+	margin: 0;
+	margin-top: 5px;
+	padding: 0;
+	font-family: 'Beans', 'Roboto', sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0 10px #767676;
+}
+.some_text span{
+	color: #fff ;
+	text-shadow: 0 0 10px #767676;
+}
+#cont2{
+	background: url('/images/cont2.jpg');
+	background-size: cover;
+}
+#cont2 .light-title,
+#cont3 .light-title,
+#cont4 .light-title,
+#cont1 .light-title{
+	color: #951d1d;
+	font-size: 35px;
+	border-bottom: 3px solid #951d1d;
+	width: 70px;
+    text-transform: uppercase;
+	font-family: 'Beans', 'Roboto', sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+}
+#testimonials-slider blockquote:before{
+	color: #951d1d;
+}
+blockquote cite{
+	color: #767676;
+	font-family: 'Beans', 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 22px;
+}
+#cont1{
+	margin-top: 30px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: url('/images/cont1.jpg') 100% 50% no-repeat;
+	background-size: 50% auto;
+}
+#cont1 .light-title{
+	color: #dabc74;
+	border-color: #dabc74;
+}
+#cont3{
+	background: url('/images/cont3.jpg') 50% 50% no-repeat;
+	background-size: cover;
+	height: 450px;
+}
+#cont3 a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+#cont3 .light-title{
+	margin-top: 20px;
+	color: #fff;
+	border-color: #fff;
+	text-shadow: 0 0 20px #333;
+}
+#cont4{
+	background: url('/images/cont4.jpg') 100% 100% no-repeat;
+	background-size: 50% auto;
+	padding: 150px 0;
+	margin-top: 30px;
+	border: none;
+}
+@media only screen and (max-width: 992px){
+	#cont4{
+		padding: 40px 0;
+	}
+}
+@media only screen and (max-width: 767px){
+	#cont4,#cont1{
+		background: none
+	}
+	#cont1{
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+}
+#cont4 .light-title{
+	color: #dabc74;
+	border-color: #dabc74;
+}
+#cont4 h4{
+	text-align: center !important;
+}
+#cont4 address a{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.4px;
+}
+#cont4 address span{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.2px;
+}
+.site-footer-bottom{
+	border: none;
+	position: relative;
+	top: -30px;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 18px !important;
+}
+.site-footer-bottom p{
+	font-size: 16px !important;
+}
+// 951d1d
+// dabc74

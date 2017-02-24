@@ -6,7 +6,7 @@
 			* { padding: 0; margin: 0; }
 			html { height: 100%; }
 			body { height: 100%; overflow:hidden; }
-			div#container { height: 100%; width: 100%; margin: 0 auto; margin-top: 85px; padding-bottom: 135px; }
+			div#container { height: 100%; width: 100%; margin: 0 auto; margin-top: 0px; padding-bottom: 0px; }
 			div#tourDIV {
 				height:100%;
 				position:relative;
@@ -37,7 +37,7 @@
 			}
 			.site-header-wrapper{
 				position: absolute;
-				top: 40px;
+				top: 0px;
 				width: 100%;
 			}
 			.site-footer-bottom{
@@ -53,18 +53,18 @@
 			}			
 			@media (max-width: 901px){
 				.site-header-wrapper{
-					top: 80px;
+					top: 0px;
 				}
 				div#container { 
-					margin-top: 125px; 
+					margin-top: 0px; 
 				}
 			}			
 			@media (max-width: 445px){
 				.site-header-wrapper{
-					top: 120px;
+					top: 0px;
 				}
 				div#container { 
-					margin-top: 165px; 
+					margin-top: 0px; 
 				}
 				
 			}			

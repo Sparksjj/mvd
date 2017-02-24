@@ -16,23 +16,26 @@
     <!-- Start Body Content -->
   	<div class="main" role="main">
     	<div id="content" class="content full">
-            <div class="container">
-            	<div class="row">
-                	<div class="col-md-7 col-sm-7">
-            			<h3 class="widget-title">{{trans('layout.about_title')}}</h3>
-                		<p>{{trans('layout.about_text')}}</p>
+            <div class="container-fluid" id="cont1">
+            	<div class="container">
+                	<div class="col-md-6 col-sm-6">
+            			<h3 class="light-title">{{trans('layout.about_title')}}</h3>
+                		<p style="    font-size: 18px;
+                        letter-spacing: 1.3px;
+                        line-height: 25px;
+                        font-weight: bold;
+                        color: #767676">{{trans('layout.about_text')}}</p>
                 	</div>
-                	<div class="col-md-5 col-sm-5">
-                    	<div class="featured-block">
+<!--                     <div class="col-md-5 col-sm-5">
+                        <div class="featured-block">
                             <figure>
-                            	<a href="{{ route('3d.index') }}">
+                                <a href="{{ route('3d.index') }}">
                                     <img src="/images/test1.jpg" alt="Learn">
                                     <span class="caption" style="text-shadow: black 0px 0px 3px;">{{trans('layout.threeD')}}</span>
                                 </a>
-                            </figure><!-- 
-                            <p>The Vestige, museum of antiquity has a variety of year-round internship programs available for students of all ages.</p> -->
+                            </figure><p>The Vestige, museum of antiquity has a variety of year-round internship programs available for students of all ages.</p>
                         </div>
-                    </div>
+                    </div> -->
                 	<!-- <div class="col-md-4 col-sm-4">
                     	<div class="featured-block">
                             <figure>
@@ -57,9 +60,9 @@
             </div>
             
 
-            <div class="spacer-50"></div>
+            <div class="spacer-30"></div>
             <!-- VISITORS SAY -->
-            <div class="latest-testimonials accent-bg padding-tb45">
+            <div class="latest-testimonials accent-bg padding-tb45" id="cont2">
             	<div class="container">
                 	<div class="row">
                     	<div class="col-md-3">
@@ -98,6 +101,50 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="spacer-30"></div>
+            <div class="container-fluid" id="cont3">
+                <a href="{{ route('3d.index') }}">
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                            <h3 class="light-title">{{trans('layout.threeD')}}</h3>
+                        </div>
+    <!--                     <div class="col-md-5 col-sm-5">
+                            <div class="featured-block">
+                                <figure>
+                                    <a href="{{ route('3d.index') }}">
+                                        <img src="/images/test1.jpg" alt="Learn">
+                                        <span class="caption" style="text-shadow: black 0px 0px 3px;">{{trans('layout.threeD')}}</span>
+                                    </a>
+                                </figure><p>The Vestige, museum of antiquity has a variety of year-round internship programs available for students of all ages.</p>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-md-4 col-sm-4">
+                            <div class="featured-block">
+                                <figure>
+                                    <a>
+                                        <img src="/images/test1.jpg" alt="Donate">
+                                    </a>
+                                </figure>
+                                <p>Our memberships provide wonderful benefits and supports our goal to preserve and conserve our local history.</p>
+                            </div>
+                        </div>
+                                            <div class="col-md-4 col-sm-4">
+                            <div class="featured-block">
+                                <figure>
+                                    <a>
+                                        <img src="/images/test1.jpg" alt="Experience">
+                                    </a>
+                                </figure>
+                                <p>Our beautiful historic properties are the ideal year-round location to host your wedding or special event.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </a>
+            </div>
+
+            <div class="spacer-30"></div>
         </div>
    	</div> 
 @endsection
