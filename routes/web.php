@@ -149,7 +149,7 @@ Route::get('parser', function(){
                 		foreach( $files_url as $index=>$value){                			
 				        	$fileext = pathinfo($value)['extension'];
 				            $file_name = md5($number.'_'.$index . rand(0, 9999)) . '.' . $fileext;		  
-				            Storage::copy('..'.$value, 'documents/' . $file_name);
+				            Storage::copy($value, 'documents/' . $file_name);
 
 			                $source = new App\Source();
                             $source->path = '/storage/documents/' . $file_name;
@@ -164,7 +164,7 @@ Route::get('parser', function(){
 	                		foreach( $files_url as $index=>$value){                			
 					        	$fileext = pathinfo($value)['extension'];
 					            $file_name = md5($number.'_'.$index . rand(0, 9999)) . '.' . $fileext;
-					            Storage::copy('..'.$value, 'documents/' . $file_name);
+					            Storage::copy($value, 'documents/' . $file_name);
 				                $source = new App\Source();
 						        $source->path = '/storage/documents/' . $file_name;
 						        $document->sources()->save($source);
