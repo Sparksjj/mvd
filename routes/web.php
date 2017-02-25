@@ -1,5 +1,5 @@
 <?php
-
+use Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +24,15 @@ Route::get('/3d', 'Site\ThreeController@index')->name('3d.index');
 Route::get('/search', 'Site\SearchController@index')->name('search.index');
 Route::get('/device1', function(){
     return view('site.devices.device1');
+});
+Route::get('/device2', function(){
+    return view('site.devices.device2');
+});
+Route::get('/device3', function(){
+    return view('site.devices.device3');
+});
+Route::get('/device4', function(){
+    return view('site.devices.device4');
 });
 Route::get('/devices', function(){
 	return view('site.devices.index');
@@ -140,12 +149,11 @@ Route::get('parser', function(){
 				        $document->sources()->delete();
                 		foreach( $files_url as $index=>$value){                			
 				        	$fileext = pathinfo($value)['extension'];
-				            $file_name = md5($number.'_'.$index . rand(0, 9999)) . '.' . $fileext;
-                		
-				            copy($value, $path_app . '/public/documents/' . $file_name);
+				            $file_name = md5($number.'_'.$index . rand(0, 9999)) . '.' . $fileext;		  
+				            Storage::copy($value, 'documents/' . $file_name);
 
 			                $source = new App\Source();
-					        $source->path = '/documents/' . $file_name;
+                            $source->path = '/storage/documents/' . $file_name;
 					        $document->sources()->save($source);
                 		}
                 	}
@@ -157,9 +165,9 @@ Route::get('parser', function(){
 	                		foreach( $files_url as $index=>$value){                			
 					        	$fileext = pathinfo($value)['extension'];
 					            $file_name = md5($number.'_'.$index . rand(0, 9999)) . '.' . $fileext;
-					            copy($value, $path_app . '/public/documents/' . $file_name);
+					            Storage::copy($value, 'documents/' . $file_name);
 				                $source = new App\Source();
-						        $source->path = '/documents/' . $file_name;
+						        $source->path = '/storage/documents/' . $file_name;
 						        $document->sources()->save($source);
 	                		}
 	                	}

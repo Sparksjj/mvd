@@ -10,6 +10,7 @@
 
     @include('site.parts._slider')
     <!-- Start Body Content -->
+    <div class="spacer-50"></div>
     <div class="main" role="main">
         <div id="content" class="content full">
             <div class="container">             

@@ -23,6 +23,7 @@
 	}
 	img{ max-width: 100% ;}
 </style>
+<div class="spacer-50"></div>
 <div class="main" role="main">
 	<div id="content" class="content full single-post">
 		<div class="container">

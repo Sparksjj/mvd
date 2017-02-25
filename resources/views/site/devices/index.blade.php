@@ -191,29 +191,29 @@
      МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
      <div class="container-fluid text-center"> 
         <div class="col-sm-10 col-sm-offset-1 ">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>СХЕМА МУЗЕЯ</span></a>
+            <a class="device_buttom" href="{{url('/device1')}}"> <span>1.ХОЛЛ, инфокиоск 1-26”</span></a>
         </div>
         <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ИСТОРИЯ МИЛИЦИИ</span></a></li>
+            <a class="device_buttom" href="{{url('/device2')}}"> <span>2.1 Инфокиоск 2-26”</span></a></li>
         </div>
         <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><span>МИНИСТРЫ ВНУТРЕННИХ ДЕЛ</span></a>
+            <a class="device_buttom" href="{{url('/device3')}}"><span>3.1. инфокиоск 3-26”</span></a>
         </div>
         <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#"> <span>3D ТУРЫ</span></a>
+            <a class="device_buttom" href="{{url('/device4')}}"> <span>4.2. инфокиоск 4-26”</span></a>
         </div>
-        <div class="col-sm-10 col-sm-offset-1 ">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><span>ИСТОРИЯ ПОДРАЗДЕЛЕНИЙ 1941-1991</span></a>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>МИНИСТРЫ ВНУТРЕННИХ ДЕЛ 1941-1991</span></a></li>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>ФИЛЬМ "() ЛЕТ МИЛИЦИИ"</span></a>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 ">
-            <a class="device_buttom" href="#"> <span>СОТРУДНИКИ, НАГРАЖДЕННЫЕ "ГАНАРОВЫ СУПРАЦОУНИК МУС"</span></a>
-        </div>
+<!--         <div class="col-sm-10 col-sm-offset-1 ">     
+    <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><span>ИСТОРИЯ ПОДРАЗДЕЛЕНИЙ 1941-1991</span></a>
+</div>
+<div class="col-sm-10 col-sm-offset-1 ">
+    <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>МИНИСТРЫ ВНУТРЕННИХ ДЕЛ 1941-1991</span></a></li>
+</div>
+<div class="col-sm-10 col-sm-offset-1 ">
+    <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>ФИЛЬМ "() ЛЕТ МИЛИЦИИ"</span></a>
+</div>
+<div class="col-sm-10 col-sm-offset-1 ">
+    <a class="device_buttom" href="#"> <span>СОТРУДНИКИ, НАГРАЖДЕННЫЕ "ГАНАРОВЫ СУПРАЦОУНИК МУС"</span></a>
+</div> -->
      </div>
     </div>
 

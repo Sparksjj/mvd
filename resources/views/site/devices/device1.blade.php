@@ -93,17 +93,22 @@
         align-items: center;
         height: 100%;
         justify-content: center;
+        flex-flow: column wrap;
     }
     #content_2d > .container .flex_img{
-        width: 50%;
+        width: 33%;
         padding: 10px;
         border: 4px solid #fff;
         display: block;
         margin-right: 20px;
         border-radius: 20px;
-        margin-bottom: 150px;
+        /* margin-bottom: 150px; */
         cursor: pointer;
         position: relative;
+        height: 45%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
     }
     #content_2d > .container .flex_img:last-child{
         margin-right: 0px;
@@ -185,19 +190,16 @@
 
 
     <div class="container-fluid big_title_main">
-     МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
+        МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
      <div class="container-fluid text-center"> 
-        <div class="col-sm-3 ">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a>
+        <div class="col-sm-4 ">     
+            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>ПЛАНЫ РАСПОЛОЖЕНИЯ ЗАЛОВ</span></a>
         </div>
-        <div class="col-sm-3 ">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
+        <div class="col-sm-4 ">
+            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>ФОТОИСТОРИЯ МИЛИЦИИ</span></a></li>
         </div>
-        <div class="col-sm-3 ">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a>
-        </div>
-        <div class="col-sm-3 ">
-            <a class="device_buttom" href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a>
+        <div class="col-sm-4 ">
+            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>ВИРТУАЛЬНЫЙ ТУР</span></a>
         </div>
      </div>
     </div>
@@ -209,10 +211,22 @@
                 <div role="tabpanel" class="tab-pane active" id="content_2d">
                     <div class="container">
                         <div class="flex_img">                            
-                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_state_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
+                            <img src="/images/device1/Холл.jpg" alt="" class="show-more" data-src="/images/device1/Холл.jpg">
                         </div>
                         <div class="flex_img">                            
-                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_ground_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
+                            <img src="/images/device1/1 этаж.jpg" alt="" class="show-more" data-src="/images/device1/1 этаж.jpg" style="height: 84%;">
+                        </div>
+                        <div class="flex_img">                            
+                            <img src="/images/device1/2 этаж.png" alt="" class="show-more" data-src="/images/device1/2 этаж.png">
+                        </div>
+                        <div class="flex_img">                            
+                            <img src="/images/device1/PhysCamera034(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera034(-potolok).jpg">
+                        </div>
+                        <div class="flex_img">                            
+                            <img src="/images/device1/PhysCamera035(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera035(-potolok).jpg">
+                        </div>
+                        <div class="flex_img">                            
+                            <img src="/images/device1/PhysCamera036(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera036(-potolok).jpg">
                         </div>
                     </div>
                 </div>
