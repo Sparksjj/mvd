@@ -532,86 +532,362 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="some_slide">
                 <div class="container" style="width: 85%">
-                  <section class="slider" style="height: 100%; position: relative">
+                  <section class="slider" style="height: 100%; position: relative;">
                     <div id="slider" class="flexslider" style="padding-bottom: 190px; max-height: 100%">
                       <ul class="slides" style="padding-top: 5px">
-                        <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 11 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 11 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 15 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
-                        <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
+                                <img src="/images/device2/2sl/Приказ № 15 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
+                                <img src="/images/device2/2sl/Приказ № 15 -3-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                        <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -3-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -4-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -5-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -6-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -7-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -8-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_056-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_056b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_057-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3297_023-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_001-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_002-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_003-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_004-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_005-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_006-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_007-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_008-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_191_001-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_191_001b-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_047-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_060-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_060b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_067-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_1_21_015_1-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_1_21_103-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_012-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_013-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_014-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_015-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_017-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_018-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_019-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_020-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_004-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_005-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_006-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_013-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_013b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_014-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_563_268-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_83_365-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_199-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_199b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_200-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_200b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_201-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_201b-min.jpg" />
                             </li>
                       </ul>
                     </div>
-                    <div id="carousel" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0;">
+                    <div id="carousel" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0; height: 150px">
                       <ul class="slides" style="
                         display: flex;
                         align-items: stretch;">
-                        <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 11 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 11 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 15 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
-                        <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
+                                <img src="/images/device2/2sl/Приказ № 15 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
+                                <img src="/images/device2/2sl/Приказ № 15 -3-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -1-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                        <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -2-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -3-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -4-min.jpg" />
                             </li>
                             <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
+                                <img src="/images/device2/2sl/Приказ № 20 -5-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -6-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -7-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/Приказ № 20 -8-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_056-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_056b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_2118_057-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3297_023-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_001-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_002-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_003-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_004-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_005-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_006-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_007-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_101_1_3511_008-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_191_001-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_191_001b-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_047-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_060-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_060b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_36_1_30_067-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_1_21_015_1-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_1_21_103-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_012-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_013-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_014-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_015-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_017-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_018-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_019-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_37_4_57_020-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_004-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_005-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_1905_006-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_013-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_013b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_218_014-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_563_268-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_83_365-min.jpg" />
+                            </li>
+
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_199-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_199b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_200-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_200b-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_201-min.jpg" />
+                            </li>
+                            <li>
+                                <img src="/images/device2/2sl/NARB_6_1_899_201b-min.jpg" />
                             </li>
                       </ul>
                     </div>
