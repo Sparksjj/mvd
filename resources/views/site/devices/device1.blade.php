@@ -682,9 +682,7 @@
     padding: 25px;
     line-height: 12px;
     height: 0;
-    background: #fff" data-dismiss="modal" aria-label="Close"><span style="font-size: 50px;" aria-hidden="true">&times;</span>
-    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-    </button>
+    background: #fff" data-dismiss="modal" aria-label="Close"><span style="font-size: 50px;" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
       </div>
