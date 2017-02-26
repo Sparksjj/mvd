@@ -119,8 +119,6 @@
         height: 100%;
         display: block;
         margin: 0 auto;
-        padding: 10px;
-        padding-bottom: 60px;
     }/* 
     .flex_img:before{
         content: "\f06e";
@@ -193,13 +191,13 @@
         МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
      <div class="container-fluid text-center"> 
         <div class="col-sm-4 ">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>ПЛАНЫ РАСПОЛОЖЕНИЯ ЗАЛОВ</span></a>
+            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ПЛАНЫ РАСПОЛОЖЕНИЯ ЗАЛОВ</span></a>
         </div>
         <div class="col-sm-4 ">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>ФОТОИСТОРИЯ МИЛИЦИИ</span></a></li>
+            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"> <span>ФОТОИСТОРИЯ МИЛИЦИИ</span></a></li>
         </div>
         <div class="col-sm-4 ">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>ВИРТУАЛЬНЫЙ ТУР</span></a>
+            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ВИРТУАЛЬНЫЙ ТУР</span></a>
         </div>
      </div>
     </div>
@@ -309,83 +307,323 @@
                     <div id="slider" class="flexslider" style="padding-bottom: 190px; max-height: 100%">
                       <ul class="slides" style="padding-top: 5px">
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/02.jpg" />
+                        </li>
                         <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
-                            </li>
-                            <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/03.jpg" />
+                        </li>
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/06.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/07.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/08.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/09.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/10.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/11.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/12.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/13.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/14.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/15.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/16.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/17.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/18.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/19.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/20.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/21.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/22.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/23.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/24.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/25.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/26.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/27.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/28.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/29.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/30.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/31.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/32.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/33.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/34.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/35.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/36.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/37.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/38.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/39.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/40.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/41.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/42.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/43.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/44.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/45.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/46.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/47.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/48.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/49.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/50.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/51.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/52.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/53.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/54.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/55.jpg" />
+                        </li>
                       </ul>
                     </div>
-                    <div id="carousel" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0;">
+                    <div id="carousel" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0;height:150px">
                       <ul class="slides" style="
     display: flex;
     align-items: stretch;">
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/02.jpg" />
+                        </li>
                         <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
-                            </li>
-                            <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/03.jpg" />
+                        </li>
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device1/sl1/06.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/07.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/08.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/09.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/10.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/11.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/12.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/13.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/14.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/15.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/16.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/17.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/18.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/19.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/20.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/21.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/22.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/23.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/24.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/25.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/26.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/27.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/28.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/29.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/30.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/31.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/32.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/33.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/34.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/35.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/36.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/37.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/38.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/39.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/40.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/41.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/42.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/43.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/44.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/45.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/46.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/47.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/48.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/49.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/50.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/51.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/52.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/53.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/54.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device1/sl1/55.jpg" />
+                        </li>
                       </ul>
                     </div>
                   </section>
@@ -401,15 +639,55 @@
       </div>
 </div>
 
+
+<style>
+    .modal-backdrop.in{
+        opacity: .9;
+    }
+    .control_modal:before{
+        content: '\f002';
+        font-family: "flexslider-icon";
+        font-size: 40px;
+        position: relative;
+        top: 7px;
+    }
+    .control_modal{
+        padding: 10px;
+        background: white;
+        position: absolute;
+        top: 48%;
+        right: 10px;
+        border-radius: 10px;
+        color: #333;
+        cursor: pointer;
+    }
+    .control_modal.left:before{
+        content: '\f001';
+    }
+    .control_modal.left{
+        right: auto;
+        left: 10px;
+    }
+</style>
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg" style="width: 90%; height: 93%" role="document">
+  <div class="modal-dialog modal-lg" style="width: 90%; height: 97%;    margin: 10px auto;" role="document">
     <div class="modal-content">
       <div class="modal-content">
-      <div class="modal-header" style="padding-bottom: 30px; border: none">
-        <button type="button" class="close" style="font-size: 30px; opacity: .9; padding: 10px 20px;margin-top: -15px" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header" style="padding-bottom: 30px; border: none;
+    position: absolute;
+    right: 0;
+    z-index: 100;">
+        <button type="button" class="close" style="font-size: 30px;
+    opacity: .9;
+    padding: 25px;
+    line-height: 12px;
+    height: 0;
+    background: #fff" data-dismiss="modal" aria-label="Close"><span style="font-size: 50px;" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
       </div>
+      <div  class="control_modal " aria-hidden="true"></div>
+      <div  class="control_modal left" aria-hidden="true"></div>
     </div>
   </div>
 </div>
@@ -424,6 +702,27 @@
             $('.modal .modal-content .modal-body').empty();
             $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
             $('.modal').modal('show')
+        })
+        $('.control_modal').on('click', function(e){
+            if ($(e.target).hasClass('left')) {
+                var par = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().prev();
+                if (par.length==0) {
+                    var par2 = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().closest('.tab-pane')
+                    $('.full-width-img').attr('src', par2.find('img').eq(par2.find('img').length-1).attr('src'))
+                }else{
+                    $('.full-width-img').attr('src', par.find('img').attr('src'))
+                }
+            }else{
+
+                var par = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().next();
+                if (par.length==0) {
+                    var par2 = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().closest('.tab-pane')
+                    $('.full-width-img').attr('src', par2.find('img').eq(0).attr('src'))
+                }else{
+                    $('.full-width-img').attr('src', par.find('img').attr('src'))
+                }
+            }
+
         })
       $('#carousel').flexslider({
         animation: "slide",

@@ -95,13 +95,12 @@
         justify-content: center;
     }
     #content_2d > .container .flex_img{
-        width: 50%;
+        
         padding: 10px;
         border: 4px solid #fff;
         display: block;
         margin-right: 20px;
         border-radius: 20px;
-        margin-bottom: 150px;
         cursor: pointer;
         position: relative;
     }
@@ -114,8 +113,6 @@
         height: 100%;
         display: block;
         margin: 0 auto;
-        padding: 10px;
-        padding-bottom: 60px;
     }/* 
     .flex_img:before{
         content: "\f06e";
@@ -343,13 +340,13 @@
      МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
      <div class="container-fluid text-center"> 
         <div class="col-sm-4">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>ФИЛЬМ</span></a>
+            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ФИЛЬМ</span></a>
         </div>
         <div class="col-sm-4">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>ИСТОРИЯ МИЛИЦИИ 1917-1941</span></a></li>
+            <a class="device_buttom" href="#3d" data-type="1" aria-controls="profile" role="tab" data-toggle="tab"><span>ИСТОРИЯ МИЛИЦИИ 1917-1941</span></a></li>
         </div>
         <div class="col-sm-4">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>АРХИВНЫЕ ДОКУМЕНТЫ</span></a>
+            <a class="device_buttom" href="#some_slide" data-type="2" aria-controls="profile" role="tab" data-toggle="tab"> <span>АРХИВНЫЕ ДОКУМЕНТЫ</span></a>
         </div>
      </div>
     </div>
@@ -361,10 +358,8 @@
                 <div role="tabpanel" class="tab-pane active" id="content_2d">
                     <div class="container">
                         <div class="flex_img">                            
-                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_state_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
-                        </div>
-                        <div class="flex_img">                            
-                            <img src="http://prousa.info/images/city/washington_dc/white_house/white_house_plan/white_house_ground_floor_plan.png" alt="" class="show-more" data-src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg">
+                           <video width="1000" height="500" controls="controls">
+                           </video>
                         </div>
                     </div>
                 </div>
@@ -374,83 +369,161 @@
                     <div id="slider2" class="flexslider" style="padding-bottom: 190px; max-height: 100%">
                       <ul class="slides" style="padding-top: 5px">
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/02.jpg" />
+                        </li>
                         <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
-                            </li>
-                            <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/03.jpg" />
+                        </li>
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/04.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/05.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/06.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/07.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/08.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/09.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/10.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/11.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/12.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/13.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/14.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/15.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/16.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/17.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/18.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/19.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/20.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/21.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/22.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/23.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/24.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/25.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/26.jpg" />
+                        </li>
                       </ul>
                     </div>
-                    <div id="carousel2" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0;">
+                    <div id="carousel2" class="flexslider" style="position: absolute;bottom: 0;left: 0;margin: 20px 0;right: 0; height: 150px">
                       <ul class="slides" style="
                         display: flex;
                         align-items: stretch;">
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://ww1.prweb.com/prfiles/2013/04/26/10781475/Siberian%20Cedars.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://anywalls.com/pic/201210/1920x1080/anywalls.com-2511.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://fb.ru/misc/i/gallery/35703/890019.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/02.jpg" />
+                        </li>
                         <li>
-                            <img src="http://vignette2.wikia.nocookie.net/harrypotter/images/4/4a/%D0%9B%D0%B5%D1%81.jpg/revision/latest?cb=20140626150601&path-prefix=ru" />
-                            </li>
-                            <li>
-                            <img src="http://i21.beon.ru/86/90/1429086/45/60548845/0.jpeg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/03.jpg" />
+                        </li>
                         <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
-                            <li>
-                            <img src="http://nsk.novosibdom.ru/story/NOVOSIBIRSK/NOVONIK_1910-1920/school_05.jpg" />
-                            </li>
+                            <img src="/images/device2/1sl/04.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/05.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/06.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/07.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/08.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/09.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/10.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/11.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/12.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/13.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/14.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/15.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/16.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/17.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/18.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/19.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/20.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/21.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/22.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/23.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/24.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/25.jpg" />
+                        </li>
+                        <li>
+                            <img src="/images/device2/1sl/26.jpg" />
+                        </li>
                       </ul>
                     </div>
                   </section>
@@ -547,23 +620,61 @@
                 </div>
 
                 </div>
-                <div role="tabpanel" class="tab-pane" id="settings">4444444444</div>
-                <div role="tabpanel" class="tab-pane" id="settings">5555555555</div>
               </div>
 
         </div>
       </div>
 </div>
 
+
+<style>
+    .modal-backdrop.in{
+        opacity: .9;
+    }
+    .control_modal:before{
+        content: '\f002';
+        font-family: "flexslider-icon";
+        font-size: 40px;
+        position: relative;
+        top: 7px;
+    }
+    .control_modal{
+        padding: 10px;
+        background: white;
+        position: absolute;
+        top: 48%;
+        right: 10px;
+        border-radius: 10px;
+        color: #333;
+        cursor: pointer;
+    }
+    .control_modal.left:before{
+        content: '\f001';
+    }
+    .control_modal.left{
+        right: auto;
+        left: 10px;
+    }
+</style>
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg" style="width: 90%; height: 93%" role="document">
+  <div class="modal-dialog modal-lg" style="width: 90%; height: 97%;    margin: 10px auto;" role="document">
     <div class="modal-content">
       <div class="modal-content">
-      <div class="modal-header" style="padding-bottom: 30px; border: none">
-        <button type="button" class="close" style="font-size: 30px; opacity: .9; padding: 10px 20px;margin-top: -15px" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header" style="padding-bottom: 30px; border: none;
+    position: absolute;
+    right: 0;
+    z-index: 100;">
+        <button type="button" class="close" style="font-size: 30px;
+    opacity: .9;
+    padding: 25px;
+    line-height: 12px;
+    height: 0;
+    background: #fff" data-dismiss="modal" aria-label="Close"><span style="font-size: 50px;" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
       </div>
+      <div  class="control_modal " aria-hidden="true"></div>
+      <div  class="control_modal left" aria-hidden="true"></div>
     </div>
   </div>
 </div>
@@ -579,66 +690,97 @@
             $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
             $('.modal').modal('show')
         })
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
+        $('.control_modal').on('click', function(e){
+            if ($(e.target).hasClass('left')) {
+                var par = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().prev();
+                if (par.length==0) {
+                    var par2 = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().closest('.tab-pane')
+                    $('.full-width-img').attr('src', par2.find('img').eq(par2.find('img').length-1).attr('src'))
+                }else{
+                    $('.full-width-img').attr('src', par.find('img').attr('src'))
+                }
+            }else{
 
-      $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-      $('#slider .slides li').on('click', function(e){
-        var target = $(e.target);
-        if (!target.is('img')) {
-            target = target.find('img');
-        }
-            var src = target.attr('src');
-            $('.modal .modal-content .modal-body').empty();
-            $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
-            $('.modal').modal('show')
-      })
-      $('#carousel2').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
+                var par = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().next();
+                if (par.length==0) {
+                    var par2 = $('#content img[src="'+$('.modal-body img').attr('src')+'"]').parent().closest('.tab-pane')
+                    $('.full-width-img').attr('src', par2.find('img').eq(0).attr('src'))
+                }else{
+                    $('.full-width-img').attr('src', par.find('img').attr('src'))
+                }
+            }
 
-      $('#slider2').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-      $('#slider2 .slides li').on('click', function(e){
-        var target = $(e.target);
-        if (!target.is('img')) {
-            target = target.find('img');
-        }
-            var src = target.attr('src');
-            $('.modal .modal-content .modal-body').empty();
-            $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
-            $('.modal').modal('show')
-      })
+        })
+/*      *//**/
+      var carousel2 = true;
+      var carousel1 = true;
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          if ($(e.target).attr('data-type')==1 && carousel2) {
+              $('#carousel2').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,
+                itemWidth: 210,
+                itemMargin: 5,
+                asNavFor: '#slider2'
+              });
+
+              $('#slider2').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,
+                sync: "#carousel2",
+                start: function(slider){
+                  $('body').removeClass('loading');
+                }
+              });
+              $('#slider2 .slides li').on('click', function(e){
+                var target = $(e.target);
+                if (!target.is('img')) {
+                    target = target.find('img');
+                }
+                    var src = target.attr('src');
+                    $('.modal .modal-content .modal-body').empty();
+                    $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
+                    $('.modal').modal('show')
+              })
+            carousel2 = false;
+          }else if($(e.target).attr('data-type')==2 && carousel1){
+            $('#carousel').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    itemWidth: 210,
+                    itemMargin: 5,
+                    asNavFor: '#slider'
+                  });
+
+                  $('#slider').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    sync: "#carousel",
+                    start: function(slider){
+                      $('body').removeClass('loading');
+                    }
+                  });
+                  $('#slider .slides li').on('click', function(e){
+                    var target = $(e.target);
+                    if (!target.is('img')) {
+                        target = target.find('img');
+                    }
+                        var src = target.attr('src');
+                        $('.modal .modal-content .modal-body').empty();
+                        $('<img src="'+src+'" class="full-width-img" alt="" />').appendTo($('.modal .modal-content .modal-body'));
+                        $('.modal').modal('show')
+                  })
+          } // newly activated tab
+          e.relatedTarget // previous active tab
+        })
     })
 </script>
 
