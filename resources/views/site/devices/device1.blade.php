@@ -93,12 +93,11 @@
         align-items: center;
         height: 100%;
         justify-content: center;
-        flex-flow: column wrap;
+        /* flex-flow: column wrap; */
     }
     #content_2d > .container .flex_img{
-        width: 33%;
+        width: 45%;
         padding: 10px;
-        border: 4px solid #fff;
         display: block;
         margin-right: 20px;
         border-radius: 20px;
@@ -106,9 +105,46 @@
         cursor: pointer;
         position: relative;
         height: 45%;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         display: flex;
         align-items: center;
+        margin-top: 50px;
+    }
+
+    #content_video > .container{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+    }
+    #content_video > .container .flex_img{
+        
+        padding: 10px;
+        border: 4px solid #fff;
+        display: block;
+        margin-right: 20px;
+        border-radius: 20px;
+        
+        cursor: pointer;
+        position: relative;
+    }
+    #content_video > .container .flex_img:last-child{
+        margin-right: 0px;
+    }
+
+
+
+    #content_2d > .container .flex_img h3{
+            position: absolute;
+            top: -203px;
+            left: 50%;
+            margin-left: -25px;
+            font-weight: bold;
+            font-family: Beans;
+            color: #d2564a;
+            font-size: 42px;
+            text-shadow: 0 0 10px #bbb;
+            letter-spacing: 1.4px
     }
     #content_2d > .container .flex_img:last-child{
         margin-right: 0px;
@@ -157,7 +193,7 @@
         border-radius:  10px;        
         box-shadow: 0 0 20px #333;
         height: 100px;
-        line-height: 100px;
+        line-height: 113px;
         color: #ede2c6 !important;
     }
     .device_buttom:hover{
@@ -175,7 +211,7 @@
             <span style="margin-top: 30px; color: #222; background-color: #eee; border-radius: 4px; padding: 15px ">Планшет в холле</span>
             <div class="grid-filter" style="margin: 30px">
                 <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
-                    <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
+                    <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" dataf-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
                     <li data-option-value=".format-image"><a href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
                     <li data-option-value=".format-link"><a href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a></li>
 <li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a></li>
@@ -190,15 +226,21 @@
     <div class="container-fluid big_title_main">
         МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
      <div class="container-fluid text-center"> 
-        <div class="col-sm-4 ">     
-            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ПЛАНЫ РАСПОЛОЖЕНИЯ ЗАЛОВ</span></a>
+        <div class="col-sm-3 ">     
+            <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ПЛАН МУЗЕЯ</span></a>
         </div>
-        <div class="col-sm-4 ">
-            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"> <span>ФОТОИСТОРИЯ МИЛИЦИИ</span></a></li>
+        <div class="col-sm-3 ">
+            <a class="device_buttom" href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"> <span>ИСТОРИЯ МИЛИЦИИ</span></a></li>
         </div>
-        <div class="col-sm-4 ">
-            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>ВИРТУАЛЬНЫЙ ТУР</span></a>
+        <div class="col-sm-3" >     
+            <a class="device_buttom" href="#content_video" aria-controls="profile" role="tab" data-toggle="tab"> <span>ФИЛЬМ</span></a>
         </div>
+        <div class="col-sm-3 ">
+            <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>3D ТУР СТАРАЯ ЭКСПОЗИЦИЯ</span></a>
+        </div>
+
+
+
      </div>
     </div>
     <!-- Start Body Content -->
@@ -206,25 +248,24 @@
     	<div id="content" class="content full">
 
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="content_2d">
+
+                <div role="tabpanel" class="tab-pane" id="content_video">
                     <div class="container">
                         <div class="flex_img">                            
-                            <img src="/images/device1/Холл.jpg" alt="" class="show-more" data-src="/images/device1/Холл.jpg">
+                           <video width="1000" height="500" controls="controls">
+                           </video>
                         </div>
-                        <div class="flex_img">                            
-                            <img src="/images/device1/1 этаж.jpg" alt="" class="show-more" data-src="/images/device1/1 этаж.jpg" style="height: 84%;">
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane active" id="content_2d">
+                    <div class="container" style="    width: 75%;">
+                        <div class="flex_img">
+                            <h3>1 ЭТАЖ</h3>                    
+                            <img src="/images/1_flor.png" alt="" class="show-more" data-src="/images/device1/Холл.jpg">
                         </div>
-                        <div class="flex_img">                            
-                            <img src="/images/device1/2 этаж.png" alt="" class="show-more" data-src="/images/device1/2 этаж.png">
-                        </div>
-                        <div class="flex_img">                            
-                            <img src="/images/device1/PhysCamera034(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera034(-potolok).jpg">
-                        </div>
-                        <div class="flex_img">                            
-                            <img src="/images/device1/PhysCamera035(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera035(-potolok).jpg">
-                        </div>
-                        <div class="flex_img">                            
-                            <img src="/images/device1/PhysCamera036(-potolok).jpg" alt="" class="show-more" data-src="/images/device1/PhysCamera036(-potolok).jpg">
+                        <div class="flex_img" style="width: 58%">
+                            <h3>2 ЭТАЖ</h3>                             
+                            <img src="/images/2_flor.png" alt="" class="show-more" data-src="/images/device1/1 этаж.jpg">
                         </div>
                     </div>
                 </div>
