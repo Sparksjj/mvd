@@ -27,7 +27,13 @@ class DocumentController extends Controller
             'categories' => Category::all(),
             'tree' => TreeHelper::getTree(),
         ];
-        $key = $request->key ?? '';
+
+        if ($request->key) {
+            $key = $request->key;
+        }else{
+            $key = '';
+        }
+
         if ($data['category'] == null) {
             $data['documents'] = Document::orderBy('created_at', 'desc')
                 ->where('title_ru', 'like', '%' . $key . '%')

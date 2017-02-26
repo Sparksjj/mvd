@@ -20,7 +20,13 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $key = $request->key ?? '';
+
+        if ($request->key) {
+            $key = $request->key;
+        }else{
+            $key = '';
+        }
+
         $data = [
             'tree' => TreeHelper::getTree(),
         ];

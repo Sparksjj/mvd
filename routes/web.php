@@ -21,21 +21,6 @@ Route::get('/contacts', 'Site\ContactsController@index')->name('contacts.index')
 Route::get('/about', 'Site\AboutController@index')->name('about.index');
 Route::get('/3d', 'Site\ThreeController@index')->name('3d.index');
 Route::get('/search', 'Site\SearchController@index')->name('search.index');
-Route::get('/device1', function(){
-    return view('site.devices.device1');
-});
-Route::get('/device2', function(){
-    return view('site.devices.device2');
-});
-Route::get('/device3', function(){
-    return view('site.devices.device3');
-});
-Route::get('/device4', function(){
-    return view('site.devices.device4');
-});
-Route::get('/devices', function(){
-	return view('site.devices.index');
-});
 Route::resource('resource',  'Site\ResourceController', ['only' => ['show', 'index']]);
 
 Auth::routes();
@@ -47,6 +32,21 @@ Route::group(['middleware' => ['auth', 'checkPermission:museum_device']], functi
 	Route::resource('projectors',  'Site\ProjectorController', ['only' => ['show', 'index']]);
 	Route::resource('articles',  'Site\ArticlesController', ['only' => ['show', 'index']]);
 
+    Route::get('/device1', function(){
+        return view('site.devices.device1');
+    });
+    Route::get('/device2', function(){
+        return view('site.devices.device2');
+    });
+    Route::get('/device3', function(){
+        return view('site.devices.device3');
+    });
+    Route::get('/device4', function(){
+        return view('site.devices.device4');
+    });
+    Route::get('/devices', function(){
+        return view('site.devices.index');
+    });
 });
 
 Route::group(['middleware' => ['auth', 'checkPermission:museum_employee'], 'prefix' => 'admin'], function () {
