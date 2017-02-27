@@ -30,6 +30,17 @@
 <![endif]-->
 <div class="body">
 <style>
+    video::-internal-media-controls-download-button {
+    display:none;
+    }
+
+    video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
     body{
         background: url('/images/Background.jpg') 50% 50% no-repeat;
         background-size: cover;
@@ -359,6 +370,8 @@
                     <div class="container">
                         <div class="flex_img">                            
                            <video width="1000" height="500" controls="controls">
+                                <!-- 1ая серия -->
+                                <source src="">
                            </video>
                         </div>
                     </div>

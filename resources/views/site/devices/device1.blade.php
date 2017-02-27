@@ -120,13 +120,14 @@
     #content_video > .container .flex_img{
         
         padding: 10px;
-        border: 4px solid #fff;
+        /* border: 4px solid #fff; */
         display: block;
         margin-right: 20px;
         border-radius: 20px;
         
         cursor: pointer;
         position: relative;
+        font-weight: bold;
     }
     #content_video > .container .flex_img:last-child{
         margin-right: 0px;
@@ -202,26 +203,18 @@
     .device_buttom:visited{
         color: #ede2c6;
     }
+    video::-internal-media-controls-download-button {
+    display:none;
+    }
+
+    video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
 </style>
-
-
-<!--         <div class="page-header">
-    <div style="height: auto">
-        <div style="vertical-align: top">
-            <span style="margin-top: 30px; color: #222; background-color: #eee; border-radius: 4px; padding: 15px ">Планшет в холле</span>
-            <div class="grid-filter" style="margin: 30px">
-                <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
-                    <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" dataf-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
-                    <li data-option-value=".format-image"><a href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
-                    <li data-option-value=".format-link"><a href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a></li>
-<li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a></li>
-<li data-option-value=".format-video"><a href="#"><i class="fa fa-play"></i> <span>Videos</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 
     <div class="container-fluid big_title_main">
         МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
@@ -239,8 +232,6 @@
             <a class="device_buttom" href="#3d" aria-controls="profile" role="tab" data-toggle="tab"> <span>3D ТУР СТАРАЯ ЭКСПОЗИЦИЯ</span></a>
         </div>
 
-
-
      </div>
     </div>
     <!-- Start Body Content -->
@@ -253,6 +244,8 @@
                     <div class="container">
                         <div class="flex_img">                            
                            <video width="1000" height="500" controls="controls">
+                                <!-- 8ая серия -->
+                                <source src="">
                            </video>
                         </div>
                     </div>
@@ -737,7 +730,38 @@
 <script src="/js/bootstrap.js"></script> <!-- UI -->
 <script defer src="/FlexSlider/jquery.flexslider-min.js"></script>
 <script>
+dvsplay_settings ()
+function dvsplay_settings () {
+// Basic parameters
+this.width=600;
+this.height = 400;
+
+this.backgroundColor="#000000"; 
+this.controlBackgroundColor="#333333";
+
+// Parameter affecting visibility of controls
+this.displayMuteButton = true;  
+this.displayPlayPauseButton = true; 
+this.displayAutoPlayButton = true;  
+this.displayFullScreenModeButton = true;
+
+this.displayVolumeControl = true;   
+this.displayTrackBar = true;    
+
+this.displayVolumeDigital = true; 
+this.displayVideoLengthDigitals = true; 
+
+// Parameters of the initial state of the player
+this.startVolume = 0.5; 
+this.startPosition = 0; 
+this.muteButtonAtStart = false; 
+
+this.autoRewind = true; 
+this.autoPlay = true; 
+}
     addEventListener('load', function(){
+
+
         $('.show-more').on('click', function(e){
             var src = $(e.target).attr('src');
             $('.modal .modal-content .modal-body').empty();

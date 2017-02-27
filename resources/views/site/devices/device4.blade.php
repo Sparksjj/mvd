@@ -30,6 +30,17 @@
 <![endif]-->
 <div class="body">
 <style>
+    video::-internal-media-controls-download-button {
+    display:none;
+    }
+
+    video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
     body{
         background: url('/images/Background.jpg') 50% 50% no-repeat;
         background-size: cover;
@@ -97,9 +108,9 @@
     }
     #some_video > .container .flex_img,
     #content_2d > .container .flex_img{
-        
+        width: 100%;
         padding: 10px;
-        border: 4px solid #fff;
+        /* border: 4px solid #fff; */
         display: block;
         margin-right: 20px;
         border-radius: 20px;
@@ -327,26 +338,10 @@
                         border-right: 4px solid #fff;
                         padding: 0 10px;
                     }
-</style>
-
-
-<!--         <div class="page-header">
-    <div style="height: auto">
-        <div style="vertical-align: top">
-            <span style="margin-top: 30px; color: #222; background-color: #eee; border-radius: 4px; padding: 15px ">Планшет в холле</span>
-            <div class="grid-filter" style="margin: 30px">
-                <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
-                    <li data-option-value="*" class="active"><a href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-map-o"></i> <span>Схема музея</span></a></li>
-                    <li data-option-value=".format-image"><a href="#3d" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-picture-o"></i> <span>3D тур</span></a></li>
-                    <li data-option-value=".format-link"><a href="#some_slide" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-link"></i> <span>Слайдер</span></a></li>
-<li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Sliders</span></a></li>
-<li data-option-value=".format-video"><a href="#"><i class="fa fa-play"></i> <span>Videos</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> -->
-
+                    .flex_img{
+                       font-weight: bold; 
+                    }
+        </style>
 
     <div class="container-fluid big_title_main">
      МУЗЕЙ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РЕСПУБЛИКИ БЕЛАРУСЬ
@@ -361,7 +356,7 @@
             <a class="device_buttom" href="#some_slide" data-type="2" aria-controls="profile" role="tab" data-toggle="tab"> <span>ТЕРРИТОРИАЛЬНЫЕ ОРГАНЫ ВНУТРЕННИХ ДЕЛ</span></a>
         </div>
         <div class="col-sm-3">
-            <a class="device_buttom" href="#no_cont" aria-controls="profile" role="tab" data-toggle="tab"> <span>ПОДРАЗДЕЛЕНИЯ МВД</span></a>
+            <a class="device_buttom" href="#some_slide2" aria-controls="profile" role="tab" data-toggle="tab" data-type="3"> <span>ПОДРАЗДЕЛЕНИЯ МВД</span></a>
         </div>
      </div>
     </div>
@@ -373,14 +368,58 @@
                 <div role="tabpanel" class="tab-pane active" id="content_2d">
                     <div class="container">
                         <div class="flex_img">                            
+
+                         <div class="container-fluid text-center"> 
+                            <div class="col-sm-6" style="margin-bottom: 150px;">     
+                                <a class="device_buttom" href="#content_video1" aria-controls="profile" role="tab" data-toggle="tab"> <span>6ая серия</span></a>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom: 150px;">     
+                                <a class="device_buttom" href="#content_video2" aria-controls="profile" role="tab" data-toggle="tab"> <span>7ая серия</span></a>
+                            </div>
+                         </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane " id="content_video1">
+                    <div class="container">
+                        <div class="flex_img">   
+                         <div class="container-fluid text-center"> 
+                            <div class="col-sm-6 col-sm-offset-3" >     
+                                <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>НАЗАД</span></a>
+                            </div>
+                         </div>                         
                            <video width="1000" height="500" controls="controls">
+                                <!-- 6ая серия -->
+                                <source src="">
                            </video>
                         </div>
                     </div>
                 </div>
+                <div role="tabpanel" class="tab-pane " id="content_video2">
+                    <div class="container">
+                        <div class="flex_img">   
+                         <div class="container-fluid text-center"> 
+                            <div class="col-sm-6 col-sm-offset-3" >     
+                                <a class="device_buttom" href="#content_2d" aria-controls="profile" role="tab" data-toggle="tab"> <span>НАЗАД</span></a>
+                            </div>
+                         </div>                             
+                           <video width="1000" height="500" controls="controls">
+                                <!-- 7ая серия -->
+                                <source src="">
+                           </video>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 <div role="tabpanel" class="tab-pane active" id="some_video">
                     <div class="container">
-                        <div class="flex_img">                            
+                        <div class="flex_img">      
+                        пока нет                      
                            <video width="1000" height="500" controls="controls">
                            </video>
                         </div>

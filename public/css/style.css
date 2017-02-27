@@ -9,8 +9,15 @@ Author:	imithemes
 @import url("font-awesome.css");
 @import url("line-icons.css");
 @import url("animations.css");
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
+/* @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic); */
+@font-face {
+	font-family: 'Beans';
+	src: url('/css/fonts/BebasNeue Book.ttf') format('truetype'),
+	url('/css/fonts/BebasNeue Book.oft') format('oft');
+	font-weight: normal;
+	font-style: normal;
+}
 @font-face {
 	font-family: 'Beans';
 	src: url('/css/fonts/BebasNeue Book.ttf') format('truetype'),
